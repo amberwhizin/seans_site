@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
+import MusicHeader from '../components/MusicHeader';
+import TutoringHeader from '../components/TutoringHeader';
 import Footer from '../components/Footer';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useYaml, useHubSpotForm, useIsTabletOrMobile } from '../hooks';
+import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
@@ -103,13 +104,17 @@ const theme = {
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const copy = useYaml();
-  useHubSpotForm();
   const isTabletOrMobile = useIsTabletOrMobile();
+  // debugger;
+  const currentApp = router.pathname.split('/')[1]; // split off at the "/" at (2nd index) after music or tutoring
+  const isMusic = currentApp === 'music'; // match location of the router against music route to show it on page
+  const isTutoring = currentApp === 'tutoring';
   return (
     <>
       <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
       <ThemeProvider theme={theme}>
-        <Header copy={copy} />
+        {isMusic && <MusicHeader copy={copy} />}
+        {isTutoring && <TutoringHeader copy={copy} />}
         <Component copy={copy} {...pageProps} />
         {!isTabletOrMobile && <Footer copy={copy} />}
       </ThemeProvider>

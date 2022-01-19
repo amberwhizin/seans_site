@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
 import BackgroundImage from '../public/pics/5thAveB.jpg';
 import { useIsTabletOrMobile } from '../hooks';
 import Footer from '../components/Footer';
@@ -20,7 +21,7 @@ const Y = 4;
 function GardenMobile() {
   return (
     <Image
-      src={BackgroundImage} 
+      src={BackgroundImage}
       alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
       width={4032 / Y}
       height={3024 / Y}
@@ -63,12 +64,15 @@ function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      {!isTabletOrMobile && <Garden />}
+      {!isTabletOrMobile && (
+        <>
+          <Link href="music/">Music</Link>
+          <Link href="tutoring/">Tutoring</Link>
+        </>
+      )}
       {isTabletOrMobile && (
         <>
-          <div>
-            <GardenMobile />
-          </div>
+          <div></div>
           <StyledFooterContainer>
             <Footer copy={copy} />
           </StyledFooterContainer>
