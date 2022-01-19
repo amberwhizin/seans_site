@@ -30,12 +30,59 @@ function GardenMobile() {
 }
 
 const Container = styled.div`
-  position: absolute;
-  top: 6rem;
+  padding: 0;
+  margin: 0;
   width: 100%;
+  font-size: 2.5rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+`;
+
+const Heading = `Sean Keegan`;
+const Title = styled.h1`
+  position: fixed;
+  padding: 1.4rem;
+  top: 0;
+  margin: 5rem;
+  font-size: 3rem;
+  border: 1px solid grey;
+`;
+
+const StyledMusic = styled.div`
+  margin-top: 30rem;
+  padding-right: 20rem;
+  text-align: center;
+`;
+
+const StyledTutor = styled.div`
+  margin-top: 30rem;
+  padding-left: 20rem;
+  text-align: center;
+`;
+
+const MusicQuote = `"Best Tutor EVER!!"`;
+const TutorQuote = `"Incredible, a must see!"`;
+
+const MusicParagraph = styled.p`
+  margin-top: 9rem;
+`;
+const TutorParagraph = styled.p`
+  margin-top: 9rem;
+`;
+
+const Line_1 = styled.span`
+  position: absolute;
+  height: 40rem;
+  /* bottom: 1rem; */
+  bottom: 1px;
+  border-left: 2px solid black;
+`;
+const Line_2 = styled.span`
+  position: absolute;
+  height: 45rem;
+  top: 12.2rem;
+  border-left: 2px solid black;
 `;
 
 const StyledFooterContainer = styled.div`
@@ -66,16 +113,17 @@ function HomePage({ copy }) {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Link href="music/">Music</Link>
-          <Link href="tutoring/">Tutoring</Link>
-        </>
-      )}
-      {isTabletOrMobile && (
-        <>
-          <div></div>
-          <StyledFooterContainer>
-            <Footer copy={copy} />
-          </StyledFooterContainer>
+          <Line_1 />
+          <Title>{Heading}</Title>
+          <StyledMusic>
+            <Link href="music/">Music</Link>
+            <MusicParagraph>{MusicQuote}</MusicParagraph>
+          </StyledMusic>
+          <Line_2 />
+          <StyledTutor>
+            <Link href="tutoring/">Tutoring</Link>
+            <TutorParagraph>{TutorQuote}</TutorParagraph>
+          </StyledTutor>
         </>
       )}
     </Container>
@@ -83,3 +131,12 @@ function HomePage({ copy }) {
 }
 
 export default HomePage;
+
+//  {isTabletOrMobile && (
+//   <>
+//   <StyledFooterContainer>
+//     {/* do we need this anymore? */}
+//     <Footer copy={copy} />
+//   </StyledFooterContainer>
+// </>
+// )}

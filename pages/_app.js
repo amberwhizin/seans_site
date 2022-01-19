@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     background: cover;
     height: 100vh;
     width: 100%;
+
   }
   h1 {
     font-size: 3rem;
@@ -36,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
   }
   ul {
     list-style-type: none;
+  }
+  a {
+    text-decoration: none;
   }
   .hbspt-form {
     display: ${(props) => {
