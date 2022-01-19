@@ -72,11 +72,11 @@ const Footer = ({ copy }) => {
   return (
     <Container>
       <FooterUl>
-        {!isTabletOrMobile && <InstagramButton />}
+        {/* {!isTabletOrMobile && <InstagramButton />} */}
         {footer.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
-        {isTabletOrMobile && <InstagramButton />}
+        {/* {isTabletOrMobile && <InstagramButton />} */}
       </FooterUl>
     </Container>
   );

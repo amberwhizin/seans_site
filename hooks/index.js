@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 export const useYaml = () => {
   const [data, setData] = useState({});
   useEffect(() => {
-    fetch('text/copy.yaml')
+    fetch('../text/copy.yaml')
       .then((response) => response.text())
       .then((yaml) => load(yaml))
       .then((yamlData) => {
