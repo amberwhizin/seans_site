@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
       box-sizing: border-box;
-      font-family: 'Proza Libre', sans-serif;
+      font-family: 'Merienda', sans-serif;
       color: ${(props) => props.theme.colors.oliveDrab7};
   }
   body {
@@ -105,16 +105,21 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const copy = useYaml();
   const isTabletOrMobile = useIsTabletOrMobile();
+  const currentApp = router.pathname.split('/')[1]; // router.pathname is '/', so at the first sign of pattern '/', look at the pathname at index [1]
   // debugger;
-  const currentApp = router.pathname.split('/')[1]; // split off at the "/" at (2nd index) after music or tutoring
-  const isMusic = currentApp === 'music'; // match location of the router against music route to show it on page
+  const isMusic = currentApp === 'music';
+  // if its music...
   const isTutoring = currentApp === 'tutoring';
+  // if its tutoring...
   return (
     <>
       <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
       <ThemeProvider theme={theme}>
         {isMusic && <MusicHeader copy={copy} />}
+        {/* show /music/ */}
         {isTutoring && <TutoringHeader copy={copy} />}
+        {/* show /tutoring */}
+        {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />
         {!isTabletOrMobile && <Footer copy={copy} />}
       </ThemeProvider>
