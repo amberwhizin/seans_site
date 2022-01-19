@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import Central from '../public/pics/CentralStreetA.jpg';
-import _5thAveB from '../public/pics/5thAveB.jpg';
-import _5thAveC from '../public/pics/5thAveC.jpg';
-import _5thAveD from '../public/pics/5thAveD.jpg';
-import _5thAveE from '../public/pics/5thAveIMG_8708.jpg';
-import { useIsTabletOrMobile } from '../hooks';
+import Central from '../../public/pics/CentralStreetA.jpg';
+import _5thAveB from '../../public/pics/5thAveB.jpg';
+import _5thAveC from '../../public/pics/5thAveC.jpg';
+import _5thAveD from '../../public/pics/5thAveD.jpg';
+import _5thAveE from '../../public/pics/5thAveIMG_8708.jpg';
+import { useIsTabletOrMobile } from '../../hooks';
 
 // TODO: Most of these components are the same as services.  Maybe we can make them shared?
 const Container = styled.div`

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import BeforeCentral from '../public/pics/CentralStreetC.jpg';
-import AfterCentral from '../public/pics/CentralStreetB.jpg';
-import BeforeTullis from '../public/pics/TullisStreetIMG_0381.png';
-import AfterTullis from '../public/pics/TullisStreetIMG_0374.jpg';
-import _5thAveMaintenance from '../public/pics/5thAveIMG_8708.jpg';
-import _5thAveMaintenance_2 from '../public/pics/5thAveC.jpg';
+import BeforeCentral from '../../public/pics/CentralStreetC.jpg';
+import AfterCentral from '../../public/pics/CentralStreetB.jpg';
+import BeforeTullis from '../../public/pics/TullisStreetIMG_0381.png';
+import AfterTullis from '../../public/pics/TullisStreetIMG_0374.jpg';
+import _5thAveMaintenance from '../../public/pics/5thAveIMG_8708.jpg';
+import _5thAveMaintenance_2 from '../../public/pics/5thAveC.jpg';
 
 const Container = styled.div`
   position: absolute;
