@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import BackgroundImage from '../../public/pics/5thAveB.jpg';
+import BackgroundImage from '../../public/pics/sean_guitar_random.jpeg';
 import { useIsTabletOrMobile } from '../../hooks';
 import Footer from '../../components/Footer';
 
 const X = 4;
-function Garden() {
+function Guitar() {
   return (
     <Image
-      src={BackgroundImage} //pass in image
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      src={BackgroundImage}
+      alt="image of a classical guitar"
       width={6032 / X}
       height={3024 / X}
     />
@@ -17,11 +17,11 @@ function Garden() {
 }
 
 const Y = 4;
-function GardenMobile() {
+function GuitarMobile() {
   return (
     <Image
-      src={BackgroundImage} 
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      src={BackgroundImage}
+      alt="image of a classical guitar"
       width={4032 / Y}
       height={3024 / Y}
     />
@@ -35,6 +35,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
 `;
 
 const StyledFooterContainer = styled.div`
@@ -63,11 +64,11 @@ function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      {!isTabletOrMobile && <Garden />}
+      {!isTabletOrMobile && <Guitar />}
       {isTabletOrMobile && (
         <>
           <div>
-            <GardenMobile />
+            <GuitarMobile />
           </div>
           <StyledFooterContainer>
             <Footer copy={copy} />

@@ -7,6 +7,7 @@ import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
+/* color: ${(props) => props.theme.colors.oliveDrab7}; */
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
@@ -14,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   * {
       box-sizing: border-box;
       font-family: 'Merienda', sans-serif;
-      color: ${(props) => props.theme.colors.oliveDrab7};
   }
   body {
     margin: 0;

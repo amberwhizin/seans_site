@@ -9,9 +9,7 @@ const StyledLink = styled.a`
   padding: 2.5rem;
   font-size: 1.6rem;
   color: ${(props) =>
-    props.isActive
-      ? props.theme.colors.oliveDrab72
-      : props.theme.colors.nickel};
+    props.isActive ? props.theme.colors.white : props.theme.colors.white};
 
   @media (max-width: 1438px) {
     display: flex;
@@ -33,16 +31,13 @@ const NavUl = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  background-color: black;
+  border: none;
 
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
     bottom: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 `;
 
