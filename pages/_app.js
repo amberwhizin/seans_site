@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   .hbspt-form {
     display: ${(props) => {
