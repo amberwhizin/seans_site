@@ -8,6 +8,7 @@ const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
   font-size: 1.6rem;
+  font-family: 'Bangers', cursive;
   color: ${(props) =>
     props.isActive ? props.theme.colors.white : props.theme.colors.white};
 
@@ -64,24 +65,24 @@ const NavItem = ({ href, children, left }) => {
 
 const MusicHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
-  const { navBar = {} } = copy;
-  const homeDivided = (navBar.home || '').split(' ');
+  const { navBarMusic = {} } = copy;
+  const homeDivided = (navBarMusic.home || '').split(' ');
 
   return (
     <header>
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            {navBar.home}
+            {navBarMusic.home}
           </NavItem>
         )}
 
         {!isTabletOrMobile && (
           <>
-            <NavItem href="/music/about">{navBar.about}</NavItem>
-            <NavItem href="/music/portfolio">{navBar.portfolio}</NavItem>
-            <NavItem href="/music/services">{navBar.services}</NavItem>
-            <NavItem href="/music/contact">{navBar.contact}</NavItem>
+            <NavItem href="/music/about">{navBarMusic.about}</NavItem>
+            <NavItem href="/music/portfolio">{navBarMusic.portfolio}</NavItem>
+            <NavItem href="/music/services">{navBarMusic.services}</NavItem>
+            <NavItem href="/music/contact">{navBarMusic.contact}</NavItem>
           </>
         )}
 

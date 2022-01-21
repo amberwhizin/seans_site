@@ -8,6 +8,7 @@ const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
   font-size: 1.6rem;
+  font-family: 'Merienda', sans-serif;
   color: ${(props) =>
     props.isActive
       ? props.theme.colors.oliveDrab72
@@ -60,8 +61,8 @@ const NavItem = ({ href, children, left }) => {
   const isActive = router.asPath === href;
   return (
     <NavLi left={left}>
-      <Link href={href} passHref> 
-      {/* is it going to index first? easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale? */}
+      <Link href={href} passHref>
+        {/* is it going to index first? easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale? */}
         <StyledLink isActive={isActive}>{children}</StyledLink>
       </Link>
     </NavLi>
@@ -70,24 +71,30 @@ const NavItem = ({ href, children, left }) => {
 
 const TutoringHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
-  const { navBar = {} } = copy;
-  const homeDivided = (navBar.home || '').split(' ');
+  const { navBarTutor = {} } = copy;
+  const homeDivided = (navBarTutor.home || '').split(' ');
   return (
     <header>
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            {navBar.home}
+            {navBarTutor.home}
           </NavItem>
         )}
 
         {!isTabletOrMobile && (
           <>
-            <NavItem href="/tutoring/about">{navBar.about}</NavItem> 
             {/* adding extra header information to split between both sides */}
-            <NavItem href="/tutoring/portfolio">{navBar.portfolio}</NavItem>
-            <NavItem href="/tutoring/services">{navBar.services}</NavItem>
-            <NavItem href="/tutoring/contact">{navBar.contact}</NavItem>
+            <NavItem href="/tutoring/about">{navBarTutor.about}</NavItem>
+            <NavItem href="/tutoring/portfolio">
+              {navBarTutor.portfolio}
+            </NavItem>
+            <NavItem href="/tutoring/subjects">{navBarTutor.subjects}</NavItem>
+            <NavItem href="/tutoring/testimonials">
+              {navBarTutor.testimonials}
+            </NavItem>
+            <NavItem href="/tutoring/services">{navBarTutor.services}</NavItem>
+            <NavItem href="/tutoring/contact">{navBarTutor.contact}</NavItem>
           </>
         )}
 
