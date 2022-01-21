@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
       box-sizing: border-box;
-      font-family: 'Merienda', sans-serif;
   }
   body {
     margin: 0;
@@ -40,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: black;
   }
   .hbspt-form {
     display: ${(props) => {
@@ -125,7 +125,7 @@ export default function App({ Component, pageProps }) {
         {/* show /tutoring */}
         {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />
-        {!isTabletOrMobile && <Footer copy={copy} />}
+        {/* {!isTabletOrMobile && <Footer copy={copy} />} */}
       </ThemeProvider>
     </>
   );
