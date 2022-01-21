@@ -49,45 +49,7 @@ const ImageGrouping = styled.div`
 `;
 
 function Services() {
-  return (
-    <Container>
-      <StyledH2>Design</StyledH2>
-      <ImageGrouping>
-        <ServicesImage
-          src={BeforeTullis}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
-        />
-        <ServicesImage
-          src={AfterTullis}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
-        />
-      </ImageGrouping>
-
-      <StyledH2>Install</StyledH2>
-      <ImageGrouping>
-        <ServicesImage
-          src={BeforeCentral}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
-        />
-        <ServicesImage
-          src={AfterCentral}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
-        />
-      </ImageGrouping>
-
-      <StyledH2>Maintenance</StyledH2>
-      <ImageGrouping>
-        <ServicesImage
-          src={_5thAveMaintenance}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
-        />
-        <ServicesImage
-          src={_5thAveMaintenance_2}
-          alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
-        />
-      </ImageGrouping>
-    </Container>
-  );
+  return <h1>Services</h1>;
 }
 
 export default Services;
