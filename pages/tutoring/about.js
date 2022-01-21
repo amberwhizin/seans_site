@@ -5,9 +5,17 @@ import { useIsTabletOrMobile } from '../../hooks';
 const AboutTitle = `Sean Keegan`;
 
 const AboutBlurb = `
-Hello! I’m Sean.
-I play awesome music!
-Let's talk. `;
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
+ `;
 
 const Container = styled.div`
   position: absolute;
@@ -27,10 +35,10 @@ const X = 3;
 function Family() {
   return (
     <Image
-      src="/pics/sean_website.jpeg"
+      src="/pics/sean_mel_.png"
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={15500 / X}
-      height={19000 / X}
+      width={15314 / X}
+      height={19624 / X}
     />
   );
 }

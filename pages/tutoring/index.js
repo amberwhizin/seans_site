@@ -1,30 +1,20 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import BackgroundImage from '../../public/pics/5thAveB.jpg';
+import BackgroundImage from '../../public/pics/book_bubbly_sean.jpeg';
 import { useIsTabletOrMobile } from '../../hooks';
 import Footer from '../../components/Footer';
 
 const X = 4;
 function Garden() {
   return (
-    <Image
-      src={BackgroundImage} 
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
-      width={6032 / X}
-      height={3024 / X}
-    />
+    <Image src={BackgroundImage} alt="" width={6032 / X} height={3024 / X} />
   );
 }
 
 const Y = 4;
 function GardenMobile() {
   return (
-    <Image
-      src={BackgroundImage} 
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
-      width={4032 / Y}
-      height={3024 / Y}
-    />
+    <Image src={BackgroundImage} alt="" width={4032 / Y} height={3024 / Y} />
   );
 }
 
