@@ -108,7 +108,6 @@ export default function App({ Component, pageProps }) {
   const copy = useYaml();
   const isTabletOrMobile = useIsTabletOrMobile();
   const currentApp = router.pathname.split('/')[1]; // router.pathname is '/', so at the first sign of pattern '/', look at the pathname at index [1]
-  // debugger;
   const isMusic = currentApp === 'music';
   // if its music...
   const isTutoring = currentApp === 'tutoring';

@@ -10,7 +10,7 @@ const Button = styled.button`
   align-items: center;
   z-index: 100;
   padding: 1rem;
-  color: #646E68;
+  color: #646e68;
 `;
 
 const CloseContainer = styled.div`
