@@ -5,9 +5,8 @@ import { useIsTabletOrMobile } from '../../hooks';
 const AboutTitle = `Sean Keegan`;
 
 const AboutBlurb = `
-Hello! I’m Sean.
-I play awesome music!
-Let's talk. `;
+Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.;
+Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.`;
 
 const Container = styled.div`
   position: absolute;
@@ -15,6 +14,8 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  /* music about page is having margin issues with the margin-top below- fix later */
+  margin-top: 7rem; 
   @media (max-width: 1438px) {
     /* position: absolute; */
     flex-direction: column;
@@ -29,8 +30,8 @@ function Family() {
     <Image
       src="/pics/sean_website.jpeg"
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={15500 / X}
-      height={19000 / X}
+      width={18324 / X}
+      height={17424 / X}
     />
   );
 }

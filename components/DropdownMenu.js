@@ -10,6 +10,7 @@ const Button = styled.button`
   align-items: center;
   z-index: 100;
   padding: 1rem;
+  color: #646E68;
 `;
 
 const CloseContainer = styled.div`
@@ -60,7 +61,7 @@ const Menu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: black;
   border-radius: 8px;
   position: fixed;
   padding: 0;

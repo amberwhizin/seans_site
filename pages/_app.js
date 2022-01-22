@@ -6,14 +6,25 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
-// font-family: 'Commissioner', sans-serif;
 /* color: ${(props) => props.theme.colors.oliveDrab7}; */
+const musicFont = `'Bangers', cursive;`;
+const tutoringFont = `'Merienda', sans-serif`;
+/* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
   }
   * {
       box-sizing: border-box;
+      font-family: ${(props) => {
+        if (props.isMusic) {
+          return musicFont;
+        }
+        if (props.isTutoring) {
+          return tutoringFont;
+        }
+      }};
+
   }
   body {
     margin: 0;
@@ -41,18 +52,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: white;
   }
-  .hbspt-form {
-    display: ${(props) => {
-      return props.showForm ? 'flex' : 'none';
-    }};
-    width: 100%;
-    max-width: 30rem;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  .submitted-message {
-    font-size: 1.5rem;
-  }
   /* Button reset credit https://css-tricks.com/overriding-default-button-styles/ */
   button {
     display: inline-block;
@@ -62,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     background: transparent;
     color: #ffffff;
-    font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
@@ -117,7 +115,7 @@ export default function App({ Component, pageProps }) {
   // if its tutoring...
   return (
     <>
-      <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
+      <GlobalStyle theme={theme} isMusic={isMusic} isTutoring={isTutoring} />
       <ThemeProvider theme={theme}>
         {isMusic && <MusicHeader copy={copy} />}
         {/* show /music/ */}

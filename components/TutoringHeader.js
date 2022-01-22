@@ -8,7 +8,6 @@ const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
   font-size: 1.6rem;
-  font-family: 'Merienda', sans-serif;
   color: ${(props) =>
     props.isActive
       ? props.theme.colors.oliveDrab72
@@ -86,9 +85,6 @@ const TutoringHeader = ({ copy }) => {
           <>
             {/* adding extra header information to split between both sides */}
             <NavItem href="/tutoring/about">{navBarTutor.about}</NavItem>
-            <NavItem href="/tutoring/portfolio">
-              {navBarTutor.portfolio}
-            </NavItem>
             <NavItem href="/tutoring/subjects">{navBarTutor.subjects}</NavItem>
             <NavItem href="/tutoring/testimonials">
               {navBarTutor.testimonials}

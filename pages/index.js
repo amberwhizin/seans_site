@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import Link from 'next/link';
-import BackgroundImage from '../public/pics/5thAveB.jpg';
 import { useIsTabletOrMobile } from '../hooks';
 import Footer from '../components/Footer';
 
@@ -12,10 +10,12 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #122932, 50%, #E3C0D3 50%);
+  background: linear-gradient(to right, #122932, 50%, #e3c0d3 50%);
+  height: 100vh;
 `;
 
 const Heading = `Sean Keegan`;
+
 const Title = styled.h1`
   position: fixed;
   padding: 1.4rem;
@@ -23,6 +23,8 @@ const Title = styled.h1`
   margin: 5rem;
   font-size: 3rem;
   background-color: white;
+  /* This is the index font */
+  font-family: 'Orbitron', sans-serif;
 `;
 
 const StyledMusic = styled.h2`
@@ -51,18 +53,6 @@ const TutorParagraph = styled.p`
   color: white;
 `;
 
-// const Line_1 = styled.span`
-//   position: absolute;
-//   height: 45rem;
-//   border-left: 2px solid black;
-// `;
-// const Line_2 = styled.span`
-//   position: absolute;
-//   height: 45rem;
-//   top: 12.2rem;
-//   border-left: 2px solid black;
-// `;
-
 const StyledFooterContainer = styled.div`
   margin: auto;
   display: flex;
@@ -85,34 +75,25 @@ const StyledFooterContainer = styled.div`
   }
 `;
 
-function HomePage() {
+function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
+      <Title>{Heading}</Title>
       {!isTabletOrMobile && (
         <>
-          <Title>{Heading}</Title>
           <StyledMusic>
-            <Link href="music/">Music</Link>
+            <Link href="/music/">Music</Link>
             <MusicParagraph>{MusicQuote}</MusicParagraph>
           </StyledMusic>
-          {/* <Line_2 /> */}
           <StyledTutor>
-            <Link href="tutoring/">Tutoring</Link>
+            <Link href="/tutoring/">Tutoring</Link>
             <TutorParagraph>{TutorQuote}</TutorParagraph>
           </StyledTutor>
           {isTabletOrMobile && (
-            <>
-              <Title>{Heading}</Title>
-              <StyledMusic>
-                <Link href="music/">Music</Link>
-                <MusicParagraph>{MusicQuote}</MusicParagraph>
-              </StyledMusic>
-              <StyledTutor>
-                <Link href="tutoring/">Tutoring</Link>
-                <TutorParagraph>{TutorQuote}</TutorParagraph>
-              </StyledTutor>
-            </>
+            <StyledFooterContainer>
+              <Footer copy={copy} />
+            </StyledFooterContainer>
           )}
         </>
       )}
@@ -121,8 +102,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-// <StyledFooterContainer>
-//   {/* do we need this anymore? */}
-//   <Footer copy={copy} />
-// </StyledFooterContainer>

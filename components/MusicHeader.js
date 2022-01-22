@@ -8,7 +8,6 @@ const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
   font-size: 1.6rem;
-  font-family: 'Bangers', cursive;
   color: ${(props) =>
     props.isActive ? props.theme.colors.white : props.theme.colors.white};
 
