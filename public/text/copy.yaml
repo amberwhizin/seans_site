@@ -1,0 +1,48 @@
+---
+#
+#  All the pages
+#
+about:
+  title: About
+  blurb:
+contact:
+  title: Contact me!
+  blurb: Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below.
+  # mobile side
+  email: 'begoniabaschy@gmail.com'
+  phone: (360) 347-6183
+  location: Olympia, WA
+  insured: Licensed, Bonded and Insured
+home:
+  # Currently we don't have a title or blurb
+  # So this is a placeholder
+  title: ''
+  blurb: ''
+  # Currently we don't have a title or blurb
+  # So this is a placeholder
+portfolio:
+  title: ''
+  blurb: ''
+  # Currently we don't have a title or blurb
+  # So this is a placeholder
+services:
+  title: ''
+  blurb: ''
+#
+# Nav Bar
+#
+navBar:
+  home: Sean Keegan
+  about: About
+  portfolio: Portfolio
+  services: Services
+  contact: Contact
+
+#
+# Footer
+#
+footer:
+  - begoniabaschy@gmail.com
+  - (360) 347-6183
+  - Olympia, WA
+  - Licensed, Bonded and Insured
