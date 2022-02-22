@@ -12,7 +12,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: black;
   @media (max-width: 1438px) {
     position: relative;
     margin-top: 2rem;
@@ -38,7 +38,7 @@ const FooterLi = styled.li`
   font-size: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: ${(props) => props?.theme?.colors?.oliveDrab72};
+  color: ${(props) => props?.theme?.colors?.white};
 
   @media (max-width: 1438px) {
     margin: 0.5rem;
@@ -56,15 +56,17 @@ const StyledGram = styled.a`
   padding: 1rem;
 `;
 
-const InstagramButton = () => (
-  <StyledGram
-    href="https://www.instagram.com/begoniabaschy/"
-    rel="noreferrer"
-    target="_blank"
-  >
-    <FaInstagram css={{ fontSize: '2rem' }} />
-  </StyledGram>
-);
+
+// does Sean want an instram, or some kind of link?
+// const InstagramButton = () => (
+//   <StyledGram
+//     href="https://www.instagram.com/begoniabaschy/"
+//     rel="noreferrer"
+//     target="_blank"
+//   >
+//     <FaInstagram css={{ fontSize: '2rem' }} />
+//   </StyledGram>
+// );
 
 const Footer = ({ copy }) => {
   const { footer = [] } = copy;
