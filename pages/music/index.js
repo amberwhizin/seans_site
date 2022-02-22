@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { useIsTabletOrMobile } from '../pages/hooks';
-import Footer from '../components/Footer';
+import { useIsTabletOrMobile } from '../../hooks';
+import Footer from '../../components/Footer';
 
 const Container = styled.div`
   padding: 0;
