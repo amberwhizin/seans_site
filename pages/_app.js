@@ -1,19 +1,30 @@
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
+import MusicHeader from '../components/MusicHeader';
+import TutoringHeader from '../components/TutoringHeader';
 import Footer from '../components/Footer';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useYaml, useHubSpotForm, useIsTabletOrMobile } from '../hooks';
+import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
-// font-family: 'Commissioner', sans-serif;
+/* color: ${(props) => props.theme.colors.oliveDrab7}; */
+const musicFont = `'Bangers', cursive;`;
+const tutoringFont = `'Merienda', sans-serif`;
+/* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
   }
   * {
       box-sizing: border-box;
-      font-family: 'Proza Libre', sans-serif;
-      color: ${(props) => props.theme.colors.oliveDrab7};
+      font-family: ${(props) => {
+        if (props.isMusic) {
+          return musicFont;
+        }
+        if (props.isTutoring) {
+          return tutoringFont;
+        }
+      }};
+
   }
   body {
     margin: 0;
@@ -22,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     background: cover;
     height: 100vh;
     width: 100%;
+
   }
   h1 {
     font-size: 3rem;
@@ -36,17 +48,9 @@ const GlobalStyle = createGlobalStyle`
   ul {
     list-style-type: none;
   }
-  .hbspt-form {
-    display: ${(props) => {
-      return props.showForm ? 'flex' : 'none';
-    }};
-    width: 100%;
-    max-width: 30rem;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  .submitted-message {
-    font-size: 1.5rem;
+  a {
+    text-decoration: none;
+    color: white;
   }
   /* Button reset credit https://css-tricks.com/overriding-default-button-styles/ */
   button {
@@ -57,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     background: transparent;
     color: #ffffff;
-    font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
@@ -103,15 +106,23 @@ const theme = {
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const copy = useYaml();
-  useHubSpotForm();
   const isTabletOrMobile = useIsTabletOrMobile();
+  const currentApp = router.pathname.split('/')[1]; // router.pathname is '/', so at the first sign of pattern '/', look at the pathname at index [1]
+  const isMusic = currentApp === 'music';
+  // if its music...
+  const isTutoring = currentApp === 'tutoring';
+  // if its tutoring...
   return (
     <>
-      <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
+      <GlobalStyle theme={theme} isMusic={isMusic} isTutoring={isTutoring} />
       <ThemeProvider theme={theme}>
-        <Header copy={copy} />
+        {isMusic && <MusicHeader copy={copy} />}
+        {/* show /music/ */}
+        {isTutoring && <TutoringHeader copy={copy} />}
+        {/* show /tutoring */}
+        {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />
-        {!isTabletOrMobile && <Footer copy={copy} />}
+        {/* {!isTabletOrMobile && <Footer copy={copy} />} */}
       </ThemeProvider>
     </>
   );
