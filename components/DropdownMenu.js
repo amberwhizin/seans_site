@@ -4,20 +4,18 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-
 const Button = styled.button`
   display: flex;
   align-items: center;
   z-index: 100;
   padding: 1rem;
+  color: #646e68;
 `;
-
 const CloseContainer = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;
 `;
-
 const CloseButton = ({ onClick }) => (
   <CloseContainer>
     <Button onClick={onClick}>
@@ -38,14 +36,12 @@ const OpenButton = ({ onClick, hidden }) => (
     </Button>
   </OpenContainer>
 );
-
 const StyledA = styled.a`
   text-decoration: none;
   :hover {
     cursor: pointer;
   }
 `;
-
 const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
   return (
     <Link href={href} passHref>
@@ -55,12 +51,11 @@ const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
     </Link>
   );
 });
-
 const Menu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: black;
   border-radius: 8px;
   position: fixed;
   padding: 0;
@@ -73,7 +68,6 @@ const Menu = styled.nav`
   opacity: ${(props) => (props.hidden ? 0 : 1)};
   transition: all 500ms ease 350ms;
 `;
-
 const MenuUl = styled.ul`
   list-style: none;
   text-decoration: none;
@@ -85,7 +79,6 @@ const MenuUl = styled.ul`
   align-items: space-around;
   height: 100%;
 `;
-
 const MenuLi = styled.li`
   display: flex;
   justify-content: center;
@@ -93,7 +86,6 @@ const MenuLi = styled.li`
   text-decoration: none;
   font-size: 1.875rem;
 `;
-
 const DropDownMenu = () => {
   const [isActive, setIsActive] = useState(false);
   const toggleIsActive = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
@@ -128,7 +120,5 @@ const DropDownMenu = () => {
     </>
   );
 };
-
 LinkWithOnClick.displayName = 'LinkWithOnClick';
-
 export default DropDownMenu;
