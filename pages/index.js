@@ -83,11 +83,11 @@ function HomePage({ copy }) {
       {!isTabletOrMobile && (
         <>
           <StyledMusic>
-            <Link href="/music/">Music</Link>
+            <Link href="/music/about/">Music</Link>
             <MusicParagraph>{MusicQuote}</MusicParagraph>
           </StyledMusic>
           <StyledTutor>
-            <Link href="/tutoring/">Tutoring</Link>
+            <Link href="/tutoring/about/">Tutoring</Link>
             <TutorParagraph>{TutorQuote}</TutorParagraph>
           </StyledTutor>
           {isTabletOrMobile && (
