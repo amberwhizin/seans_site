@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useIsTabletOrMobile } from '../hooks';
+import { useIsTabletOrMobile } from '../../hooks';
 
 const Container = styled.div`
   text-align: center;
