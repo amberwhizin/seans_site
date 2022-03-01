@@ -12,19 +12,37 @@ const Container = styled.div`
   justify-content: center;
   background: linear-gradient(to right, #122932, 50%, #e3c0d3 50%);
   height: 100vh;
+  position: relative;
 `;
 
 const Heading = `Sean Keegan`;
 
-const Title = styled.h1`
-  position: fixed;
+const firstName = 'Sean';
+const lastName = 'Keegan';
+
+const First = styled.div`
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 30px;
+`;
+const Last = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+`;
+
+const Title = styled.div`
+  position: absolute;
+  display: flex;
   padding: 1.4rem;
   top: 0;
   margin: 5rem;
   font-size: 3rem;
-  background-color: white;
   /* This is the index font */
   font-family: 'Orbitron', sans-serif;
+  justify-content: space-between;
 `;
 
 const StyledMusic = styled.h2`
@@ -79,7 +97,11 @@ function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <Title>{Heading}</Title>
+      {/* <Title>{`${firstName}  ${Space}  ${lastName}`}</Title> */}
+      <Title>
+        <First>{firstName}</First>
+        <Last>{lastName}</Last>
+      </Title>
       {!isTabletOrMobile && (
         <>
           <StyledMusic>
