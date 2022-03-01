@@ -26,7 +26,7 @@ const Title = styled.h1`
   /* This is the index font */
   font-family: 'Orbitron', sans-serif;
 `;
-
+ 
 const StyledMusic = styled.h2`
   margin-top: 30rem;
   padding-right: 20rem;
@@ -79,7 +79,7 @@ function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <Title>{Heading}</Title>
+      <Title>{Heading + 'testhotfix'}</Title>
       {!isTabletOrMobile && (
         <>
           <StyledMusic>
