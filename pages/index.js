@@ -79,7 +79,7 @@ function HomePage({ copy }) {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <Title>{Heading + 'testhotfix'}</Title>
+      <Title>{Heading}</Title>
       {!isTabletOrMobile && (
         <>
           <StyledMusic>
