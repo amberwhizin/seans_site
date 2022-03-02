@@ -48,8 +48,12 @@ const ImageGrouping = styled.div`
   }
 `;
 
-function Services() {
-  return <h1>Services</h1>;
-}
+const Services = () => {
+  return (
+    <Container>
+      <h1>Services</h1>
+    </Container>
+  );
+};
 
 export default Services;
