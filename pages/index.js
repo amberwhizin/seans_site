@@ -10,7 +10,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #122932, 50%, #e3c0d3 50%);
+  background: linear-gradient(to right, black, 50%, #e3c0d3 50%);
   height: 100vh;
 `;
 
