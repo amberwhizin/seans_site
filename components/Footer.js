@@ -12,7 +12,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: black;
+  background-color: #420000;
   @media (max-width: 1438px) {
     position: relative;
     margin-top: 2rem;
@@ -35,7 +35,7 @@ const FooterLi = styled.li`
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
   color: ${(props) => props?.theme?.colors?.white};
@@ -50,35 +50,15 @@ const FooterLi = styled.li`
   }
 `;
 
-const StyledGram = styled.a`
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-`;
-
-
-// does Sean want an instram, or some kind of link?
-// const InstagramButton = () => (
-//   <StyledGram
-//     href="https://www.instagram.com/begoniabaschy/"
-//     rel="noreferrer"
-//     target="_blank"
-//   >
-//     <FaInstagram css={{ fontSize: '2rem' }} />
-//   </StyledGram>
-// );
-
 const Footer = ({ copy }) => {
   const { footer = [] } = copy;
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
       <FooterUl>
-        {/* {!isTabletOrMobile && <InstagramButton />} */}
         {footer.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
-        {/* {isTabletOrMobile && <InstagramButton />} */}
       </FooterUl>
     </Container>
   );
