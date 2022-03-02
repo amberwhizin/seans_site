@@ -31,7 +31,7 @@ const NavUl = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #420000;
   border: none;
 
   @media (max-width: 1438px) {

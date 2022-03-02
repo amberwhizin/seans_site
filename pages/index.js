@@ -23,15 +23,13 @@ const Title = styled.h1`
   margin: 5rem;
   font-size: 3rem;
   background-color: white;
-  /* This is the index font */
-  font-family: 'Orbitron', sans-serif;
 `;
- 
+
 const StyledMusic = styled.h2`
   margin-top: 30rem;
   padding-right: 20rem;
   text-align: center;
-  font-family: 'Bangers', cursive;
+  font-family: 'Metal Mania', cursive;
 `;
 
 const StyledTutor = styled.h2`
