@@ -15,7 +15,6 @@ const Container = styled.div`
 const VideoGallery = () => {
   return (
     <Container>
-      <h1>youtube example</h1>
       <YoutubeEmbed embedId="dw_OuFkgq0c" />
     </Container>
   );
