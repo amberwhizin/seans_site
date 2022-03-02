@@ -7,7 +7,7 @@ import { useIsTabletOrMobile } from '../hooks';
 const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: ${(props) =>
     props.isActive ? props.theme.colors.white : props.theme.colors.white};
 

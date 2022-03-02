@@ -7,7 +7,7 @@ import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 /* color: ${(props) => props.theme.colors.oliveDrab7}; */
-const musicFont = `'Metal Mania', cursive; color: white`;
+const musicFont = `'Metal Mania', cursive; color: white;`;
 const tutoringFont = `'Merienda', sans-serif`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
@@ -122,7 +122,7 @@ export default function App({ Component, pageProps }) {
         {/* show /tutoring */}
         {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />
-        {/* {!isTabletOrMobile && <Footer copy={copy} />} */}
+        {!isTabletOrMobile && <Footer copy={copy} />}
       </ThemeProvider>
     </>
   );

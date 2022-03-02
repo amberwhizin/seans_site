@@ -53,13 +53,14 @@ const TextContainer = styled.div`
   padding: 0;
   margin: 5rem;
 `;
+
 const Text = styled.p`
   font-family: 'Cinzel Decorative', cursive;
 `;
 const HeaderContainer = styled.h1`
   margin: 0;
   font-family: 'Metal Mania', cursive;
-  font-size: 7rem;
+  font-size: 6rem;
   @media (max-width: 1438px) {
     text-align: center;
     margin-bottom: 0.5rem;
