@@ -2,13 +2,19 @@ import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
   text-align: center;
+  
 `;
 
 const Description = styled.p`
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 5rem;
+  font-size: 2rem;
+  font-family: 'Cinzel Decorative', cursive;
 `;
 
 const Contact = ({ copy }) => {
@@ -19,6 +25,7 @@ const Contact = ({ copy }) => {
       {!isTabletOrMobile && (
         <>
           <h1>{contact.title}</h1>
+          <Description>{contact.email}</Description>
           <Description>{contact.blurb}</Description>
         </>
       )}
