@@ -25,6 +25,7 @@ const MobileHome = styled.div`
   flex-direction: column;
   font-size: 1rem;
 `;
+// hi why is the build failing?
 
 const NavUl = styled.ul`
   display: flex;
