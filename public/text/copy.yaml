@@ -32,14 +32,14 @@ services:
 # Nav Bars
 #
 navBarMusic:
-  home: sean keegan
+  home: SK
   about: about
   videoGallery: video gallery
   services: services
   testimonials: testimonials
   contact: contact
 navBarTutor:
-  home: sean keegan
+  home: SK
   about: about
   subjects: subjects
   testimonials: testimonials

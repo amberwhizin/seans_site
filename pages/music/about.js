@@ -40,9 +40,9 @@ function Family() {
 }
 
 const ImageContainer = styled.div`
-  padding-left: 3rem;
+  padding-left: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 `;
