@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
-import Footer from '../components/Footer';
 
 const Container = styled.div`
   padding: 0;
@@ -88,13 +87,9 @@ function HomePage({ copy }) {
             <Link href="/tutoring/about/">Tutoring</Link>
             <TutorParagraph>{TutorQuote}</TutorParagraph>
           </StyledTutor>
-          {isTabletOrMobile && (
-            <StyledFooterContainer>
-              <Footer copy={copy} />
-            </StyledFooterContainer>
-          )}
         </>
       )}
+     
     </Container>
   );
 }

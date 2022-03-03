@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaInstagram } from 'react-icons/fa';
 import { useIsTabletOrMobile } from '../hooks';
 
 const Container = styled.div`
@@ -37,7 +36,7 @@ const FooterLi = styled.li`
   font-size: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: ${(props) => props?.theme?.colors?.white};
+  color: ${(props) => props.theme.colors.nickel}; // why did these have ? on them?
 
   @media (max-width: 1438px) {
     margin: 0.5rem;
@@ -49,13 +48,13 @@ const FooterLi = styled.li`
   }
 `;
 
-const Footer = ({ copy }) => {
-  const { footer = [] } = copy;
+const FooterTutor = ({ copy }) => {
+  const { footerTutoring = [] } = copy;
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
       <FooterUl>
-        {footer.map((item) => {
+        {footerTutoring.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
       </FooterUl>
@@ -63,4 +62,4 @@ const Footer = ({ copy }) => {
   );
 };
 
-export default Footer;
+export default FooterTutor;

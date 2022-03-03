@@ -6,7 +6,6 @@ const Container = styled.div`
   flex-direction: column;
   margin: 2rem;
   text-align: center;
-  
 `;
 
 const Description = styled.p`
