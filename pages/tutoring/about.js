@@ -36,7 +36,7 @@ function Family() {
   return (
     <Image
       src="/pics/sean_mel_.png"
-      alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
+      alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
       width={15314 / X}
       height={19624 / X}
     />

@@ -40,12 +40,11 @@ function Family() {
 }
 
 const ImageContainer = styled.div`
-  /* padding-left: 2rem; */
+  padding-left: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 10px #420000 solid; */
 `;
 
 const TextContainer = styled.div`
