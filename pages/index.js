@@ -17,11 +17,13 @@ const Heading = `Sean Keegan`;
 
 const Title = styled.h1`
   position: fixed;
-  padding: 1.4rem;
+  padding: 1rem;
   top: 0;
-  margin: 5rem;
-  font-size: 3rem;
+  margin: 4rem;
+  font-size: 6rem;
+  font-family: 'Caveat', cursive;
   background-color: white;
+  border-radius: 3%;
 `;
 
 const StyledMusic = styled.h2`
@@ -35,7 +37,7 @@ const StyledTutor = styled.h2`
   margin-top: 30rem;
   padding-left: 20rem;
   text-align: center;
-  font-family: 'Happy Monkey', cursive;
+  font-family: 'Merienda', sans-serif;
 `;
 
 const TutorQuote = `"Best Tutor EVER!!"`;
@@ -89,7 +91,6 @@ function HomePage({ copy }) {
           </StyledTutor>
         </>
       )}
-     
     </Container>
   );
 }
