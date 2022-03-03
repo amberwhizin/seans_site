@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import BackgroundImage from '../../public/pics/book_bubbly_sean.jpeg';
 import { useIsTabletOrMobile } from '../../hooks';
-import Footer from '../../components/Footer';
+
 
 const X = 4;
 function Garden() {
@@ -60,7 +60,6 @@ function HomePage({ copy }) {
             <GardenMobile />
           </div>
           <StyledFooterContainer>
-            <Footer copy={copy} />
           </StyledFooterContainer>
         </>
       )}

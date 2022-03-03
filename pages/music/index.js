@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import BackgroundImage from '../../public/pics/sean_guitar_random.jpeg';
 import { useIsTabletOrMobile } from '../../hooks';
-import Footer from '../../components/Footer';
 
 const X = 4;
 function Guitar() {
@@ -71,7 +70,6 @@ function HomePage({ copy }) {
             <GuitarMobile />
           </div>
           <StyledFooterContainer>
-            <Footer copy={copy} />
           </StyledFooterContainer>
         </>
       )}
