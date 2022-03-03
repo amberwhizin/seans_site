@@ -16,10 +16,6 @@ const VideoContainer = styled.div`
   align-items: center;
   padding: 2rem;
   margin: 2rem;
-  &hover {
-    
-  }
-
 `;
 
 const VideoGallery = () => {
