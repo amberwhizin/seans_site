@@ -5,8 +5,11 @@ import { useIsTabletOrMobile } from '../../hooks';
 const AboutTitle = `Sean Keegan`;
 
 const AboutBlurb = `
-Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.;
-Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.Hello! Im Sean. I play awesome music! Let's talk. Hello! Im Sean. I play awesome music! Let's talk.`;
+Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
+ 
+Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
+ 
+Et ut nulla. Nesciunt nam eos vel cumque laborum. Rem numquam incidunt ipsum sapiente.`;
 
 const Container = styled.div`
   position: absolute;
@@ -15,7 +18,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   /* music about page is having margin issues with the margin-top below- fix later */
-  margin-top: 7rem; 
+  margin-top: 6rem;
   @media (max-width: 1438px) {
     /* position: absolute; */
     flex-direction: column;
@@ -30,16 +33,16 @@ function Family() {
     <Image
       src="/pics/sean_website.jpeg"
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={18324 / X}
-      height={17424 / X}
+      width={12032 / X}
+      height={10024 / X}
     />
   );
 }
 
 const ImageContainer = styled.div`
-  padding-left: 2rem;
+  padding-left: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 `;
@@ -49,8 +52,14 @@ const TextContainer = styled.div`
   padding: 0;
   margin: 5rem;
 `;
+
+const Text = styled.p`
+  font-family: 'Cinzel Decorative', cursive;
+`;
 const HeaderContainer = styled.h1`
   margin: 0;
+  font-family: 'Metal Mania', cursive;
+  font-size: 5rem;
   @media (max-width: 1438px) {
     text-align: center;
     margin-bottom: 0.5rem;
@@ -68,7 +77,7 @@ const About = () => {
           </ImageContainer>
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <p>{AboutBlurb}</p>
+            <Text>{AboutBlurb}</Text>
           </TextContainer>
         </>
       )}

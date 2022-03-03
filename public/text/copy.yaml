@@ -6,7 +6,7 @@ about:
   title: About
   blurb:
 contact:
-  title:
+  title: Contact
   blurb: Email me to get in touch!
   # mobile side
   email: 'seanthekeegan@gmail.com'
@@ -32,14 +32,14 @@ services:
 # Nav Bars
 #
 navBarMusic:
-  home: sean keegan
+  home: SK
   about: about
   videoGallery: video gallery
   services: services
   testimonials: testimonials
   contact: contact
 navBarTutor:
-  home: sean keegan
+  home: SK
   about: about
   subjects: subjects
   testimonials: testimonials
@@ -48,6 +48,9 @@ navBarTutor:
 #
 # Footer
 #
-footer:
+footerMusic:
+  - seanthekeegan@gmail.com
+  - Sunnyvale, CA
+footerTutoring:
   - seanthekeegan@gmail.com
   - Sunnyvale, CA

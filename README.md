@@ -10,6 +10,7 @@
  - combine about/contact?
  - create testimonial/subject and videoGal/services pages (vid/serv = the same?)
   - testimonials on music side??
+ - fix my google fonts! theyre all added together
 
 
   what i did

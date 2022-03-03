@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router';
 import MusicHeader from '../components/MusicHeader';
 import TutoringHeader from '../components/TutoringHeader';
-import Footer from '../components/Footer';
+import FooterMusic from '../components/FooterMusic';
+import FooterTutoring from '../components/FooterTutoring';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 /* color: ${(props) => props.theme.colors.oliveDrab7}; */
-const musicFont = `'Bangers', cursive;`;
-const tutoringFont = `'Merienda', sans-serif`;
+const musicFont = `'Metal Mania', cursive; color: white; background: black`;
+const tutoringFont = `'Merienda', sans-serif; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
   html {
@@ -29,12 +30,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #fff;
     background: cover;
     height: 100vh;
     width: 100%;
-
   }
+
   h1 {
     font-size: 3rem;
     margin: 10px;
@@ -117,12 +117,13 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle theme={theme} isMusic={isMusic} isTutoring={isTutoring} />
       <ThemeProvider theme={theme}>
         {isMusic && <MusicHeader copy={copy} />}
+        {isMusic && <FooterMusic copy={copy} />}
         {/* show /music/ */}
         {isTutoring && <TutoringHeader copy={copy} />}
+        {isTutoring && <FooterTutoring copy={copy} />}
         {/* show /tutoring */}
         {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />
-        {/* {!isTabletOrMobile && <Footer copy={copy} />} */}
       </ThemeProvider>
     </>
   );

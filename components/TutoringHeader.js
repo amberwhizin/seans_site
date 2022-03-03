@@ -35,8 +35,6 @@ const NavUl = styled.ul`
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  margin-left: 3rem;
-  margin-right: 3rem;
 
   @media (max-width: 1438px) {
     padding: 0;
@@ -90,7 +88,6 @@ const TutoringHeader = ({ copy }) => {
             <NavItem href="/tutoring/testimonials">
               {navBarTutor.testimonials}
             </NavItem>
-            <NavItem href="/tutoring/services">{navBarTutor.services}</NavItem>
             <NavItem href="/tutoring/contact">{navBarTutor.contact}</NavItem>
           </>
         )}

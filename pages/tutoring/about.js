@@ -5,17 +5,11 @@ import { useIsTabletOrMobile } from '../../hooks';
 const AboutTitle = `Sean Keegan`;
 
 const AboutBlurb = `
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
-Hello, I'm Sean, a Tutor! My tutoring methods are too cool for school, but just cool enough for tutoring. 
- `;
+Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
+ 
+Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
+ 
+Et ut nulla. Nesciunt nam eos vel cumque laborum. Rem numquam incidunt ipsum sapiente.`;
 
 const Container = styled.div`
   position: absolute;
@@ -36,9 +30,9 @@ function Family() {
   return (
     <Image
       src="/pics/sean_mel_.png"
-      alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={15314 / X}
-      height={19624 / X}
+      alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
+      width={10300 / X}
+      height={11752 / X}
     />
   );
 }

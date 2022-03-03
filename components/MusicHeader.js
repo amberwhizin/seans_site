@@ -7,7 +7,7 @@ import { useIsTabletOrMobile } from '../hooks';
 const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: ${(props) =>
     props.isActive ? props.theme.colors.white : props.theme.colors.white};
 
@@ -31,7 +31,6 @@ const NavUl = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0;
-  background-color: black;
   border: none;
 
   @media (max-width: 1438px) {
@@ -80,7 +79,6 @@ const MusicHeader = ({ copy }) => {
           <>
             <NavItem href="/music/about">{navBarMusic.about}</NavItem>
             <NavItem href="/music/videoGallery">{navBarMusic.videoGallery}</NavItem>
-            {/* <NavItem href="/music/portfolio">{navBarMusic.portfolio}</NavItem> */}
             <NavItem href="/music/services">{navBarMusic.services}</NavItem>
             <NavItem href="/music/contact">{navBarMusic.contact}</NavItem>
           </>

@@ -6,9 +6,9 @@ const Container = styled.div`
 `;
 
 const Description = styled.p`
-  max-width: 40rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 4rem;
+  font-size: 2rem;
 `;
 
 const Contact = ({ copy }) => {
@@ -20,6 +20,7 @@ const Contact = ({ copy }) => {
         <>
           <h1>{contact.title}</h1>
           <Description>{contact.blurb}</Description>
+          <Description>{contact.email}</Description>
         </>
       )}
       {isTabletOrMobile && (

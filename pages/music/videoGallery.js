@@ -8,17 +8,26 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5em;
-  padding: 2em;
+  margin-top: 10em;
+`;
+
+const VideoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem;
 `;
 
 const VideoGallery = () => {
   return (
     <Container>
-      <YoutubeEmbed embedId="dw_OuFkgq0c" />
+      <h1>Video Gallery</h1>
+      <VideoContainer>
+        <YoutubeEmbed embedId="dw_OuFkgq0c" />
+        <YoutubeEmbed embedId="w83rZNYYIK4" />
+      </VideoContainer>
     </Container>
   );
 };
 
 export default VideoGallery;
-

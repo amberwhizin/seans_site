@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaInstagram } from 'react-icons/fa';
 import { useIsTabletOrMobile } from '../hooks';
 
 const Container = styled.div`
@@ -12,7 +11,6 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: black;
   @media (max-width: 1438px) {
     position: relative;
     margin-top: 2rem;
@@ -35,10 +33,10 @@ const FooterLi = styled.li`
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: ${(props) => props?.theme?.colors?.white};
+  color: ${(props) => props.theme.colors.nickel}; // why did these have ? on them?
 
   @media (max-width: 1438px) {
     margin: 0.5rem;
@@ -50,38 +48,18 @@ const FooterLi = styled.li`
   }
 `;
 
-const StyledGram = styled.a`
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-`;
-
-
-// does Sean want an instram, or some kind of link?
-// const InstagramButton = () => (
-//   <StyledGram
-//     href="https://www.instagram.com/begoniabaschy/"
-//     rel="noreferrer"
-//     target="_blank"
-//   >
-//     <FaInstagram css={{ fontSize: '2rem' }} />
-//   </StyledGram>
-// );
-
-const Footer = ({ copy }) => {
-  const { footer = [] } = copy;
+const FooterTutor = ({ copy }) => {
+  const { footerTutoring = [] } = copy;
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
       <FooterUl>
-        {/* {!isTabletOrMobile && <InstagramButton />} */}
-        {footer.map((item) => {
+        {footerTutoring.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
-        {/* {isTabletOrMobile && <InstagramButton />} */}
       </FooterUl>
     </Container>
   );
 };
 
-export default Footer;
+export default FooterTutor;

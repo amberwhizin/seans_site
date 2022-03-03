@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
-import Footer from '../components/Footer';
 
 const Container = styled.div`
   padding: 0;
@@ -10,7 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #122932, 50%, #e3c0d3 50%);
+  background: linear-gradient(to right, black, 50%, #e3c0d3 50%);
   height: 100vh;
 `;
 
@@ -18,27 +17,27 @@ const Heading = `Sean Keegan`;
 
 const Title = styled.h1`
   position: fixed;
-  padding: 1.4rem;
+  padding: 1rem;
   top: 0;
-  margin: 5rem;
-  font-size: 3rem;
+  margin: 4rem;
+  font-size: 6rem;
+  font-family: 'Caveat', cursive;
   background-color: white;
-  /* This is the index font */
-  font-family: 'Orbitron', sans-serif;
+  border-radius: 3%;
 `;
- 
+
 const StyledMusic = styled.h2`
   margin-top: 30rem;
   padding-right: 20rem;
   text-align: center;
-  font-family: 'Bangers', cursive;
+  font-family: 'Metal Mania', cursive;
 `;
 
 const StyledTutor = styled.h2`
   margin-top: 30rem;
   padding-left: 20rem;
   text-align: center;
-  font-family: 'Happy Monkey', cursive;
+  font-family: 'Merienda', sans-serif;
 `;
 
 const TutorQuote = `"Best Tutor EVER!!"`;
@@ -90,11 +89,6 @@ function HomePage({ copy }) {
             <Link href="/tutoring/about/">Tutoring</Link>
             <TutorParagraph>{TutorQuote}</TutorParagraph>
           </StyledTutor>
-          {isTabletOrMobile && (
-            <StyledFooterContainer>
-              <Footer copy={copy} />
-            </StyledFooterContainer>
-          )}
         </>
       )}
     </Container>
