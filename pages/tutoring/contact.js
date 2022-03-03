@@ -20,6 +20,7 @@ const Contact = ({ copy }) => {
         <>
           <h1>{contact.title}</h1>
           <Description>{contact.blurb}</Description>
+          <Description>{contact.email}</Description>
         </>
       )}
       {isTabletOrMobile && (
