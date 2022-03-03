@@ -34,8 +34,6 @@ const NavUl = styled.ul`
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  margin-left: 3rem;
-  margin-right: 3rem;
 
   @media (max-width: 1438px) {
     padding: 0;

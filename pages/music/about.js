@@ -33,7 +33,7 @@ function Family() {
     <Image
       src="/pics/sean_website.jpeg"
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={11032 / X}
+      width={12032 / X}
       height={10024 / X}
     />
   );
@@ -59,7 +59,7 @@ const Text = styled.p`
 const HeaderContainer = styled.h1`
   margin: 0;
   font-family: 'Metal Mania', cursive;
-  font-size: 6rem;
+  font-size: 5rem;
   @media (max-width: 1438px) {
     text-align: center;
     margin-bottom: 0.5rem;
