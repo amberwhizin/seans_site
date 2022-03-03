@@ -1,19 +1,20 @@
 # seanssite
- - make music side all dark
- - music side different font
+
+ - MOBILE ==> WHEN YOU COME BACK FROM WALK!:::: Fix mobile side and then send to Sean with questions and all!!!!!
+ - then mess with this stuff and add questions below to sean email:
+
  - not sure about making both side clickable the way i have it now, have to look into it
- - music side all dark background
- - math - subjects add
- - think about Seans title name and how to add it in differently?
- - add footer
- - add logo
- - combine about/contact?
- - create testimonial/subject and videoGal/services pages (vid/serv = the same?)
-  - testimonials on music side??
- - fix my google fonts! theyre all added together
+ - subjects add
+ - think about Seans title name and how to add it in differently onto front page - ask graphic designer
+ - add logo - ask Emily Graphic Designer
+ - combine about/contact? - ask Sean
+ - build out bare bones of testimonial/subject
+ - videoGal/services pages (vid/serv = the same?) - ask Sean
+  - testimonials on music side? - ask Sean
+ - are the index pages quotes different sizes? - ask me
+  - notes for me:
+  what i did GIT!
 
-
-  what i did
   - git checkout -b videoGalpal
   - git push
   - git push --set-upstream origin videoGalpal
