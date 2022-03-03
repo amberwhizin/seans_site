@@ -89,7 +89,6 @@ const TutoringHeader = ({ copy }) => {
             <NavItem href="/tutoring/testimonials">
               {navBarTutor.testimonials}
             </NavItem>
-            <NavItem href="/tutoring/services">{navBarTutor.services}</NavItem>
             <NavItem href="/tutoring/contact">{navBarTutor.contact}</NavItem>
           </>
         )}
