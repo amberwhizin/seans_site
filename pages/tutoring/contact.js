@@ -6,9 +6,9 @@ const Container = styled.div`
 `;
 
 const Description = styled.p`
-  max-width: 40rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 4rem;
+  font-size: 2rem;
 `;
 
 const Contact = ({ copy }) => {

@@ -11,13 +11,23 @@ const Container = styled.div`
   padding: 3em;
 `;
 
+const Description = styled.p`
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 3rem;
+`;
+
 const Services = () => {
   return (
     <Container>
       <h1>Services</h1>
-      <p>Lessons</p>
+      <Description>Coming soon!</Description>
+      
+      {/* <p>Lessons</p>
       <p>Events</p>
-      <p>Concerts</p>
+      <p>Concerts</p> */}
     </Container>
   );
 };

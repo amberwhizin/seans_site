@@ -9,7 +9,6 @@ const Container = styled.div`
 `;
 
 const Description = styled.p`
-  max-width: 40rem;
   margin: 0 auto;
   padding: 5rem;
   font-size: 2rem;
@@ -24,8 +23,8 @@ const Contact = ({ copy }) => {
       {!isTabletOrMobile && (
         <>
           <h1>{contact.title}</h1>
-          <Description>{contact.email}</Description>
           <Description>{contact.blurb}</Description>
+          <Description>{contact.email}</Description>
         </>
       )}
       {isTabletOrMobile && (

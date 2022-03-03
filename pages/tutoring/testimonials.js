@@ -11,10 +11,17 @@ const Container = styled.div`
   padding: 3em;
 `;
 
+const Description = styled.p`
+  padding: 1rem;
+  font-size: 4rem;
+  font-family: cursive;
+`;
+
 const Testimonials = () => {
   return (
     <Container>
       <h1>Testimonials</h1>
+      <Description>Coming soon!</Description>
     </Container>
   );
 };
