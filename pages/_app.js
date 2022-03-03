@@ -7,8 +7,8 @@ import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 /* color: ${(props) => props.theme.colors.oliveDrab7}; */
-const musicFont = `'Metal Mania', cursive; color: white;`;
-const tutoringFont = `'Merienda', sans-serif`;
+const musicFont = `'Metal Mania', cursive; color: white; background: black`;
+const tutoringFont = `'Merienda', sans-serif; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
   html {
@@ -29,12 +29,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: black;
     background: cover;
     height: 100vh;
     width: 100%;
-
   }
+
   h1 {
     font-size: 3rem;
     margin: 10px;

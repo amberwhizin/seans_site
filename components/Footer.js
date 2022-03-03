@@ -12,7 +12,6 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #420000;
   @media (max-width: 1438px) {
     position: relative;
     margin-top: 2rem;
