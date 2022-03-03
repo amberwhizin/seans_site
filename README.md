@@ -24,4 +24,15 @@
   - merged
   - git pull
   - success!
+
+  more git fun divergent 
+  - git checkout -b main3.0
+  - git checkout - (main)
+  - git fetch origin main
+   - From github.com:amberwhizin/seans_site
+   -  * branch            main       -> FETCH_HEAD
+  -  git reset --soft FETCH_HEAD
+  - looked at all the files i wanted to keep(back arrow-discard changes) OR accepted new green files (+) and commited those
+  - there were two files that i created in another branch(other than main) that arrived deleted. so i copy pasted them into new files i made into components and they disapeared from commit arena.
+  - All good!
   
