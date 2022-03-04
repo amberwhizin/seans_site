@@ -14,8 +14,6 @@ const YoutubeEmbed = ({ embedId, width, height }) => (
       allowFullScreen
       title="Embedded youtube"
     />
-
- 
   </div>
 );
 
