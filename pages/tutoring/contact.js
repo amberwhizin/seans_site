@@ -2,12 +2,15 @@ import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
 
 const Container = styled.div`
+   display: flex;
+  flex-direction: column;
+  margin: 2rem;
   text-align: center;
 `;
 
 const Description = styled.p`
   margin: 0 auto;
-  padding: 4rem;
+  padding: 5rem;
   font-size: 2rem;
 `;
 
