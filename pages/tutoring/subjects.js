@@ -16,7 +16,7 @@ const Description = styled.p`
 const Subjects = () => {
   return (
     <Container>
-      <h1>Subjects</h1>
+      <h1>subjects</h1>
       <Description>Coming soon!</Description>
     </Container>
   );

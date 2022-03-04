@@ -6,7 +6,7 @@ about:
   title: About
   blurb:
 contact:
-  title: Contact
+  title: contact
   blurb: Email me to get in touch!
   # mobile side
   email: 'seanthekeegan@gmail.com'
@@ -53,4 +53,4 @@ footerMusic:
   - Sunnyvale, CA
 footerTutoring:
   - seanthekeegan@gmail.com
-  - Sunnyvale, CA
+  - sunnyvale, CA

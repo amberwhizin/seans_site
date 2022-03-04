@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 5em;
-  padding: 3em;
+  margin: 2rem;
+  text-align: center;
 `;
 
 const Description = styled.p`
@@ -20,7 +16,7 @@ const Description = styled.p`
 const Testimonials = () => {
   return (
     <Container>
-      <h1>Testimonials</h1>
+      <h1>testimonials</h1>
       <Description>Coming soon!</Description>
     </Container>
   );
