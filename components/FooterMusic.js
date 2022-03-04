@@ -5,40 +5,30 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
   border-top: 1px solid #f4e9cd;
   @media (max-width: 1438px) {
-    position: relative;
+    position: fixed;
     margin-top: 2rem;
   }
 `;
 
 const FooterUl = styled.ul`
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
-  
 `;
 
 const FooterLi = styled.li`
-  margin: 1rem;
+  padding-right: 4rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 2rem;
-  /* padding-left: 4rem;
-  padding-right: 4rem; */
-  color: ${(props) =>
-    props.theme.colors.lightBrown}; // why did these have ? on them?
+  height: 5rem;
+  color: ${(props) => props.theme.colors.lightBrown};
 
   @media (max-width: 1438px) {
     margin: 0.5rem;
