@@ -13,6 +13,9 @@ const Container = styled.div`
   height: 100vh;
   @media (max-height: 1438px) {
     background: linear-gradient(to bottom, black, 50%, #468189 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 `;
 
@@ -25,9 +28,14 @@ const Title = styled.h1`
   margin: 4rem;
   font-size: 9rem;
   font-family: 'Caveat', cursive;
-  /* @media (max-height: 800px) {
+  @media (max-height: 1438px) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
     font-size: 5rem;
-  } */
+  }
 `;
 
 const StyledMusic = styled.h2`
@@ -38,6 +46,7 @@ const StyledMusic = styled.h2`
   @media (max-height: 1438px) {
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
   }
 `;
 
@@ -46,6 +55,12 @@ const StyledTutor = styled.h2`
   padding-left: 20rem;
   text-align: center;
   font-family: 'Merienda', sans-serif;
+
+  @media (max-height: 1438px) {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid yellow; */
+  }
 `;
 
 // target
@@ -67,16 +82,22 @@ const MusicParagraph = styled.p`
   margin-top: 9rem;
   color: #f4e9cd;
   font-size: 2rem;
-  /* @media (max-height: 800px) {
-    margin-right: 12rem;
-    margin-top: 10rem;
-    font-size: 1rem;
-  } */
+  @media (max-height: 1438px) {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    /* border: 2px solid blue; */
+  }
 `;
 const TutorParagraph = styled.p`
   font-size: 2rem;
   margin-top: 9rem;
   color: #f4e9cd;
+  @media (max-height: 1438px) {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const HomePage = ({ copy }) => {
@@ -108,6 +129,13 @@ const HomePage = ({ copy }) => {
             </Link>
             <MusicParagraph>{MusicQuote}</MusicParagraph>
           </StyledMusic>
+          <Title>{Heading}</Title>
+          <StyledTutor>
+            <Link href="/tutoring/about/" passHref>
+              <HomeLink>Tutoring</HomeLink>
+            </Link>
+            <TutorParagraph>{TutorQuote}</TutorParagraph>
+          </StyledTutor>
         </>
       )}
     </Container>
