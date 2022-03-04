@@ -98,7 +98,7 @@ const DropDownMenu = () => {
         <MenuUl>
           <MenuLi>
             <LinkWithOnClick onClick={toggleIsActive} href="/music/about">
-              about
+              About
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>

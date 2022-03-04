@@ -40,6 +40,7 @@ const OpenButton = ({ onClick, hidden }) => (
 );
 const StyledA = styled.a`
   text-decoration: none;
+  color: #468189;
   :hover {
     cursor: pointer;
   }
@@ -57,7 +58,7 @@ const Menu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: white;
   border-radius: 8px;
   position: fixed;
   padding: 0;
