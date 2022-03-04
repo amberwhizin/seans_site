@@ -39,9 +39,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3rem;
     margin: 10px;
     color: #9dbebb;
-    @media (max-width: 1438px) {
-      font-size: 2rem;
-    }
   }
 
   p {
