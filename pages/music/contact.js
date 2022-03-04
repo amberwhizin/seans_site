@@ -6,6 +6,15 @@ const Container = styled.div`
   flex-direction: column;
   margin: 2rem;
   text-align: center;
+
+  @media (max-width: 1438px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const Description = styled.p`
