@@ -6,13 +6,13 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding: 2.5rem;
-  font-size: 1.6rem;
-  color: ${(props) =>
-    props.isActive
-      ? props.theme.colors.oliveDrab72
-      : props.theme.colors.nickel};
-
+  padding-right: 4rem;
+  font-size: 2rem;
+  color: #468189;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
   @media (max-width: 1438px) {
     display: flex;
     align-items: center;
@@ -25,23 +25,16 @@ const MobileHome = styled.div`
   flex-direction: column;
   font-size: 1rem;
 `;
-// hi why is the build failing?
 
 const NavUl = styled.ul`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
   background-color: #ffffff;
-
+  border-bottom: 1px solid #468189;
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
     bottom: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 `;
 
@@ -50,7 +43,7 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 6rem;
+  height: 5rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 

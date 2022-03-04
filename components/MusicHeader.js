@@ -6,7 +6,7 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding-right: 5rem;
+  padding-right: 4rem;
   font-size: 2rem;
   color: #f4e9cd;
   &:hover,
@@ -28,15 +28,9 @@ const MobileHome = styled.div`
 
 const NavUl = styled.ul`
   display: flex;
-  justify-content: space-around;
-
   margin: 0 auto;
-
   background-color: black;
   border-bottom: 1px solid #f4e9cd;
-  /* padding-left: 4rem; */
-  font-size: 2rem;
-
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
@@ -49,7 +43,7 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 6rem;
+  height: 5rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
