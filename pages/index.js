@@ -73,9 +73,16 @@ const HomeLink = styled.a`
     color: #9dbebb;
   }
   @media (max-width: 1438px) {
-    margin: 0;
+    font-size: 45px;
+    margin-bottom: 1.5rem;
     padding: 0;
-    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :hover {
+    cursor: pointer;
+  }
   }
 `;
 
@@ -90,7 +97,6 @@ const MusicParagraph = styled.p`
     margin: 0;
     padding: 0;
     font-size: 18px;
-    /* border: 2px solid blue; */
   }
 `;
 const TutorParagraph = styled.p`
