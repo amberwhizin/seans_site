@@ -10,8 +10,7 @@ const Container = styled.div`
   width: 100%;
   border-top: 1px solid #468189;
   @media (max-width: 1438px) {
-    position: fixed;
-    margin-top: 2rem;
+    border-top: none;
   }
 `;
 
@@ -37,6 +36,7 @@ const FooterLi = styled.li`
     flex-direction: row;
     align-items: center;
     text-align: center;
+    font-size: .7rem;
   }
 `;
 
@@ -45,11 +45,15 @@ const TutoringFooter = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <FooterUl>
-        {footerTutoring.map((item) => {
-          return <FooterLi key={item}>{item}</FooterLi>;
-        })}
-      </FooterUl>
+      {!isTabletOrMobile && (
+        <>
+        <FooterUl>
+          {footerTutoring.map((item) => {
+            return <FooterLi key={item}>{item}</FooterLi>;
+          })}
+        </FooterUl>
+        </>
+      )}
     </Container>
   );
 };
