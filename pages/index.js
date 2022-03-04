@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   background: linear-gradient(to right, black, 50%, #468189 50%);
   height: 100vh;
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     background: linear-gradient(to bottom, black, 50%, #468189 50%);
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ const Title = styled.h1`
   margin: 4rem;
   font-size: 9rem;
   font-family: 'Caveat', cursive;
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     position: relative;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ const StyledMusic = styled.h2`
   padding-right: 20rem;
   text-align: center;
   font-family: 'Metal Mania', cursive;
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     margin: 0;
     padding: 0;
     /* border: 1px solid red; */
@@ -56,7 +56,7 @@ const StyledTutor = styled.h2`
   text-align: center;
   font-family: 'Merienda', sans-serif;
 
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     margin: 0;
     padding: 0;
     /* border: 1px solid yellow; */
@@ -65,13 +65,17 @@ const StyledTutor = styled.h2`
 
 // target
 const HomeLink = styled.a`
-text-decoration: none;
-font-size: 4rem;
-    color: #f4e9cd;
- }
+  text-decoration: none;
+  font-size: 4rem;
+  color: #f4e9cd;
   &:hover,
   &:focus {
-   color: #9dbebb;
+    color: #9dbebb;
+  }
+  @media (max-width: 1438px) {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid yellow; */
   }
 `;
 
@@ -82,7 +86,7 @@ const MusicParagraph = styled.p`
   margin-top: 9rem;
   color: #f4e9cd;
   font-size: 2rem;
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     margin: 0;
     padding: 0;
     font-size: 18px;
@@ -93,7 +97,7 @@ const TutorParagraph = styled.p`
   font-size: 2rem;
   margin-top: 9rem;
   color: #f4e9cd;
-  @media (max-height: 1438px) {
+  @media (max-width: 1438px) {
     font-size: 15px;
     margin: 0;
     padding: 0;
