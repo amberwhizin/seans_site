@@ -11,6 +11,9 @@ const Container = styled.div`
   justify-content: center;
   background: linear-gradient(to right, black, 50%, #468189 50%);
   height: 100vh;
+  @media (max-height: 1438px) {
+    background: linear-gradient(to bottom, black, 50%, #468189 50%);
+  }
 `;
 
 const Heading = `Sean Keegan`;
@@ -22,9 +25,9 @@ const Title = styled.h1`
   margin: 4rem;
   font-size: 9rem;
   font-family: 'Caveat', cursive;
-  /* color: #031926; */
-  /* background-color: #f4e9cd; */
-  /* border-radius: 3%; */
+  /* @media (max-height: 800px) {
+    font-size: 5rem;
+  } */
 `;
 
 const StyledMusic = styled.h2`
@@ -32,6 +35,10 @@ const StyledMusic = styled.h2`
   padding-right: 20rem;
   text-align: center;
   font-family: 'Metal Mania', cursive;
+  @media (max-height: 1438px) {
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const StyledTutor = styled.h2`
@@ -40,6 +47,7 @@ const StyledTutor = styled.h2`
   text-align: center;
   font-family: 'Merienda', sans-serif;
 `;
+
 // target
 const HomeLink = styled.a`
 text-decoration: none;
@@ -59,6 +67,11 @@ const MusicParagraph = styled.p`
   margin-top: 9rem;
   color: #f4e9cd;
   font-size: 2rem;
+  /* @media (max-height: 800px) {
+    margin-right: 12rem;
+    margin-top: 10rem;
+    font-size: 1rem;
+  } */
 `;
 const TutorParagraph = styled.p`
   font-size: 2rem;
@@ -66,35 +79,13 @@ const TutorParagraph = styled.p`
   color: #f4e9cd;
 `;
 
-const StyledFooterContainer = styled.div`
-  margin: auto;
-  display: flex;
-  align-items: center;
-  margin-top: 6.5rem;
-  @media (max-height: 800px) {
-    margin-top: 5.5rem;
-  }
-  @media (max-height: 750px) {
-    margin-top: 4rem;
-  }
-  @media (max-height: 667px) {
-    margin-top: 3rem;
-  }
-  @media (max-height: 640px) {
-    margin-top: 2rem;
-  }
-  @media (max-height: 600px) {
-    margin-top: 0;
-  }
-`;
-
-function HomePage({ copy }) {
+const HomePage = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <Title>{Heading}</Title>
       {!isTabletOrMobile && (
         <>
+          <Title>{Heading}</Title>
           <StyledMusic>
             <Link href="/music/about/" passHref>
               <HomeLink>Music</HomeLink>
@@ -109,8 +100,18 @@ function HomePage({ copy }) {
           </StyledTutor>
         </>
       )}
+      {isTabletOrMobile && (
+        <>
+          <StyledMusic>
+            <Link href="/music/about/" passHref>
+              <HomeLink>Music</HomeLink>
+            </Link>
+            <MusicParagraph>{MusicQuote}</MusicParagraph>
+          </StyledMusic>
+        </>
+      )}
     </Container>
   );
-}
+};
 
 export default HomePage;
