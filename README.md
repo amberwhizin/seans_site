@@ -1,21 +1,18 @@
 # seanssite
 
- - MOBILE ==> WHEN YOU COME BACK FROM WALK!:::: Fix mobile side and then send to Sean with questions and all!!!!!
- - then mess with this stuff and add questions below to sean email:
-
  - not sure about making both side clickable the way i have it now, have to look into it
  - subjects add
- - think about Seans title name and how to add it in differently onto front page - ask graphic designer
+ - ...above ...think about Seans title name and how to add it in differently onto front page - ask graphic designer..?
  - add logo - ask Emily Graphic Designer
  - combine about/contact? - ask Sean
  - build out bare bones of testimonial/subject
- - videoGal/services pages (vid/serv = the same?) - ask Sean
+ - videoGal/services pages (vid/serv = the same?) - ask Sean or em?
   - testimonials on music side? - ask Sean
- - are the index pages quotes different sizes? - ask me
- - when you first go to about page from index the about isnt selected until you click on about - fixxx
- - music about foto takes too long to load - type of file maybe? -- fixxxx
- - make line for the header and footer
-- center footer
+ - when you first go to about page from index the about isnt selected until you click on about - 
+ - music about foto takes too long to load - type of file maybe? OR size?? -- fixxxx
+ - contact tutoring strinks in dropdownmenu press
+ - about paragraph to slim
+
   - notes for me:
   what i did GIT!
 
