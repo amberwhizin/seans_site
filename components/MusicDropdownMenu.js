@@ -4,12 +4,14 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 const Button = styled.button`
   display: flex;
   align-items: center;
   z-index: 100;
   padding: 1rem;
-  color: #646e68;
+  margin-top: 0.6rem;
+  border: none;
 `;
 const CloseContainer = styled.div`
   position: absolute;
@@ -100,13 +102,16 @@ const DropDownMenu = () => {
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/music/videoGallery">
+            <LinkWithOnClick
+              onClick={toggleIsActive}
+              href="/music/videoGallery"
+            >
               Video Gallery
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
             <LinkWithOnClick onClick={toggleIsActive} href="/music/services">
-            Services
+              Services
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>

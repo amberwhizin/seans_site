@@ -9,7 +9,9 @@ const Button = styled.button`
   align-items: center;
   z-index: 100;
   padding: 1rem;
-  color: #646e68;
+  margin-top: 0.7rem;
+  color: #468189;
+  border: none;
 `;
 const CloseContainer = styled.div`
   position: absolute;
@@ -105,8 +107,11 @@ const DropDownMenu = () => {
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/tutoring/testimonials">
-            testimonials
+            <LinkWithOnClick
+              onClick={toggleIsActive}
+              href="/tutoring/testimonials"
+            >
+              testimonials
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
