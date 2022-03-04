@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import TutorDropdownMenu from './TutorDropdownMenu';
+import TutoringDropdownMenu from './TutoringDropdownMenu';
 import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
@@ -95,7 +95,7 @@ const TutoringHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <TutorDropdownMenu />}
+            {isTabletOrMobile && <TutoringDropdownMenu />}
           </>
         )}
       </NavUl>

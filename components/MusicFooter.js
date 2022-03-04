@@ -40,7 +40,7 @@ const FooterLi = styled.li`
   }
 `;
 
-const FooterMusic = ({ copy }) => {
+const MusicFooter = ({ copy }) => {
   const { footerMusic = [] } = copy;
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
@@ -54,4 +54,4 @@ const FooterMusic = ({ copy }) => {
   );
 };
 
-export default FooterMusic;
+export default MusicFooter;

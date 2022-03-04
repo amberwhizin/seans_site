@@ -1,18 +1,16 @@
 import styled from 'styled-components';
+import { useIsTabletOrMobile } from '../../hooks';
 
 const Container = styled.div`
-  position: absolute;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 5em;
-  padding: 3em;
+  margin: 2rem;
+  text-align: center;
 `;
 
 const Description = styled.p`
   margin: 0 auto;
-  padding: 1rem;
+  padding: 5rem;
   font-family: 'Cinzel Decorative', cursive;
   font-size: 3rem;
 `;

@@ -67,9 +67,9 @@ const About = () => {
       )}
       {isTabletOrMobile && (
         <>
+          <HeaderContainer>{AboutTitle}</HeaderContainer>
           <Family />
           <TextContainer>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
             <p>{AboutBlurb}</p>
           </TextContainer>
         </>

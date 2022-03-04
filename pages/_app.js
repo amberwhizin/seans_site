@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import MusicHeader from '../components/MusicHeader';
 import TutoringHeader from '../components/TutoringHeader';
-import FooterMusic from '../components/FooterMusic';
-import FooterTutoring from '../components/FooterTutoring';
+import MusicFooter from '../components/MusicFooter';
+import TutoringFooter from '../components/TutoringFooter';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
@@ -88,10 +88,10 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle theme={theme} isMusic={isMusic} isTutoring={isTutoring} />
       <ThemeProvider theme={theme}>
         {isMusic && <MusicHeader copy={copy} />}
-        {isMusic && <FooterMusic copy={copy} />}
+        {isMusic && <MusicFooter copy={copy} />}
         {/* show /music/ */}
         {isTutoring && <TutoringHeader copy={copy} />}
-        {isTutoring && <FooterTutoring copy={copy} />}
+        {isTutoring && <TutoringFooter copy={copy} />}
         {/* show /tutoring */}
         {/* otherwise nothing */}
         <Component copy={copy} {...pageProps} />

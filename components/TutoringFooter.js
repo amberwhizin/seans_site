@@ -40,7 +40,7 @@ const FooterLi = styled.li`
   }
 `;
 
-const FooterTutor = ({ copy }) => {
+const TutoringFooter = ({ copy }) => {
   const { footerTutoring = [] } = copy;
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
@@ -54,4 +54,4 @@ const FooterTutor = ({ copy }) => {
   );
 };
 
-export default FooterTutor;
+export default TutoringFooter;
