@@ -23,7 +23,7 @@ const StyledLink = styled.a`
 const MobileHome = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  font-size: 2rem;
 `;
 
 const NavUl = styled.ul`
