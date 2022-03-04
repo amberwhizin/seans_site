@@ -95,22 +95,22 @@ const DropDownMenu = () => {
       <Menu hidden={!isActive}>
         <MenuUl>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/about">
+            <LinkWithOnClick onClick={toggleIsActive} href="/tutoring/about/">
               about
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/subjects">
+            <LinkWithOnClick onClick={toggleIsActive} href="/tutoring/subjects">
               subjects
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/testimonials">
+            <LinkWithOnClick onClick={toggleIsActive} href="/tutoring/testimonials">
             testimonials
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={toggleIsActive} href="/contact">
+            <LinkWithOnClick onClick={toggleIsActive} href="/tutoring/contact">
               contact
             </LinkWithOnClick>
           </MenuLi>

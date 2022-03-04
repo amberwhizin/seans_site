@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import DropdownMenu from './DropdownMenu';
+import MusicDropdownMenu from './MusicDropdownMenu';
 import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
@@ -94,7 +94,7 @@ const MusicHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <DropdownMenu />}
+            {isTabletOrMobile && <MusicDropdownMenu />}
           </>
         )}
       </NavUl>
