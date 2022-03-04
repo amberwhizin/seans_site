@@ -54,6 +54,9 @@ const HeaderContainer = styled.h1`
   @media (max-width: 1438px) {
     text-align: center;
     margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 3.5rem;
   }
 `;
 
