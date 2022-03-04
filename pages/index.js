@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, black, 50%, #e3c0d3 50%);
+  background: linear-gradient(to right, black, 50%, #468189 50%);
   height: 100vh;
 `;
 
@@ -20,10 +20,11 @@ const Title = styled.h1`
   padding: 1rem;
   top: 0;
   margin: 4rem;
-  font-size: 6rem;
+  font-size: 9rem;
   font-family: 'Caveat', cursive;
-  background-color: white;
-  border-radius: 3%;
+  /* color: #031926; */
+  /* background-color: #f4e9cd; */
+  /* border-radius: 3%; */
 `;
 
 const StyledMusic = styled.h2`
@@ -39,17 +40,30 @@ const StyledTutor = styled.h2`
   text-align: center;
   font-family: 'Merienda', sans-serif;
 `;
+// target
+const HomeLink = styled.a`
+text-decoration: none;
+font-size: 4rem;
+    color: #f4e9cd;
+ }
+  &:hover,
+  &:focus {
+   color: #9dbebb;
+  }
+`;
 
 const TutorQuote = `"Best Tutor EVER!!"`;
 const MusicQuote = `"Incredible, a must see!"`;
 
 const MusicParagraph = styled.p`
   margin-top: 9rem;
-  color: white;
+  color: #f4e9cd;
+  font-size: 2rem;
 `;
 const TutorParagraph = styled.p`
+  font-size: 2rem;
   margin-top: 9rem;
-  color: white;
+  color: #f4e9cd;
 `;
 
 const StyledFooterContainer = styled.div`
@@ -82,11 +96,15 @@ function HomePage({ copy }) {
       {!isTabletOrMobile && (
         <>
           <StyledMusic>
-            <Link href="/music/about/">Music</Link>
+            <Link href="/music/about/" passHref>
+              <HomeLink>Music</HomeLink>
+            </Link>
             <MusicParagraph>{MusicQuote}</MusicParagraph>
           </StyledMusic>
           <StyledTutor>
-            <Link href="/tutoring/about/">Tutoring</Link>
+            <Link href="/tutoring/about/" passHref>
+              <HomeLink>Tutoring</HomeLink>
+            </Link>
             <TutorParagraph>{TutorQuote}</TutorParagraph>
           </StyledTutor>
         </>

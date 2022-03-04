@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: absolute;
-  top: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -12,7 +11,6 @@ const Container = styled.div`
 `;
 
 const Description = styled.p`
-  max-width: 40rem;
   margin: 0 auto;
   padding: 1rem;
   font-family: 'Cinzel Decorative', cursive;
@@ -24,7 +22,6 @@ const Services = () => {
     <Container>
       <h1>Services</h1>
       <Description>Coming soon!</Description>
-      
       {/* <p>Lessons</p>
       <p>Events</p>
       <p>Concerts</p> */}

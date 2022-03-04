@@ -8,7 +8,7 @@ import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 /* color: ${(props) => props.theme.colors.oliveDrab7}; */
-const musicFont = `'Metal Mania', cursive; color: white; background: black`;
+const musicFont = `'Metal Mania', cursive; color: #f4e9cd; background: black`;
 const tutoringFont = `'Merienda', sans-serif; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
 const GlobalStyle = createGlobalStyle`
@@ -38,51 +38,18 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3rem;
     margin: 10px;
+    color: #9dbebb;
     @media (max-width: 1438px) {
       font-size: 2rem;
     }
   }
+
   p {
     font-size: 1.2rem;
   }
   ul {
     list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  /* Button reset credit https://css-tricks.com/overriding-default-button-styles/ */
-  button {
-    display: inline-block;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    background: transparent;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  button:hover,
-  button:focus {
-      background: transparent;
-  }
-
-  button:focus {
-      outline: 1px solid #fff;
-      outline-offset: -4px;
-  }
-
-  button:active {
-      transform: scale(0.99);
-  }
+  }  
 `;
 
 const theme = {
@@ -100,6 +67,10 @@ const theme = {
     floralWhite: '##FFFAF0',
     aliceBlue: '##F0F8FF',
     sapphireBlue: '#1768AC',
+    lightBrown: '#f4e9cd',
+    greenish: '#9dbebb',
+    darkerGreen: '#77aca2',
+    darkestGreen: '#468189',
   },
 };
 

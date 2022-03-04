@@ -12,6 +12,10 @@
  - videoGal/services pages (vid/serv = the same?) - ask Sean
   - testimonials on music side? - ask Sean
  - are the index pages quotes different sizes? - ask me
+ - when you first go to about page from index the about isnt selected until you click on about - fixxx
+ - music about foto takes too long to load - type of file maybe? -- fixxxx
+ - make line for the header and footer
+- center footer
   - notes for me:
   what i did GIT!
 

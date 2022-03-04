@@ -12,15 +12,13 @@ Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci v
 Et ut nulla. Nesciunt nam eos vel cumque laborum. Rem numquam incidunt ipsum sapiente.`;
 
 const Container = styled.div`
-  position: absolute;
+  margin-top: 6.5rem;
+  margin-left: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  /* music about page is having margin issues with the margin-top below- fix later */
-  margin-top: 6rem;
+
   @media (max-width: 1438px) {
-    /* position: absolute; */
+    position: absolute;
     flex-direction: column;
     padding: 1rem;
     margin: 1rem;
@@ -39,18 +37,11 @@ function Family() {
   );
 }
 
-const ImageContainer = styled.div`
-  padding-left: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-`;
-
 const TextContainer = styled.div`
   display: block;
   padding: 0;
-  margin: 5rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
 `;
 
 const Text = styled.p`
@@ -72,9 +63,7 @@ const About = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <ImageContainer>
-            <Family />
-          </ImageContainer>
+          <Family />
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
             <Text>{AboutBlurb}</Text>

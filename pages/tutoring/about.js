@@ -12,11 +12,11 @@ Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci v
 Et ut nulla. Nesciunt nam eos vel cumque laborum. Rem numquam incidunt ipsum sapiente.`;
 
 const Container = styled.div`
-  position: absolute;
+  margin-top: 3rem;
+  margin-left: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+
   @media (max-width: 1438px) {
     /* position: absolute; */
     flex-direction: column;
@@ -31,25 +31,19 @@ function Family() {
     <Image
       src="/pics/sean_mel_.png"
       alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
-      width={10300 / X}
-      height={11752 / X}
+      width={8300 / X}
+      height={9752 / X}
     />
   );
 }
 
-const ImageContainer = styled.div`
-  padding-left: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
 const TextContainer = styled.div`
   display: block;
   padding: 0;
-  margin: 5rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
 `;
+
 const HeaderContainer = styled.h1`
   margin: 0;
   @media (max-width: 1438px) {
@@ -64,9 +58,7 @@ const About = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <ImageContainer>
-            <Family />
-          </ImageContainer>
+          <Family />
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
             <p>{AboutBlurb}</p>

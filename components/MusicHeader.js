@@ -6,11 +6,13 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding: 2.5rem;
+  padding-right: 5rem;
   font-size: 2rem;
-  color: ${(props) =>
-    props.isActive ? props.theme.colors.white : props.theme.colors.white};
-
+  color: #f4e9cd;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
   @media (max-width: 1438px) {
     display: flex;
     align-items: center;
@@ -26,12 +28,14 @@ const MobileHome = styled.div`
 
 const NavUl = styled.ul`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  border: none;
+  justify-content: space-around;
+
+  margin: 0 auto;
+
+  background-color: black;
+  border-bottom: 1px solid #f4e9cd;
+  /* padding-left: 4rem; */
+  font-size: 2rem;
 
   @media (max-width: 1438px) {
     padding: 0;
@@ -78,7 +82,9 @@ const MusicHeader = ({ copy }) => {
         {!isTabletOrMobile && (
           <>
             <NavItem href="/music/about">{navBarMusic.about}</NavItem>
-            <NavItem href="/music/videoGallery">{navBarMusic.videoGallery}</NavItem>
+            <NavItem href="/music/videoGallery">
+              {navBarMusic.videoGallery}
+            </NavItem>
             <NavItem href="/music/services">{navBarMusic.services}</NavItem>
             <NavItem href="/music/contact">{navBarMusic.contact}</NavItem>
           </>
