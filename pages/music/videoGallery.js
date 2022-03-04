@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;;
+  margin: 2rem; ;
 `;
 
 const VideoContainer = styled.div`
@@ -16,6 +16,17 @@ const VideoContainer = styled.div`
   align-items: center;
   padding: 2rem;
   margin: 2rem;
+  @media (max-width: 1438px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0
+
+    
+   
+
+  }
 `;
 
 const VideoGallery = () => {
@@ -26,16 +37,16 @@ const VideoGallery = () => {
       {!isTabletOrMobile && (
         <>
           <VideoContainer>
-            <YoutubeEmbed embedId="dw_OuFkgq0c" />
-            <YoutubeEmbed embedId="w83rZNYYIK4" />
+            <YoutubeEmbed embedId="dw_OuFkgq0c" width="560" height="315"/>
+            <YoutubeEmbed embedId="w83rZNYYIK4" width="560" height="315"/>
           </VideoContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
           <VideoContainer>
-            <YoutubeEmbed embedId="dw_OuFkgq0c" />
-            <YoutubeEmbed embedId="w83rZNYYIK4" />
+            <YoutubeEmbed embedId="dw_OuFkgq0c" width="370" height="220"/>
+            <YoutubeEmbed embedId="w83rZNYYIK4" width="370" height="220"/>
           </VideoContainer>
         </>
       )}
