@@ -12,6 +12,11 @@ const Description = styled.p`
   margin: 0 auto;
   padding: 5rem;
   font-size: 2rem;
+  @media (max-width: 1438px) {
+    text-align: center;
+    font-size: 20px;
+    padding: 3rem;
+  } 
 `;
 
 const Contact = ({ copy }) => {
@@ -28,10 +33,9 @@ const Contact = ({ copy }) => {
       )}
       {isTabletOrMobile && (
         <>
-          <h2>{contact.title}</h2>
-          <p>{contact.insured}</p>
-          <p>{contact.email}</p>
-          <p>{contact.phone}</p>
+          <h1>{contact.title}</h1>
+          <Description>{contact.blurb}</Description>
+          <Description>{contact.email}</Description>
         </>
       )}
     </Container>
