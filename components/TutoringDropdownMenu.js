@@ -11,6 +11,13 @@ const Button = styled.button`
   padding: 1rem;
   margin-top: 0.7rem;
   color: #468189;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
+  :hover {
+    cursor: pointer;
+  }
   border: none;
 `;
 const CloseContainer = styled.div`
@@ -41,6 +48,10 @@ const OpenButton = ({ onClick, hidden }) => (
 const StyledA = styled.a`
   text-decoration: none;
   color: #468189;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
   :hover {
     cursor: pointer;
   }

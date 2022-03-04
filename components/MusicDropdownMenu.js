@@ -12,6 +12,14 @@ const Button = styled.button`
   padding: 1rem;
   margin-top: 0.6rem;
   border: none;
+  color: #f4e9cd; // this isnt working for somereason
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
+  :hover {
+    cursor: pointer;
+  }
 `;
 const CloseContainer = styled.div`
   position: absolute;
@@ -39,6 +47,11 @@ const OpenButton = ({ onClick, hidden }) => (
   </OpenContainer>
 );
 const StyledA = styled.a`
+  color: #f4e9cd;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
   text-decoration: none;
   :hover {
     cursor: pointer;
