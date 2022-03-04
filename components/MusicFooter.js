@@ -10,8 +10,7 @@ const Container = styled.div`
   width: 100%;
   border-top: 1px solid #f4e9cd;
   @media (max-width: 1438px) {
-    position: fixed;
-    margin-top: 2rem;
+    border-top: none;
   }
 `;
 
@@ -45,11 +44,15 @@ const MusicFooter = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <FooterUl>
-        {footerMusic.map((item) => {
-          return <FooterLi key={item}>{item}</FooterLi>;
-        })}
-      </FooterUl>
+      {!isTabletOrMobile && (
+        <>
+          <FooterUl>
+            {footerMusic.map((item) => {
+              return <FooterLi key={item}>{item}</FooterLi>;
+            })}
+          </FooterUl>
+        </>
+      )}
     </Container>
   );
 };
