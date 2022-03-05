@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const Container = styled.div`
   padding: 0;
@@ -99,12 +100,21 @@ const Title = styled.h1`
   position: fixed;
   top: 15vh;
   left: 50vw;
-  transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
   font-family: 'Caveat', cursive;
   margin: 0;
   padding: 0;
+  transition: transform 1200ms;
+  transform: ${(props) => {
+    if (props.wasMusicClicked) {
+      return 'translate(-50%, -50%) rotate(360deg);';
+    }
+    if (props.wasTutoringClicked) {
+      return 'translate(-50%, -50%) rotate(360deg);';
+    }
+    return 'translate(-50%, -50%) rotate(0);';
+  }};
   @media (max-width: 1438px) {
     font-size: 5rem;
     top: 48vh;
@@ -158,12 +168,32 @@ const TutorParagraph = styled.p`
 const HomePage = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const router = useRouter();
+  const [wasMusicClicked, setWasMusicClicked] = useState(false);
+  const onClickMusic = () => {
+    setWasMusicClicked(true);
+    setTimeout(() => {
+      router.push('/music/about/');
+    }, 600);
+  };
+  const [wasTutoringClicked, setWasTutoringClicked] = useState(false);
+  const onClickTutoring = () => {
+    setWasTutoringClicked(true);
+    setTimeout(() => {
+      router.push('/tutoring/about/');
+    }, 600);
+  };
+
   return (
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Title>{Heading}</Title>
-          <MusicContainer onClick={() => router.push('/music/about/')}>
+          <Title
+            wasMusicClicked={wasMusicClicked}
+            wasTutoringClicked={wasTutoringClicked}
+          >
+            {Heading}
+          </Title>
+          <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
               <Link href="/music/about/" passHref>
                 <HomeLink>Music</HomeLink>
@@ -171,7 +201,7 @@ const HomePage = ({ copy }) => {
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
-          <TutorContainer onClick={() => router.push('/tutoring/about/')}>
+          <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
               <Link href="/tutoring/about/" passHref>
                 <HomeLink>Tutoring</HomeLink>
@@ -184,7 +214,7 @@ const HomePage = ({ copy }) => {
       {isTabletOrMobile && (
         <>
           <Title>{Heading}</Title>
-          <MusicContainer onClick={() => router.push('/music/about/')}>
+          <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
               <Link href="/music/about/" passHref>
                 <HomeLink>Music</HomeLink>
@@ -192,7 +222,7 @@ const HomePage = ({ copy }) => {
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
-          <TutorContainer onClick={() => router.push('/tutoring/about/')}>
+          <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
               <Link href="/tutoring/about/" passHref>
                 <HomeLink>Tutoring</HomeLink>
