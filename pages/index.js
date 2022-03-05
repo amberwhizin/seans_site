@@ -116,6 +116,12 @@ const Title = styled.h1`
     font-size: 5rem;
     top: 48vh;
   }
+  @media (max-width: 340px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 270px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const StyledMusic = styled.h2`
