@@ -18,20 +18,47 @@ const Container = styled.div`
   }
 `;
 
-const TutorContainer = styled.div`
-  background: black;
+// target
+const HomeLink = styled.a`
+  text-decoration: none;
+  font-size: 4rem;
+  color: #f4e9cd;
+  &:hover,
+  &:focus {
+    color: #9dbebb;
+  }
+  @media (max-width: 1438px) {
+    font-size: 45px;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+const MusicContainer = styled.div`
+  background: #040707;
   flex: 1;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 2s, transform 0s;
   :hover {
-      cursor: pointer;
+    cursor: pointer;
+    background-color: #111f21;
+    & ${HomeLink} {
+      color: #9dbebb;
     }
   }
   @media (max-width: 1438px) {
-    background: black;
+    background: #040707;
     flex: 1;
     width: 100%;
     display: flex;
@@ -39,7 +66,7 @@ const TutorContainer = styled.div`
     justify-content: center;
   }
 `;
-const MusicContainer = styled.div`
+const TutorContainer = styled.div`
   background: #468189;
   flex: 1;
   width: 100%;
@@ -47,8 +74,12 @@ const MusicContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 2s, transform 0s;
   :hover {
-      cursor: pointer;
+    cursor: pointer;
+    background-color: #4d8d96;
+    & ${HomeLink} {
+      color: #9dbebb;
     }
   }
   @media (max-width: 1438px) {
@@ -100,29 +131,6 @@ const StyledTutor = styled.h2`
   }
 `;
 
-// target
-const HomeLink = styled.a`
-  text-decoration: none;
-  font-size: 4rem;
-  color: #f4e9cd;
-  &:hover,
-  &:focus {
-    color: #9dbebb;
-  }
-  @media (max-width: 1438px) {
-    font-size: 45px;
-    margin-bottom: 1.5rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    :hover {
-      cursor: pointer;
-    }
-  }
-`;
-
 const TutorQuote = `"Best Tutor EVER!!"`;
 const MusicQuote = `"Incredible, a must see!"`;
 
@@ -155,43 +163,43 @@ const HomePage = ({ copy }) => {
       {!isTabletOrMobile && (
         <>
           <Title>{Heading}</Title>
-          <TutorContainer onClick={() => router.push('/music/about/')}>
+          <MusicContainer onClick={() => router.push('/music/about/')}>
             <StyledMusic>
               <Link href="/music/about/" passHref>
                 <HomeLink>Music</HomeLink>
               </Link>
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
-          </TutorContainer>
-          <MusicContainer onClick={() => router.push('/tutoring/about/')}>
+          </MusicContainer>
+          <TutorContainer onClick={() => router.push('/tutoring/about/')}>
             <StyledTutor>
               <Link href="/tutoring/about/" passHref>
                 <HomeLink>Tutoring</HomeLink>
               </Link>
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
-          </MusicContainer>
+          </TutorContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
           <Title>{Heading}</Title>
-          <TutorContainer onClick={() => router.push('/music/about/')}>
+          <MusicContainer onClick={() => router.push('/music/about/')}>
             <StyledMusic>
               <Link href="/music/about/" passHref>
                 <HomeLink>Music</HomeLink>
               </Link>
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
-          </TutorContainer>
-          <MusicContainer onClick={() => router.push('/tutoring/about/')}>
+          </MusicContainer>
+          <TutorContainer onClick={() => router.push('/tutoring/about/')}>
             <StyledTutor>
               <Link href="/tutoring/about/" passHref>
                 <HomeLink>Tutoring</HomeLink>
               </Link>
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
-          </MusicContainer>
+          </TutorContainer>
         </>
       )}
     </Container>
