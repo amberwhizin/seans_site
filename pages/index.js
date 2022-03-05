@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
+import { useRouter } from 'next/router';
 
 const Container = styled.div`
   padding: 0;
@@ -9,57 +10,93 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, black, 50%, #468189 50%);
   height: 100vh;
   @media (max-width: 1438px) {
-    background: linear-gradient(to bottom, black, 50%, #468189 50%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 `;
 
+const TutorContainer = styled.div`
+  background: black;
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 1438px) {
+    background: black;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+const MusicContainer = styled.div`
+  background: #468189;
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 1438px) {
+    background: #468189;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 const Heading = `Sean Keegan`;
 
 const Title = styled.h1`
-  position: fixed;
-  padding: 1rem;
-  top: 0;
-  margin: 4rem;
   font-size: 9rem;
+  position: fixed;
+  top: 15vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
   font-family: 'Caveat', cursive;
+  margin: 0;
+  padding: 0;
   @media (max-width: 1438px) {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
     font-size: 5rem;
+    top: 48vh;
   }
 `;
 
 const StyledMusic = styled.h2`
-  margin-top: 30rem;
-  padding-right: 20rem;
+  padding-top: 20rem;
   text-align: center;
   font-family: 'Metal Mania', cursive;
   @media (max-width: 1438px) {
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
   }
 `;
 
 const StyledTutor = styled.h2`
-  margin-top: 30rem;
-  padding-left: 20rem;
+  padding-top: 20rem;
   text-align: center;
   font-family: 'Merienda', sans-serif;
-
   @media (max-width: 1438px) {
     margin: 0;
     padding: 0;
-    /* border: 1px solid yellow; */
   }
 `;
 
@@ -81,8 +118,8 @@ const HomeLink = styled.a`
     justify-content: center;
 
     :hover {
-    cursor: pointer;
-  }
+      cursor: pointer;
+    }
   }
 `;
 
@@ -112,40 +149,49 @@ const TutorParagraph = styled.p`
 
 const HomePage = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
+  const router = useRouter();
   return (
     <Container>
       {!isTabletOrMobile && (
         <>
           <Title>{Heading}</Title>
-          <StyledMusic>
-            <Link href="/music/about/" passHref>
-              <HomeLink>Music</HomeLink>
-            </Link>
-            <MusicParagraph>{MusicQuote}</MusicParagraph>
-          </StyledMusic>
-          <StyledTutor>
-            <Link href="/tutoring/about/" passHref>
-              <HomeLink>Tutoring</HomeLink>
-            </Link>
-            <TutorParagraph>{TutorQuote}</TutorParagraph>
-          </StyledTutor>
+          <TutorContainer onClick={() => router.push('/music/about/')}>
+            <StyledMusic>
+              <Link href="/music/about/" passHref>
+                <HomeLink>Music</HomeLink>
+              </Link>
+              <MusicParagraph>{MusicQuote}</MusicParagraph>
+            </StyledMusic>
+          </TutorContainer>
+          <MusicContainer onClick={() => router.push('/tutoring/about/')}>
+            <StyledTutor>
+              <Link href="/tutoring/about/" passHref>
+                <HomeLink>Tutoring</HomeLink>
+              </Link>
+              <TutorParagraph>{TutorQuote}</TutorParagraph>
+            </StyledTutor>
+          </MusicContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <StyledMusic>
-            <Link href="/music/about/" passHref>
-              <HomeLink>Music</HomeLink>
-            </Link>
-            <MusicParagraph>{MusicQuote}</MusicParagraph>
-          </StyledMusic>
           <Title>{Heading}</Title>
-          <StyledTutor>
-            <Link href="/tutoring/about/" passHref>
-              <HomeLink>Tutoring</HomeLink>
-            </Link>
-            <TutorParagraph>{TutorQuote}</TutorParagraph>
-          </StyledTutor>
+          <TutorContainer onClick={() => router.push('/music/about/')}>
+            <StyledMusic>
+              <Link href="/music/about/" passHref>
+                <HomeLink>Music</HomeLink>
+              </Link>
+              <MusicParagraph>{MusicQuote}</MusicParagraph>
+            </StyledMusic>
+          </TutorContainer>
+          <MusicContainer onClick={() => router.push('/tutoring/about/')}>
+            <StyledTutor>
+              <Link href="/tutoring/about/" passHref>
+                <HomeLink>Tutoring</HomeLink>
+              </Link>
+              <TutorParagraph>{TutorQuote}</TutorParagraph>
+            </StyledTutor>
+          </MusicContainer>
         </>
       )}
     </Container>
