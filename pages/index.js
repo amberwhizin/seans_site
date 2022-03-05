@@ -181,10 +181,6 @@ const HomePage = ({ copy }) => {
 
   return (
     <Container>
-      <RandomNoteDrop
-        wasMusicClicked={wasMusicClicked}
-        isTabletOrMobile={isTabletOrMobile}
-      />
       {!isTabletOrMobile && (
         <>
           <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
@@ -217,6 +213,10 @@ const HomePage = ({ copy }) => {
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
+          <RandomNoteDrop
+            wasMusicClicked={wasMusicClicked}
+            isTabletOrMobile={isTabletOrMobile}
+          />
         </>
       )}
     </Container>
