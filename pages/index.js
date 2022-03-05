@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import RandomNoteDrop from '../components/RandomNoteDrop';
 
 const Container = styled.div`
   padding: 0;
@@ -107,9 +107,6 @@ const Title = styled.h1`
   padding: 0;
   transition: transform 1200ms;
   transform: ${(props) => {
-    if (props.wasMusicClicked) {
-      return 'translate(-50%, -50%) rotate(360deg);';
-    }
     if (props.wasTutoringClicked) {
       return 'translate(-50%, -50%) rotate(360deg);';
     }
@@ -164,7 +161,6 @@ const TutorParagraph = styled.p`
     padding: 0;
   }
 `;
-
 const HomePage = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const router = useRouter();
@@ -173,39 +169,34 @@ const HomePage = ({ copy }) => {
     setWasMusicClicked(true);
     setTimeout(() => {
       router.push('/music/about/');
-    }, 600);
+    }, 900);
   };
   const [wasTutoringClicked, setWasTutoringClicked] = useState(false);
   const onClickTutoring = () => {
     setWasTutoringClicked(true);
     setTimeout(() => {
       router.push('/tutoring/about/');
-    }, 600);
+    }, 900);
   };
 
   return (
     <Container>
+      <RandomNoteDrop
+        wasMusicClicked={wasMusicClicked}
+        isTabletOrMobile={isTabletOrMobile}
+      />
       {!isTabletOrMobile && (
         <>
-          <Title
-            wasMusicClicked={wasMusicClicked}
-            wasTutoringClicked={wasTutoringClicked}
-          >
-            {Heading}
-          </Title>
+          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
           <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
-              <Link href="/music/about/" passHref>
-                <HomeLink>Music</HomeLink>
-              </Link>
+              <HomeLink onClick={onClickMusic}>Music</HomeLink>
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
-              <Link href="/tutoring/about/" passHref>
-                <HomeLink>Tutoring</HomeLink>
-              </Link>
+              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
@@ -213,20 +204,16 @@ const HomePage = ({ copy }) => {
       )}
       {isTabletOrMobile && (
         <>
-          <Title>{Heading}</Title>
+          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
           <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
-              <Link href="/music/about/" passHref>
-                <HomeLink>Music</HomeLink>
-              </Link>
+              <HomeLink onClick={onClickMusic}>Music</HomeLink>
               <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
-              <Link href="/tutoring/about/" passHref>
-                <HomeLink>Tutoring</HomeLink>
-              </Link>
+              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
