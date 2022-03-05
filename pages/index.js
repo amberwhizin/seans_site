@@ -97,7 +97,7 @@ const Heading = `Sean Keegan`;
 
 const Title = styled.h1`
   font-size: 9rem;
-  position: fixed;
+  position: absolute;
   top: 15vh;
   left: 50vw;
   text-align: center;
