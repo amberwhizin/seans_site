@@ -213,12 +213,12 @@ const HomePage = ({ copy }) => {
               <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
-          <RandomNoteDrop
-            wasMusicClicked={wasMusicClicked}
-            isTabletOrMobile={isTabletOrMobile}
-          />
         </>
       )}
+      <RandomNoteDrop
+        wasMusicClicked={wasMusicClicked}
+        isTabletOrMobile={isTabletOrMobile}
+      />
     </Container>
   );
 };

@@ -8,21 +8,24 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 };
 
-const HiddenNotes = styled.h1`
+const getTransform = (props) => {
+  if (props.wasMusicClicked) {
+    const bottom = props.isTabletOrMobile ? '180vh' : '140vh';
+    return `translate(${props.verticalWidth}vw, ${bottom})`;
+  }
+  return `translate(${props.verticalWidth}vw, 0)`; // left right - -50 - 50
+};
+
+const HiddenNotes = styled.div.attrs((props) => ({
+  style: {
+    fontSize: `${props.randomFontSize}px`,
+    transition: `transform ${props.fallSpeed}ms ${props.delaySpeed}ms`,
+    transform: getTransform(props),
+  },
+}))`
   color: white;
-  font-size: ${(props) => props.randomFontSize}px; // 80px - 150px
   position: fixed;
-  /* opacity: ${(props) => (props.wasMusicClicked ? 1 : 0)}; */
-  transition: transform ${(props) => props.fallSpeed}ms
-    ${(props) => props.delaySpeed}ms; // 1000
   top: -300px;
-  transform: ${(props) => {
-    if (props.wasMusicClicked) {
-      const bottom = props.isTabletOrMobile ? '180vh' : '140vh';
-      return `translate(${props.verticalWidth}vw, ${bottom});`;
-    }
-    return `translate(${props.verticalWidth}vw, 0);`; // left right - -50 - 50
-  }};
 `;
 
 const characters = ['♩', '♩', '♩', '♪', '♯', '♫', '♫', '♬', '♭', '𝄫', '𝄞'];
@@ -40,19 +43,17 @@ const RandomNote = ({ wasMusicClicked, delay }) => {
     fallSpeed += 300;
   }
   return (
-    <>
-      <HiddenNotes
-        wasMusicClicked={wasMusicClicked}
-        randomFontSize={randomFontSize}
-        rightPercent={rightPercent}
-        verticalWidth={verticalWidth}
-        fallSpeed={fallSpeed}
-        delaySpeed={delaySpeed}
-        isTabletOrMobile={isTabletOrMobile}
-      >
-        {randomCharacter}
-      </HiddenNotes>
-    </>
+    <HiddenNotes
+      wasMusicClicked={wasMusicClicked}
+      randomFontSize={randomFontSize}
+      rightPercent={rightPercent}
+      verticalWidth={verticalWidth}
+      fallSpeed={fallSpeed}
+      delaySpeed={delaySpeed}
+      isTabletOrMobile={isTabletOrMobile}
+    >
+      {randomCharacter}
+    </HiddenNotes>
   );
 };
 
