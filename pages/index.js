@@ -121,7 +121,7 @@ const Title = styled.h1`
   z-index: 1;
   font-size: 9rem;
   position: absolute;
-  top: 15vh;
+  top: 17vh;
   left: 50vw;
   text-align: center;
   width: 100%;
