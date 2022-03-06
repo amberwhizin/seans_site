@@ -5,6 +5,8 @@ import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 
 const Container = styled.div`
+  position: fixed;
+  overflow: hidden;
   padding: 0;
   margin: 0;
   font-size: 2.5rem;
@@ -35,9 +37,11 @@ const HomeLink = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-
     :hover {
       cursor: pointer;
+    }
+    @media (max-width: 375px) {
+      font-size: 40px;
     }
   }
 `;
@@ -50,11 +54,12 @@ const polySkewMobile = 40;
 const mobileTop = 4;
 
 const MusicContainer = styled.div`
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   width: ${50 + desktopLeft + polySkewDesktop / 2}%;
   height: 100%;
   right: 0;
-  clip-path: polygon(0 0, 100% 0%, ${99 - polySkewDesktop}% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, ${100 - polySkewDesktop}% 100%, 0% 100%);
   left: 0;
   background: #040707;
   display: flex;
@@ -68,7 +73,7 @@ const MusicContainer = styled.div`
     }
   }
   @media (max-width: 1438px) {
-    clip-path: polygon(0 0, 100% 0%, 100% ${99 - polySkewMobile}%, 0 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     background: #040707;
     flex: 1;
     width: 100%;
@@ -82,7 +87,8 @@ const MusicContainer = styled.div`
 `;
 
 const TutorContainer = styled.div`
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   width: ${50 - mobileTop + desktopLeft + polySkewDesktop / 2}%;
   height: 100%;
   right: 0;
@@ -120,7 +126,7 @@ const Title = styled.h1`
   color: #f4e9cd;
   z-index: 1;
   font-size: 9rem;
-  position: absolute;
+  position: fixed;
   top: 17vh;
   left: 50vw;
   text-align: center;
@@ -137,7 +143,7 @@ const Title = styled.h1`
   }};
   @media (max-width: 1438px) {
     font-size: 5rem;
-    top: 48vh;
+    top: 48%;
   }
   @media (max-width: 340px) {
     font-size: 4rem;
@@ -150,20 +156,29 @@ const Title = styled.h1`
 const StyledMusic = styled.h2`
   text-align: center;
   font-family: 'Metal Mania', cursive;
-  position: absolute;
+  position: fixed;
   margin-right: ${polySkewDesktop + desktopLeft}%;
   @media (max-width: 1438px) {
+    top: 0;
     margin-right: 0;
-    margin-bottom: 200px;
+    margin-top: 100px;
+  }
+  @media (max-width: 340px) {
+    margin-top: 50px;
   }
 `;
 
 const StyledTutor = styled.h2`
   text-align: center;
   font-family: 'Merienda', sans-serif;
-  position: absolute;
+  position: fixed;
   @media (max-width: 1438px) {
-    margin-top: 150px;
+    bottom: 0;
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+  @media (max-width: 340px) {
+    margin-bottom: 50px;
   }
 `;
 
