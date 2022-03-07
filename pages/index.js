@@ -5,7 +5,6 @@ import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 
 const Container = styled.div`
-  position: fixed;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -48,8 +47,8 @@ const HomeLink = styled.a`
 
 // https://bennettfeely.com/clippy/
 // these are the controls for the skew, and skew position!
-const polySkewDesktop = 15;
 const desktopLeft = 6;
+const polySkewDesktop = 15;
 const polySkewMobile = 40;
 const mobileTop = 4;
 

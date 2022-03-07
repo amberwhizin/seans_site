@@ -36,11 +36,11 @@ const RandomNote = ({ wasMusicClicked, delay }) => {
   let randomFontSize = getRandomInt(60, 180);
   const rightPercent = getRandomInt(0, 95);
   const verticalWidth = getRandomInt(-60, 60);
-  let fallSpeed = getRandomInt(700, 1200);
+  let fallSpeed = getRandomInt(600, 1700);
   let delaySpeed = getRandomInt(0, 300) + delay;
   if (isTabletOrMobile) {
     randomFontSize = getRandomInt(30, 90);
-    fallSpeed += 600;
+    fallSpeed += 700;
   }
   return (
     <HiddenNotes
