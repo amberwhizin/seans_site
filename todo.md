@@ -11,7 +11,7 @@
  - music about foto takes too long to load - type of file maybe? OR size?? -- fixxxx
  - contact tutoring strinks in dropdownmenu press
  - about paragraph to slim
-
+ - fix naming in MUsicCOntainer and TutorCONtainer switch
   - notes for me:
   what i did GIT!
 

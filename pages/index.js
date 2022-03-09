@@ -1,65 +1,22 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { useIsTabletOrMobile } from '../hooks';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import RandomNoteDrop from '../components/RandomNoteDrop';
 
 const Container = styled.div`
+  overflow: hidden;
   padding: 0;
   margin: 0;
   font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, black, 50%, #468189 50%);
   height: 100vh;
   @media (max-width: 1438px) {
-    background: linear-gradient(to bottom, black, 50%, #468189 50%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
-`;
-
-const Heading = `Sean Keegan`;
-
-const Title = styled.h1`
-  position: fixed;
-  padding: 1rem;
-  top: 0;
-  margin: 4rem;
-  font-size: 9rem;
-  font-family: 'Caveat', cursive;
-  @media (max-width: 1438px) {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-size: 5rem;
-  }
-`;
-
-const StyledMusic = styled.h2`
-  margin-top: 30rem;
-  padding-right: 20rem;
-  text-align: center;
-  font-family: 'Metal Mania', cursive;
-  @media (max-width: 1438px) {
-    margin: 0;
-    padding: 0;
-    /* border: 1px solid red; */
-  }
-`;
-
-const StyledTutor = styled.h2`
-  margin-top: 30rem;
-  padding-left: 20rem;
-  text-align: center;
-  font-family: 'Merienda', sans-serif;
-
-  @media (max-width: 1438px) {
-    margin: 0;
-    padding: 0;
-    /* border: 1px solid yellow; */
   }
 `;
 
@@ -79,10 +36,148 @@ const HomeLink = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-
     :hover {
-    cursor: pointer;
+      cursor: pointer;
+    }
+    @media (max-width: 375px) {
+      font-size: 40px;
+    }
   }
+`;
+
+// https://bennettfeely.com/clippy/
+// these are the controls for the skew, and skew position!
+const desktopLeft = 6;
+const polySkewDesktop = 15;
+const polySkewMobile = 40;
+const mobileTop = 4;
+
+const MusicContainer = styled.div`
+  position: fixed;
+  overflow: hidden;
+  width: ${50 + desktopLeft + polySkewDesktop / 2}%;
+  height: 100%;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0%, ${100 - polySkewDesktop}% 100%, 0% 100%);
+  left: 0;
+  background: #040707;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    cursor: pointer;
+    background-color: #111f21;
+    & ${HomeLink} {
+      color: #9dbebb;
+    }
+  }
+  @media (max-width: 1438px) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    background: #040707;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: ${50 + polySkewMobile / 2}%;
+    top: 0;
+  }
+`;
+
+const TutorContainer = styled.div`
+  position: fixed;
+  overflow: hidden;
+  width: ${50 - mobileTop + desktopLeft + polySkewDesktop / 2}%;
+  height: 100%;
+  right: 0;
+  clip-path: polygon(${polySkewDesktop}% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background: #468189;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 2s, transform 0s;
+  :hover {
+    cursor: pointer;
+    background-color: #4d8d96;
+    & ${HomeLink} {
+      color: #9dbebb;
+    }
+  }
+  @media (max-width: 1438px) {
+    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
+    background: #468189;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: ${50 - mobileTop + polySkewMobile / 2}%;
+    bottom: 0;
+  }
+`;
+
+const Heading = `Sean Keegan`;
+
+const Title = styled.h1`
+  /* clip-path  is messing with whats on top.*/
+  color: #f4e9cd;
+  z-index: 1;
+  font-size: 9rem;
+  position: fixed;
+  top: 17vh;
+  left: 50vw;
+  text-align: center;
+  width: 100%;
+  font-family: 'Caveat', cursive;
+  margin: 0;
+  padding: 0;
+  transition: transform 1200ms;
+  transform: ${(props) => {
+    if (props.wasTutoringClicked) {
+      return 'translate(-50%, -50%) rotate(360deg);';
+    }
+    return 'translate(-50%, -50%) rotate(0);';
+  }};
+  @media (max-width: 1438px) {
+    font-size: 5rem;
+    top: 48%;
+  }
+  @media (max-width: 340px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 270px) {
+    font-size: 3.5rem;
+  }
+`;
+
+const StyledMusic = styled.h2`
+  text-align: center;
+  font-family: 'Metal Mania', cursive;
+  position: fixed;
+  margin-right: ${polySkewDesktop + desktopLeft}%;
+  @media (max-width: 1438px) {
+    top: 0;
+    margin-right: 0;
+    margin-top: 100px;
+  }
+  @media (max-width: 340px) {
+    margin-top: 50px;
+  }
+`;
+
+const StyledTutor = styled.h2`
+  text-align: center;
+  font-family: 'Merienda', sans-serif;
+  position: fixed;
+  @media (max-width: 1438px) {
+    bottom: 0;
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+  @media (max-width: 340px) {
+    margin-bottom: 50px;
   }
 `;
 
@@ -90,7 +185,7 @@ const TutorQuote = `"Best Tutor EVER!!"`;
 const MusicQuote = `"Incredible, a must see!"`;
 
 const MusicParagraph = styled.p`
-  margin-top: 9rem;
+  margin-top: 7rem;
   color: #f4e9cd;
   font-size: 2rem;
   @media (max-width: 1438px) {
@@ -101,7 +196,7 @@ const MusicParagraph = styled.p`
 `;
 const TutorParagraph = styled.p`
   font-size: 2rem;
-  margin-top: 9rem;
+  margin-top: 7rem;
   color: #f4e9cd;
   @media (max-width: 1438px) {
     font-size: 15px;
@@ -109,45 +204,64 @@ const TutorParagraph = styled.p`
     padding: 0;
   }
 `;
-
-const HomePage = ({ copy }) => {
+const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
+  const router = useRouter();
+  const [wasMusicClicked, setWasMusicClicked] = useState(false);
+  const onClickMusic = () => {
+    setWasMusicClicked(true);
+    setTimeout(() => {
+      router.push('/music/about/');
+    }, 900);
+  };
+  const [wasTutoringClicked, setWasTutoringClicked] = useState(false);
+  const onClickTutoring = () => {
+    setWasTutoringClicked(true);
+    setTimeout(() => {
+      router.push('/tutoring/about/');
+    }, 900);
+  };
+
   return (
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Title>{Heading}</Title>
-          <StyledMusic>
-            <Link href="/music/about/" passHref>
-              <HomeLink>Music</HomeLink>
-            </Link>
-            <MusicParagraph>{MusicQuote}</MusicParagraph>
-          </StyledMusic>
-          <StyledTutor>
-            <Link href="/tutoring/about/" passHref>
-              <HomeLink>Tutoring</HomeLink>
-            </Link>
-            <TutorParagraph>{TutorQuote}</TutorParagraph>
-          </StyledTutor>
+          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
+          <MusicContainer onClick={onClickMusic}>
+            <StyledMusic>
+              <HomeLink onClick={onClickMusic}>Music</HomeLink>
+              <MusicParagraph>{MusicQuote}</MusicParagraph>
+            </StyledMusic>
+          </MusicContainer>
+          <TutorContainer onClick={onClickTutoring}>
+            <StyledTutor>
+              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
+              <TutorParagraph>{TutorQuote}</TutorParagraph>
+            </StyledTutor>
+          </TutorContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <StyledMusic>
-            <Link href="/music/about/" passHref>
-              <HomeLink>Music</HomeLink>
-            </Link>
-            <MusicParagraph>{MusicQuote}</MusicParagraph>
-          </StyledMusic>
-          <Title>{Heading}</Title>
-          <StyledTutor>
-            <Link href="/tutoring/about/" passHref>
-              <HomeLink>Tutoring</HomeLink>
-            </Link>
-            <TutorParagraph>{TutorQuote}</TutorParagraph>
-          </StyledTutor>
+          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
+          <MusicContainer onClick={onClickMusic}>
+            <StyledMusic>
+              <HomeLink onClick={onClickMusic}>Music</HomeLink>
+              <MusicParagraph>{MusicQuote}</MusicParagraph>
+            </StyledMusic>
+          </MusicContainer>
+          <TutorContainer onClick={onClickTutoring}>
+            <StyledTutor>
+              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
+              <TutorParagraph>{TutorQuote}</TutorParagraph>
+            </StyledTutor>
+          </TutorContainer>
         </>
       )}
+      <RandomNoteDrop
+        wasMusicClicked={wasMusicClicked}
+        isTabletOrMobile={isTabletOrMobile}
+      />
     </Container>
   );
 };
