@@ -4,25 +4,26 @@ import { useState } from 'react';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 2rem;
   text-align: center;
   padding-bottom: 7rem;
 `;
 
 const TextContainer = styled.div`
+  /* if size of text container excedes max height adn width add read mroe */
+  background-color: #ecf4f5;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1.5rem 3rem 0 3rem;
   margin-top: 3rem;
-  background-color: #ecf4f5;
+  width: 60rem;
+  box-shadow: 5px 5px 5px #cbdddb;
 `;
-
 const Description = styled.p`
   background-color: #ecf4f5;
-  height: 29.5vh;
-  /* padding: 0 2rem 0 2rem; */
-  /* margin-top: 3rem; */
+  height: 20.5vh;
   overflow: hidden;
   ${(props) => {
     if (props.isReadMoreClicked) {
@@ -30,6 +31,7 @@ const Description = styled.p`
     }
   }};
 `;
+
 let ButtonText = 'read more';
 
 const ReadMoreButton = styled.button`
@@ -44,42 +46,54 @@ const ReadMoreButton = styled.button`
   }
 `;
 
-const Testimonials = () => {
+const ExpandableSection = ({ children }) => {
   const [isReadMoreClicked, setReadMoreClicked] = useState(false);
-
   const onClickedReadMore = () => {
     setReadMoreClicked(true);
-    ButtonText = 'read less';
-    if (isReadMoreClicked === true) {
+    if (isReadMoreClicked) {
       setReadMoreClicked(false);
-      ButtonText = 'read more';
     }
+    isReadMoreClicked ? (ButtonText = 'read more') : (ButtonText = 'read less');
   };
-
   return (
+    <TextContainer>
+      <Description isReadMoreClicked={isReadMoreClicked}>
+        {children}
+      </Description>
+      <ReadMoreButton onClick={onClickedReadMore}>{ButtonText}</ReadMoreButton>
+    </TextContainer>
+  );
+};
+
+const Testimonials = () => {
+  return (
+    //
     <Container>
       <h1>testimonials</h1>
-      <Description>
-        “Our daughters have been receiving tutoring from Sean for the past 2
-        years. His knowledge and expertise in Math and Science has helped them
-        stay on top of their work and kept them on pace with the course
-        curriculum. His friendly attitude and patience has given them so much
-        confidence in their abilities. He has been able to assess their needs
-        and scaffold the work to meet them where they are. He is reliable and
-        always makes time for extra sessions if they have a big test or
-        assignment due.” -Jodi and Marcus Bannon
-      </Description>
-
-      <Description>
-        “Sean has been my daughter’s AP Calculus teacher for the past two years.
-        He is an amazing teacher and we are blessed to have him as her tutor.
-        His conceptual approach in his teaching strategies has helped her not
-        only learn the materials more fundamentally but also become a better
-        learner and more confident in applying knowledge in different topics and
-        subjects.” -Nazila K
-      </Description>
-      <TextContainer>
-        <Description isReadMoreClicked={isReadMoreClicked}>
+      {/* <TextContainer>
+        <Description>
+          “Our daughters have been receiving tutoring from Sean for the past 2
+          years. His knowledge and expertise in Math and Science has helped them
+          stay on top of their work and kept them on pace with the course
+          curriculum. His friendly attitude and patience has given them so much
+          confidence in their abilities. He has been able to assess their needs
+          and scaffold the work to meet them where they are. He is reliable and
+          always makes time for extra sessions if they have a big test or
+          assignment due.” <br />
+          -Jodi and Marcus Bannon
+        </Description>
+      </TextContainer> */}
+      {/* <TextContainer>
+        <Description>
+          “Sean has been my daughter’s AP Calculus teacher for the past two
+          years. He is an amazing teacher and we are blessed to have him as her
+          tutor. His conceptual approach in his teaching strategies has helped
+          her not only learn the materials more fundamentally but also become a
+          better learner and more confident in applying knowledge in different
+          topics and subjects.” <br /> -Nazila K
+        </Description>
+      </TextContainer> */}
+      <ExpandableSection>
           “After failing my first calculus AB exam, my friend who was also
           struggling in calculus referred me to Sean. After starting tutoring
           sessions, I never received below an A on a test in AB. After starting
@@ -109,13 +123,10 @@ const Testimonials = () => {
           explains and elaborates concepts in ways no teacher has ever been able
           to do for me. I am appreciative of Sean not only because he’s a good
           teacher, but because he made me passionate about something I never
-          thought I had the capacity to enjoy.” -Tara K
-        </Description>
-        <ReadMoreButton onClick={onClickedReadMore}>
-          {ButtonText}
-        </ReadMoreButton>
-      </TextContainer>
-      <Description>
+          thought I had the capacity to enjoy.” <br />
+          -Tara K
+      </ExpandableSection>
+      <ExpandableSection>
         “We are very happy with Sean’s support as a tutor for our kids. Sean has
         tutored both our sons since we moved from Europe during high school and
         they experienced gaps in their knowledge in maths and had some
@@ -133,28 +144,34 @@ const Testimonials = () => {
         cares about them and he really wants them to do good in school and feel
         good about themselves. I highly recommend Sean as a tutor for any class
         he is interested in himself. Because he is totally capable of sharing
-        his enthusiasm and knowledge.” -Anonymous (contact available upon
-        request)
-      </Description>
-      <Description>
-        “Three of our sons have worked with Sean for tutoring in Geometry,
-        Algebra, Algebra II Honors and AP Calculus. Though all were strong
-        students, Sean’s expertise was invaluable, especially during distance
-        learning. He is enthusiastic, personable, and presents material from a
-        fresh, relatable perspective. Whether your child is struggling, has
-        missed concepts due to absence, or just needs material presented in an
-        alternate fashion, Sean can help. He will build or restore the
-        confidence required to excel in math. We have been extremely happy with
-        our experience with him.” -Shannon M
-      </Description>
-      <Description>
-        “I have had a wonderful experience with Sean Keegan. When my classes
-        moved online there was a disconnect between me and the material,
-        especially in math. Sean Keegan was really able to help me and adapt in
-        a way that my teachers could not. He is extremely knowledgeable, and
-        makes learning new material simple and easy, whether in person or
-        remote. I would definitely recommend!” -Connor M
-      </Description>
+        his enthusiasm and knowledge.” <br />
+        -Anonymous (contact available upon request)
+      </ExpandableSection>
+      {/* <TextContainer>
+        <Description>
+          “Three of our sons have worked with Sean for tutoring in Geometry,
+          Algebra, Algebra II Honors and AP Calculus. Though all were strong
+          students, Sean’s expertise was invaluable, especially during distance
+          learning. He is enthusiastic, personable, and presents material from a
+          fresh, relatable perspective. Whether your child is struggling, has
+          missed concepts due to absence, or just needs material presented in an
+          alternate fashion, Sean can help. He will build or restore the
+          confidence required to excel in math. We have been extremely happy
+          with our experience with him.” <br />
+          -Shannon M
+        </Description>
+      </TextContainer> */}
+      {/* <TextContainer>
+        <Description>
+          “I have had a wonderful experience with Sean Keegan. When my classes
+          moved online there was a disconnect between me and the material,
+          especially in math. Sean Keegan was really able to help me and adapt
+          in a way that my teachers could not. He is extremely knowledgeable,
+          and makes learning new material simple and easy, whether in person or
+          remote. I would definitely recommend!” <br />
+          -Connor M
+        </Description>
+      </TextContainer> */}
     </Container>
   );
 };
