@@ -23,7 +23,7 @@ const TextContainer = styled.div`
 
 const Description = styled.p`
   background-color: #ecf4f5;
-  height: 21vh;
+  height: 20.5vh;
   overflow: hidden;
   ${(props) => {
     if (props.isReadMoreClicked) {
@@ -56,9 +56,7 @@ const ExpandableSection = ({ children }) => {
         <Description isReadMoreClicked={isReadMoreClicked}>
           {children}
         </Description>
-        <ReadMoreButton onClick={toggleButton}>
-          {ButtonText}
-        </ReadMoreButton>
+        <ReadMoreButton onClick={toggleButton}>{ButtonText}</ReadMoreButton>
       </TextContainer>
     </>
   );
