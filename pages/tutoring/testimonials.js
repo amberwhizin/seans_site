@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import LinesEllipsis from 'react-lines-ellipsis';
 
 const Container = styled.div`
   display: flex;
@@ -7,40 +8,74 @@ const Container = styled.div`
   align-items: center;
   margin: 2rem;
   text-align: center;
-  padding-bottom: 7rem;
+  padding-bottom: 7rem; //bottom
+  border: 2px solid red;
 `;
 
 const TextContainer = styled.div`
+  border: 2px solid purple;
   background-color: #ecf4f5;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 1.5rem 3rem 0 3rem;
-  margin-top: 3rem;
-  width: 60rem;
+  padding: 1em;
+  margin-top: 4rem;
+  width: 55rem;
   box-shadow: 5px 5px 5px #cbdddb;
+  @media (max-width: 1438px) {
+    width: 20rem;
+  }
 `;
 
 const Description = styled.p`
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1em;
+  border: 2px solid orange;
   background-color: #ecf4f5;
-  height: 20.5vh;
+  height: 23vh;
+  width: 50rem;
+  line-height: 2;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical; // or this and the height is cut off? */
+  /* line-clamp: 5; */
   overflow: hidden;
+  white-space: pre-line;
+  transition: all 0.3s ease-in-out;
+  margin: 0; //
+  display: flex;
+  align-items: flex-start;
   ${(props) => {
     if (props.isReadMoreClicked) {
-      return 'height: auto';
+      return 'height: auto'; //or overflow:visible but text container doesnt expand
     }
   }};
+
+  @media (max-width: 1438px) {
+    height: 40vh;
+    width: 20rem;
+    line-height: 1.7;
+    ${(props) => {
+      if (props.isReadMoreClicked) {
+        return 'height: auto';
+      }
+    }};
+  }
 `;
 
 const ReadMoreButton = styled.button`
-  color: grey;
-  font-size: 1rem;
+  color: darkgray;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  margin-right: 1.5rem;
   background-color: #ecf4f5;
   border: none;
   display: flex;
-  align-self: flex-end;
+  align-self: end;
   :hover {
-    color: black;
+    color: grey;
   }
 `;
 
@@ -50,10 +85,17 @@ const ExpandableSection = ({ children }) => {
   const [isReadMoreClicked, setReadMoreClicked] = useState(false);
   const toggleButton = () => setReadMoreClicked(!isReadMoreClicked);
   isReadMoreClicked ? (ButtonText = 'read less') : (ButtonText = 'read more');
+
+  const truncate = (str, n) => {
+    return str.length > n ? <>{str.slice(0, n)} &hellip;</> : str; //remove names or at .?
+  }; 
+
   return (
     <>
       <TextContainer>
         <Description isReadMoreClicked={isReadMoreClicked}>
+          {/* or truncate and the dots are at the bottom of children, can i add them at height 23? */}
+          {/* {truncate(children, children.length - 1)}  */}
           {children}
         </Description>
         <ReadMoreButton onClick={toggleButton}>{ButtonText}</ReadMoreButton>
@@ -66,9 +108,8 @@ const Testimonials = () => {
   return (
     <Container>
       <h1>testimonials</h1>
-      <TextContainer>
-        <Description>
-          {`“Our daughters have been receiving tutoring from Sean for the past 2
+      <ExpandableSection>
+        {`“Our daughters have been receiving tutoring from Sean for the past 2
         years. His knowledge and expertise in Math and Science has helped them
         stay on top of their work and kept them on pace with the course
         curriculum. His friendly attitude and patience has given them so much
@@ -76,19 +117,17 @@ const Testimonials = () => {
         and scaffold the work to meet them where they are. He is reliable and
         always makes time for extra sessions if they have a big test or
         assignment due.” 
-        -Jodi and Marcus Bannon`}
-        </Description>
-      </TextContainer>
-      <TextContainer>
-        <Description>
-          {` “Sean has been my daughter’s AP Calculus teacher for the past two years.
+      -Jodi and Marcus`}
+      </ExpandableSection>
+      <ExpandableSection>
+        {` “Sean has been my daughter’s AP Calculus teacher for the past two years.
         He is an amazing teacher and we are blessed to have him as her tutor.
         His conceptual approach in his teaching strategies has helped her not
         only learn the materials more fundamentally but also become a better
         learner and more confident in applying knowledge in different topics and
-        subjects.”  -Nazila K`}
-        </Description>
-      </TextContainer>
+        subjects.”  
+        -Nazila K`}
+      </ExpandableSection>
       <ExpandableSection>
         {` “After failing my first calculus AB exam, my friend who was also
         struggling in calculus referred me to Sean. After starting tutoring
@@ -143,9 +182,8 @@ const Testimonials = () => {
         -Anonymous (contact available upon request)`}
       </ExpandableSection>
 
-      <TextContainer>
-        <Description>
-          {`  “Three of our sons have worked with Sean for tutoring in Geometry,
+      <ExpandableSection>
+        {`  “Three of our sons have worked with Sean for tutoring in Geometry,
         Algebra, Algebra II Honors and AP Calculus. Though all were strong
         students, Sean’s expertise was invaluable, especially during distance
         learning. He is enthusiastic, personable, and presents material from a
@@ -155,19 +193,16 @@ const Testimonials = () => {
         confidence required to excel in math. We have been extremely happy with
         our experience with him.” 
         -Shannon M`}
-        </Description>
-      </TextContainer>
-      <TextContainer>
-        <Description>
-          {` “I have had a wonderful experience with Sean Keegan. When my classes
+      </ExpandableSection>
+      <ExpandableSection>
+        {` “I have had a wonderful experience with Sean Keegan. When my classes
         moved online there was a disconnect between me and the material,
         especially in math. Sean Keegan was really able to help me and adapt in
         a way that my teachers could not. He is extremely knowledgeable, and
         makes learning new material simple and easy, whether in person or
         remote. I would definitely recommend!” 
         -Connor M`}
-        </Description>
-      </TextContainer>
+      </ExpandableSection>
     </Container>
   );
 };
