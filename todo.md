@@ -45,3 +45,5 @@
 
  - donate and site Photo by Ylanite Koppens from Pexels -music paper
  - paper - 
+
+ - for fun? add icons and names to testimonials?
