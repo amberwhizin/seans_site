@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import LinesEllipsis from 'react-lines-ellipsis';
 
 const Container = styled.div`
   display: flex;
@@ -9,11 +8,11 @@ const Container = styled.div`
   margin: 2rem;
   text-align: center;
   padding-bottom: 7rem; //bottom
-  border: 2px solid red;
+  /* border: 2px solid red; */
 `;
 
 const TextContainer = styled.div`
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   background-color: #ecf4f5;
   display: flex;
   align-items: center;
@@ -32,7 +31,7 @@ const Description = styled.p`
   justify-content: center;
   margin: 0;
   padding: 1em;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   background-color: #ecf4f5;
   height: 23vh;
   width: 50rem;
