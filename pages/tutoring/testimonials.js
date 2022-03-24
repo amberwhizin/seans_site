@@ -116,7 +116,7 @@ const Testimonials = () => {
         and scaffold the work to meet them where they are. He is reliable and
         always makes time for extra sessions if they have a big test or
         assignment due.” 
-      -Jodi and Marcus`}
+      -Jodi and Marcus B`}
       </ExpandableSection>
       <ExpandableSection>
         {` “Sean has been my daughter’s AP Calculus teacher for the past two years.
