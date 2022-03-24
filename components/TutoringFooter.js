@@ -12,6 +12,7 @@ const Container = styled.div`
   @media (max-width: 1438px) {
     border-top: none;
   }
+  z-index: 1;
 `;
 
 const FooterUl = styled.ul`
@@ -36,7 +37,7 @@ const FooterLi = styled.li`
     flex-direction: row;
     align-items: center;
     text-align: center;
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -47,11 +48,11 @@ const TutoringFooter = ({ copy }) => {
     <Container>
       {!isTabletOrMobile && (
         <>
-        <FooterUl>
-          {footerTutoring.map((item) => {
-            return <FooterLi key={item}>{item}</FooterLi>;
-          })}
-        </FooterUl>
+          <FooterUl>
+            {footerTutoring.map((item) => {
+              return <FooterLi key={item}>{item}</FooterLi>;
+            })}
+          </FooterUl>
         </>
       )}
     </Container>
