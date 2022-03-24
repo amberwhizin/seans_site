@@ -181,29 +181,6 @@ const StyledTutor = styled.h2`
   }
 `;
 
-const TutorQuote = `"Best Tutor EVER!!"`;
-const MusicQuote = `"Incredible, a must see!"`;
-
-const MusicParagraph = styled.p`
-  margin-top: 7rem;
-  color: #f4e9cd;
-  font-size: 2rem;
-  @media (max-width: 1438px) {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-  }
-`;
-const TutorParagraph = styled.p`
-  font-size: 2rem;
-  margin-top: 7rem;
-  color: #f4e9cd;
-  @media (max-width: 1438px) {
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-  }
-`;
 const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const router = useRouter();
@@ -230,13 +207,11 @@ const HomePage = () => {
           <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
               <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
               <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
         </>
@@ -247,13 +222,11 @@ const HomePage = () => {
           <MusicContainer onClick={onClickMusic}>
             <StyledMusic>
               <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
               <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
             </StyledTutor>
           </TutorContainer>
         </>
