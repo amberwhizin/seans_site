@@ -27,6 +27,7 @@ const TextContainer = styled.div`
 `;
 
 const Description = styled.p`
+  position: relative;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -36,19 +37,11 @@ const Description = styled.p`
   height: 23vh;
   width: 50rem;
   line-height: 2;
-  /* display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical; // or this and the height is cut off? */
-  /* line-clamp: 5; */
   overflow: hidden;
   white-space: pre-line;
-  transition: all 0.3s ease-in-out;
-  margin: 0; //
-  display: flex;
-  align-items: flex-start;
   ${(props) => {
     if (props.isReadMoreClicked) {
-      return 'height: auto'; //or overflow:visible but text container doesnt expand
+      return 'height: auto';
     }
   }};
 
@@ -78,16 +71,29 @@ const ReadMoreButton = styled.button`
   }
 `;
 
+const TransparentBottom = styled.div`
+  width: 100%;
+  height: 6rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(236, 244, 245, 0),
+    rgba(236, 244, 245, 1)
+  );
+  background-color: transparent;
+  /* opacity: 5; */
+  position: absolute;
+  bottom: 0;
+  @media (max-width: 1438px) {
+    height: 10rem;
+  }
+`;
+
 let ButtonText = '';
 
 const ExpandableSection = ({ children }) => {
   const [isReadMoreClicked, setReadMoreClicked] = useState(false);
   const toggleButton = () => setReadMoreClicked(!isReadMoreClicked);
   isReadMoreClicked ? (ButtonText = 'read less') : (ButtonText = 'read more');
-
-  const truncate = (str, n) => {
-    return str.length > n ? <>{str.slice(0, n)} &hellip;</> : str; //remove names or at .?
-  }; 
 
   return (
     <>
@@ -96,6 +102,7 @@ const ExpandableSection = ({ children }) => {
           {/* or truncate and the dots are at the bottom of children, can i add them at height 23? */}
           {/* {truncate(children, children.length - 1)}  */}
           {children}
+          {!isReadMoreClicked && <TransparentBottom />}
         </Description>
         <ReadMoreButton onClick={toggleButton}>{ButtonText}</ReadMoreButton>
       </TextContainer>
