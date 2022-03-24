@@ -22,7 +22,7 @@ const TextContainer = styled.div`
   width: 55rem;
   box-shadow: 5px 5px 5px #cbdddb;
   @media (max-width: 1438px) {
-    width: 20rem;
+    width: 22rem;
   }
 `;
 
@@ -42,10 +42,6 @@ const Description = styled.p`
   /* line-clamp: 5; */
   overflow: hidden;
   white-space: pre-line;
-  transition: all 0.3s ease-in-out;
-  margin: 0; //
-  display: flex;
-  align-items: flex-start;
   ${(props) => {
     if (props.isReadMoreClicked) {
       return 'height: auto'; //or overflow:visible but text container doesnt expand
@@ -53,8 +49,9 @@ const Description = styled.p`
   }};
 
   @media (max-width: 1438px) {
-    height: 40vh;
+    height: 41.5vh;
     width: 20rem;
+    padding: 0.5em;
     line-height: 1.7;
     ${(props) => {
       if (props.isReadMoreClicked) {
@@ -76,6 +73,9 @@ const ReadMoreButton = styled.button`
   :hover {
     color: grey;
   }
+  @media (max-width: 1438px) {
+    margin-right: 0;
+  }
 `;
 
 let ButtonText = '';
@@ -87,8 +87,8 @@ const ExpandableSection = ({ children }) => {
 
   const truncate = (str, n) => {
     return str.length > n ? <>{str.slice(0, n)} &hellip;</> : str; //remove names or at .?
-  }; 
-
+  };
+  
   return (
     <>
       <TextContainer>
