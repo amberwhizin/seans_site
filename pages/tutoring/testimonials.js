@@ -22,7 +22,7 @@ const TextContainer = styled.div`
   width: 55rem;
   box-shadow: 5px 5px 5px #cbdddb;
   @media (max-width: 1438px) {
-    width: 20rem;
+    width: 22rem;
   }
 `;
 
@@ -46,8 +46,9 @@ const Description = styled.p`
   }};
 
   @media (max-width: 1438px) {
-    height: 40vh;
+    height: 41.5vh;
     width: 20rem;
+    padding: 0.5em;
     line-height: 1.7;
     ${(props) => {
       if (props.isReadMoreClicked) {
@@ -68,6 +69,9 @@ const ReadMoreButton = styled.button`
   align-self: end;
   :hover {
     color: grey;
+  }
+  @media (max-width: 1438px) {
+    margin-right: 0;
   }
 `;
 
@@ -123,7 +127,7 @@ const Testimonials = () => {
         and scaffold the work to meet them where they are. He is reliable and
         always makes time for extra sessions if they have a big test or
         assignment due.” 
-      -Jodi and Marcus`}
+      -Jodi and Marcus B`}
       </ExpandableSection>
       <ExpandableSection>
         {` “Sean has been my daughter’s AP Calculus teacher for the past two years.
