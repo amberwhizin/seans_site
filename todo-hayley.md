@@ -1,12 +1,20 @@
-add testimony data file
+~~add testimony data file~~
 
-add updated testimonial from Development/2022/seans_site
+~~add updated testimonial from Development/2022/seans_site~~
 
-get fade to work with H-testimonials 
-  - make author a child of the body rather than a second <p>
-  - 
+### Testimonials
 
+- make icon with author of testimony
+- get fade to work with H-testimonials 
 
+### Subjects
+- 
 
-Make Contact form on website to contact sean via email:
+### Misc.
+- add fav icon
+  - current img blurry, but in public folder
+  - need manifest.json?
+  - [how-to](https://serverless-stack.com/chapters/add-app-favicons.html)
+- link page to google analytics
+  - [how-to](https://medium.com/geekculture/how-to-use-google-analytics-on-reactjs-in-5-minutes-7f6b43017ba9#:~:text=You%20just%20need%20to%20open,That's%20it%20!)
 
