@@ -7,7 +7,6 @@ import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/biggest_marjanNo.png';
 
-
 const Container = styled.div`
   overflow: hidden;
   padding: 0;
@@ -199,18 +198,18 @@ const HomePage = () => {
       {!isTabletOrMobile && (
         <>
           {/* <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title> */}
-          <MusicContainer onClick={onClickMusic}>
+          <TutorContainer onClick={onClickTutoring}>
             <TutoringImage />
             {/* <StyledMusic> */}
             {/* <HomeLink onClick={onClickMusic}>Music</HomeLink> */}
             {/* </StyledMusic> */}
-          </MusicContainer>
-          <TutorContainer onClick={onClickTutoring}>
+          </TutorContainer>
+          <MusicContainer onClick={onClickMusic}>
             <MusicImage />
             {/* <StyledTutor> */}
             {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
             {/* </StyledTutor> */}
-          </TutorContainer>
+          </MusicContainer>
         </>
       )}
       {isTabletOrMobile && (
