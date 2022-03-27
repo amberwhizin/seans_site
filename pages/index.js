@@ -8,9 +8,7 @@ import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100vh;
   @media (max-width: 1438px) {
     display: flex;
@@ -51,8 +49,7 @@ const polySkewMobile = 40;
 const mobileTop = 4;
 
 const TutorContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  height: 50%;
   :hover {
     cursor: pointer;
     & ${HomeLink} {
@@ -60,10 +57,8 @@ const TutorContainer = styled.div`
     }
   }
 `;
-
 const MusicContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  height: 50%;
   transition: background-color 2s, transform 0s;
   :hover {
     cursor: pointer;
@@ -195,18 +190,18 @@ const HomePage = () => {
       {!isTabletOrMobile && (
         <>
           {/* <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title> */}
-          <TutorContainer onClick={onClickTutoring}>
-            <TutoringImage />
+          <MusicContainer onClick={onClickMusic}>
+            <MusicImage />
             {/* <StyledMusic> */}
             {/* <HomeLink onClick={onClickMusic}>Music</HomeLink> */}
             {/* </StyledMusic> */}
-          </TutorContainer>
-          <MusicContainer onClick={onClickMusic}>
-            <MusicImage />
+          </MusicContainer>
+          <TutorContainer onClick={onClickTutoring}>
+            <TutoringImage />
             {/* <StyledTutor> */}
             {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
             {/* </StyledTutor> */}
-          </MusicContainer>
+          </TutorContainer>
         </>
       )}
       {isTabletOrMobile && (
