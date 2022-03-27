@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
-import BackgroundTutoring from '../public/pics/biggest_marjanNo.png';
+import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
 
 const Container = styled.div`
   display: flex;
@@ -136,9 +136,9 @@ const StyledTutor = styled.h2`
 `;
 
 const ImageContainer = styled.div`
-  height: 100%;
-  width: auto;
   position: relative;
+  width: 100%;
+  height: 100%;
 `;
 
 const MusicImage = () => {
@@ -148,8 +148,9 @@ const MusicImage = () => {
         src={BackgroundMusic}
         alt="an image of three pieces of ripped sheet music on top one another"
         layout="fill"
+        objectFit="cover"
         placeholder="blur"
-        priority
+        // priority
       />
     </ImageContainer>
   );
@@ -162,9 +163,9 @@ const TutoringImage = () => {
         src={BackgroundTutoring}
         alt="image of lined paper for usually used for school work"
         layout="fill"
-        objectFit="contain"
+        objectFit="cover"
         placeholder="blur"
-        priority
+        // priority
       />
     </ImageContainer>
   );
