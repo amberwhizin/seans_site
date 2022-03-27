@@ -7,10 +7,11 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
-/* color: ${(props) => props.theme.colors.oliveDrab7}; */
-const musicFont = `'Metal Mania', cursive; color: #f4e9cd; background: black`;
-const tutoringFont = `'Merienda', sans-serif; background: white`;
+
+const musicFont = `'Montserrat', cursive; color: #f4e9cd; background: black`;
+const tutoringFont = `'Montserrat', cursive; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
+
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;

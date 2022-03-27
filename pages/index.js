@@ -6,6 +6,7 @@ import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
+import GreenTapeImg from '../public/pics/cropped_green_label.png';
 
 const Container = styled.div`
   width: 100%;
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const HomeLink = styled.a`
+  /* border: 4px solid red; */
   text-decoration: none;
   font-size: 4rem;
   color: #f4e9cd;
@@ -60,6 +62,7 @@ const TutorContainer = styled.div`
   }
 `;
 const MusicContainer = styled.div`
+  filter: grayscale(100%);
   height: 100%;
   width: 100%;
   position: fixed;
@@ -73,25 +76,18 @@ const MusicContainer = styled.div`
   }
 `;
 
-const Heading = `Sean Keegan`;
 const Title = styled.h1`
-  color: #f4e9cd;
   z-index: 1;
-  font-size: 9rem;
   position: fixed;
-  top: 17vh;
-  left: 50vw;
-  text-align: center;
-  width: 100%;
-  font-family: 'Caveat', cursive;
-  margin: 0;
-  padding: 0;
+  top: 10vw;
+  left: 31vw;
+  width: 45%;
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
       return 'translate(-50%, -50%) rotate(360deg);';
     }
-    return 'translate(-50%, -50%) rotate(0);';
+    return;
   }};
   @media (max-width: 1438px) {
     font-size: 5rem;
@@ -106,8 +102,8 @@ const Title = styled.h1`
 `;
 
 const StyledMusic = styled.h2`
+  z-index: 1;
   text-align: center;
-  font-family: 'Metal Mania', cursive;
   position: fixed;
   margin-right: ${polySkewDesktop + desktopLeft}%;
   @media (max-width: 1438px) {
@@ -121,8 +117,8 @@ const StyledMusic = styled.h2`
 `;
 
 const StyledTutor = styled.h2`
+
   text-align: center;
-  font-family: 'Merienda', sans-serif;
   position: fixed;
   @media (max-width: 1438px) {
     bottom: 0;
@@ -194,22 +190,27 @@ const HomePage = () => {
         <>
           <TutorContainer onClick={onClickTutoring}>
             <TutoringImage />
-            {/* <StyledTutor> */}
-            {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
-            {/* </StyledTutor> */}
+            <StyledTutor>
+              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
+            </StyledTutor>
           </TutorContainer>
-          {/* <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title> */}
+          <Title wasTutoringClicked={wasTutoringClicked}>
+            <Image
+              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+              src={GreenTapeImg}
+            />
+          </Title>
           <MusicContainer onClick={onClickMusic}>
             <MusicImage />
-            {/* <StyledMusic> */}
-            {/* <HomeLink onClick={onClickMusic}>Music</HomeLink> */}
-            {/* </StyledMusic> */}
+            <StyledMusic>
+              <HomeLink onClick={onClickMusic}>Music</HomeLink>
+            </StyledMusic>
           </MusicContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
+          <Title wasTutoringClicked={wasTutoringClicked}>{}</Title>
           <MusicContainer onClick={onClickMusic}>
             <MusicImage />
             <StyledMusic>
