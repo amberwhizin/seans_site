@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../hooks';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
+import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
+import BackgroundTutoring from '../public/pics/biggest_marjanNo.png';
+
 
 const Container = styled.div`
   overflow: hidden;
@@ -20,7 +24,6 @@ const Container = styled.div`
   }
 `;
 
-// target
 const HomeLink = styled.a`
   text-decoration: none;
   font-size: 4rem;
@@ -52,74 +55,30 @@ const polySkewDesktop = 15;
 const polySkewMobile = 40;
 const mobileTop = 4;
 
-const MusicContainer = styled.div`
-  position: fixed;
-  overflow: hidden;
-  width: ${50 + desktopLeft + polySkewDesktop / 2}%;
+const TutorContainer = styled.div`
+  width: 100%;
   height: 100%;
-  right: 0;
-  clip-path: polygon(0 0, 100% 0%, ${100 - polySkewDesktop}% 100%, 0% 100%);
-  left: 0;
-  background: #040707;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   :hover {
     cursor: pointer;
-    background-color: #111f21;
     & ${HomeLink} {
       color: #9dbebb;
     }
-  }
-  @media (max-width: 1438px) {
-    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
-    background: #040707;
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: ${50 + polySkewMobile / 2}%;
-    top: 0;
   }
 `;
 
-const TutorContainer = styled.div`
-  position: fixed;
-  overflow: hidden;
-  width: ${50 - mobileTop + desktopLeft + polySkewDesktop / 2}%;
+const MusicContainer = styled.div`
+  width: 100%;
   height: 100%;
-  right: 0;
-  clip-path: polygon(${polySkewDesktop}% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #468189;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: background-color 2s, transform 0s;
   :hover {
     cursor: pointer;
-    background-color: #4d8d96;
     & ${HomeLink} {
       color: #9dbebb;
     }
-  }
-  @media (max-width: 1438px) {
-    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
-    background: #468189;
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: ${50 - mobileTop + polySkewMobile / 2}%;
-    bottom: 0;
   }
 `;
 
 const Heading = `Sean Keegan`;
-
 const Title = styled.h1`
   /* clip-path  is messing with whats on top.*/
   color: #f4e9cd;
@@ -181,32 +140,45 @@ const StyledTutor = styled.h2`
   }
 `;
 
-const TutorQuote = `"Best Tutor EVER!!"`;
-const MusicQuote = `"Incredible, a must see!"`;
+const ImageContainer = styled.div`
+  height: 100%;
+  width: auto;
+  position: relative;
+`;
 
-const MusicParagraph = styled.p`
-  margin-top: 7rem;
-  color: #f4e9cd;
-  font-size: 2rem;
-  @media (max-width: 1438px) {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-  }
-`;
-const TutorParagraph = styled.p`
-  font-size: 2rem;
-  margin-top: 7rem;
-  color: #f4e9cd;
-  @media (max-width: 1438px) {
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-  }
-`;
+const MusicImage = () => {
+  return (
+    <ImageContainer>
+      <Image
+        src={BackgroundMusic}
+        alt="an image of three pieces of ripped sheet music on top one another"
+        layout="fill"
+        placeholder="blur"
+        priority
+      />
+    </ImageContainer>
+  );
+};
+
+const TutoringImage = () => {
+  return (
+    <ImageContainer>
+      <Image
+        src={BackgroundTutoring}
+        alt="image of lined paper for usually used for school work"
+        layout="fill"
+        objectFit="contain"
+        placeholder="blur"
+        priority
+      />
+    </ImageContainer>
+  );
+};
+
 const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const router = useRouter();
+
   const [wasMusicClicked, setWasMusicClicked] = useState(false);
   const onClickMusic = () => {
     setWasMusicClicked(true);
@@ -226,18 +198,18 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
+          {/* <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title> */}
           <MusicContainer onClick={onClickMusic}>
-            <StyledMusic>
-              <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
-            </StyledMusic>
+            <TutoringImage />
+            {/* <StyledMusic> */}
+            {/* <HomeLink onClick={onClickMusic}>Music</HomeLink> */}
+            {/* </StyledMusic> */}
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
-            <StyledTutor>
-              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
-            </StyledTutor>
+            <MusicImage />
+            {/* <StyledTutor> */}
+            {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
+            {/* </StyledTutor> */}
           </TutorContainer>
         </>
       )}
@@ -245,15 +217,15 @@ const HomePage = () => {
         <>
           <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
           <MusicContainer onClick={onClickMusic}>
+            <MusicImage />
             <StyledMusic>
               <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
             </StyledMusic>
           </MusicContainer>
           <TutorContainer onClick={onClickTutoring}>
             <StyledTutor>
               <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
+              <TutoringImage />
             </StyledTutor>
           </TutorContainer>
         </>
