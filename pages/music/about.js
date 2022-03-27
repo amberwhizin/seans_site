@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
+import seanGuitarImg from '../../public/pics/sean_website.jpeg'
 
 const AboutTitle = `Sean Keegan`;
 
@@ -29,10 +30,12 @@ const X = 3;
 function Family() {
   return (
     <Image
-      src="/pics/sean_website.jpeg"
+      src={seanGuitarImg}
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
       width={12032 / X}
       height={10024 / X}
+      placeholder="blur"
+      priority // loads the image first over verything else since its the largest but for some reason the slowest to load out of all my images...
     />
   );
 }

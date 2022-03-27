@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
+import seanTutoringImg from '../../public/pics/sean_mel_.png';
 
 const AboutTitle = `Sean Keegan`;
 
@@ -29,10 +30,12 @@ const X = 3;
 function Family() {
   return (
     <Image
-      src="/pics/sean_mel_.png"
+      src={seanTutoringImg}
       alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
       width={8300 / X}
       height={9752 / X}
+      placeholder="blur"
+      priority
     />
   );
 }
