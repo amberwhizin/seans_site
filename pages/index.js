@@ -8,10 +8,6 @@ import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/biggest_marjanNo.png';
 
 const Container = styled.div`
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
