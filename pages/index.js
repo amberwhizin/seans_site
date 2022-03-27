@@ -49,7 +49,9 @@ const polySkewMobile = 40;
 const mobileTop = 4;
 
 const TutorContainer = styled.div`
-  height: 50%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   :hover {
     cursor: pointer;
     & ${HomeLink} {
@@ -58,8 +60,11 @@ const TutorContainer = styled.div`
   }
 `;
 const MusicContainer = styled.div`
-  height: 50%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   transition: background-color 2s, transform 0s;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
   :hover {
     cursor: pointer;
     & ${HomeLink} {
@@ -70,7 +75,6 @@ const MusicContainer = styled.div`
 
 const Heading = `Sean Keegan`;
 const Title = styled.h1`
-  /* clip-path  is messing with whats on top.*/
   color: #f4e9cd;
   z-index: 1;
   font-size: 9rem;
@@ -150,7 +154,6 @@ const MusicImage = () => {
     </ImageContainer>
   );
 };
-
 const TutoringImage = () => {
   return (
     <ImageContainer>
@@ -189,6 +192,12 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
+          <TutorContainer onClick={onClickTutoring}>
+            <TutoringImage />
+            {/* <StyledTutor> */}
+            {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
+            {/* </StyledTutor> */}
+          </TutorContainer>
           {/* <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title> */}
           <MusicContainer onClick={onClickMusic}>
             <MusicImage />
@@ -196,12 +205,6 @@ const HomePage = () => {
             {/* <HomeLink onClick={onClickMusic}>Music</HomeLink> */}
             {/* </StyledMusic> */}
           </MusicContainer>
-          <TutorContainer onClick={onClickTutoring}>
-            <TutoringImage />
-            {/* <StyledTutor> */}
-            {/* <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink> */}
-            {/* </StyledTutor> */}
-          </TutorContainer>
         </>
       )}
       {isTabletOrMobile && (
