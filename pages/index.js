@@ -7,6 +7,7 @@ import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
 import GreenTapeImg from '../public/pics/cropped_green_label.png';
+import MobileGreenTape from '../public/pics/7.png';
 
 const Container = styled.div`
   width: 100%;
@@ -32,8 +33,8 @@ const TutorContainer = styled.div`
     cursor: pointer;
     opacity: 0.8;
   }
-  @media (max-width: 1438px) {
-    clip-path: polygon(100% 0, 0% 100%, 0 0);
+  @media (max-width: 820px) {
+    clip-path: inset(0 0 50% 0);
   }
 `;
 // https://bennettfeely.com/clippy/
@@ -52,8 +53,9 @@ const MusicContainer = styled.div`
     opacity: 0.9;
   }
 
-  @media (max-width: 1438px) {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  @media (max-width: 820px) {
+    border: 2px solid red;
+    clip-path: inset(50% 0 0 0);
   }
 `;
 
@@ -63,7 +65,6 @@ const StyledTutor = styled.div`
   left: 7vw;
   bottom: 73vh;
   color: #343a40;
-  /* text-shadow: grey 1px 0 2px; */
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
   @media (max-width: 1438px) {
@@ -71,8 +72,8 @@ const StyledTutor = styled.div`
     /* margin-right: 0; */
     /* margin-bottom: 100px; */
   }
-  @media (max-width: 340px) {
-    margin-bottom: 50px;
+  @media (max-width: 820px) {
+    border: 2px solid red;
   }
 `;
 
@@ -89,8 +90,8 @@ const StyledMusic = styled.div`
     /* margin-right: 0; */
     /* margin-top: 100px; */
   }
-  @media (max-width: 340px) {
-    margin-top: 50px;
+  @media (max-width: 820px) {
+    border: 2px solid red;
   }
 `;
 
@@ -120,28 +121,27 @@ const HomeLink = styled.a`
 const Title = styled.div`
   z-index: 1;
   position: fixed;
+  display: block;
   margin: 0;
   padding: 0;
   top: 25vh;
   left: 31vw;
   width: 40%;
-  /* opacity: 0.9; */
+  height: auto;
+  /* max-width: 100%;
+  max-height: 20vh; */
+  border: 5px solid purple;
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
       return 'translate(-50%, -50%) rotate(360deg);';
     }
-    return;
+    return 'translate(-50%, -50%) rotate(0);';
   }};
-  @media (max-width: 1438px) {
-    font-size: 5rem;
-    top: 48%;
-  }
-  @media (max-width: 340px) {
-    font-size: 4rem;
-  }
-  @media (max-width: 270px) {
-    font-size: 3.5rem;
+
+  @media (min-width: 820px) {
+    border: 2px solid red;
+    top: 38vh;
   }
 `;
 
@@ -168,7 +168,7 @@ const MusicImage = () => {
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        // priority
+        priority
       />
     </ImageContainerMuisc>
   );
@@ -182,7 +182,7 @@ const TutoringImage = () => {
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        // priority
+        priority
       />
     </ImageContainerTutor>
   );
@@ -239,30 +239,27 @@ const HomePage = () => {
       )}
       {isTabletOrMobile && (
         <>
-          <>
-            <TutorContainer onClick={onClickTutoring}>
-              <TutoringImage />
-              <HomeLink onClick={onClickTutoring}>
-                <StyledTutor>TUTORING</StyledTutor>
-              </HomeLink>
-            </TutorContainer>
-          </>
-          <>
-            <Title wasTutoringClicked={wasTutoringClicked}>
-              <Image
-                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
-                src={GreenTapeImg}
-              />
-            </Title>
-          </>
-          <>
-            <MusicContainer onClick={onClickMusic}>
-              <MusicImage />
-              <HomeLink onClick={onClickMusic}>
-                <StyledMusic>MUSIC</StyledMusic>
-              </HomeLink>
-            </MusicContainer>
-          </>
+          <TutorContainer onClick={onClickTutoring}>
+            <TutoringImage />
+            <HomeLink onClick={onClickTutoring}>
+              <StyledTutor>TUTORING</StyledTutor>
+            </HomeLink>
+          </TutorContainer>
+          {/* <Title wasTutoringClicked={wasTutoringClicked}> */}
+            <Image
+              src={MobileGreenTape}
+              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+              layout="responsive"
+              width={937}
+              height={261}
+            />
+          {/* </Title> */}
+          <MusicContainer onClick={onClickMusic}>
+            <MusicImage />
+            <HomeLink onClick={onClickMusic}>
+              <StyledMusic>MUSIC</StyledMusic>
+            </HomeLink>
+          </MusicContainer>
         </>
       )}
       <RandomNoteDrop

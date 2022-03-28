@@ -30,10 +30,8 @@ function Family() {
     <Image
       src={seanGuitarImg}
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      // width={12032 / X}
-      // height={10024 / X}
       placeholder="blur"
-      priority // loads the image first over everything else since its the largest but for some reason the slowest to load out of all my images...
+      priority 
     />
   );
 }
