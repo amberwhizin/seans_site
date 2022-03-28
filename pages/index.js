@@ -18,14 +18,86 @@ const Container = styled.div`
   }
 `;
 
+const TutorContainer = styled.div`
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(100% 0, 0% 100%, 0 0);
+  
+  :hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  @media (max-width: 1438px) {
+    clip-path: polygon(100% 0, 0% 100%, 0 0);
+  }
+`;
+// https://bennettfeely.com/clippy/
+const MusicContainer = styled.div`
+  /* filter: grayscale(100%); */
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  :hover {
+    cursor: pointer;
+    opacity: 0.878;
+  }
+  @media (max-width: 1438px) {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+`;
+
+const StyledTutor = styled.div`
+  border: 3px solid red;
+  z-index: 100;
+  position: absolute;
+  left: 7vw;
+  bottom: 73vh;
+  @media (max-width: 1438px) {
+    /* bottom: 0; */
+    /* margin-right: 0; */
+    /* margin-bottom: 100px; */
+  }
+  @media (max-width: 340px) {
+    margin-bottom: 50px;
+  }
+`;
+
+
+
+const StyledMusic = styled.div`
+  border: 4px solid orange;
+  position: absolute;
+  top: 73vh;
+  /* bottom: 10vh; */
+  /* left: 0; */
+  right: 7vw;
+
+  @media (max-width: 1438px) {
+    /* margin-right: 0; */
+    /* margin-top: 100px; */
+  }
+  @media (max-width: 340px) {
+    margin-top: 50px;
+  }
+`;
+
 const HomeLink = styled.a`
-  /* border: 4px solid red; */
   text-decoration: none;
-  font-size: 4rem;
-  color: #f4e9cd;
-  &:hover,
-  &:focus {
-    color: #9dbebb;
+  font-size: 156px;
+  color: black;
+  :hover {
+    cursor: pointer;
+    color: #212529;
   }
   @media (max-width: 1438px) {
     font-size: 45px;
@@ -43,45 +115,14 @@ const HomeLink = styled.a`
   }
 `;
 
-// https://bennettfeely.com/clippy/
-// these are the controls for the skew, and skew position!
-const desktopLeft = 6;
-const polySkewDesktop = 15;
-const polySkewMobile = 40;
-const mobileTop = 4;
-
-const TutorContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  :hover {
-    cursor: pointer;
-    & ${HomeLink} {
-      color: #9dbebb;
-    }
-  }
-`;
-const MusicContainer = styled.div`
-  filter: grayscale(100%);
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  transition: background-color 2s, transform 0s;
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
-  :hover {
-    cursor: pointer;
-    & ${HomeLink} {
-      color: #9dbebb;
-    }
-  }
-`;
-
-const Title = styled.h1`
+const Title = styled.div`
   z-index: 1;
   position: fixed;
-  top: 10vw;
+  margin: 0;
+  padding: 0;
+  top: 21vh;
   left: 31vw;
-  width: 45%;
+  width: 42%;
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
@@ -98,35 +139,6 @@ const Title = styled.h1`
   }
   @media (max-width: 270px) {
     font-size: 3.5rem;
-  }
-`;
-
-const StyledMusic = styled.h2`
-  z-index: 1;
-  text-align: center;
-  position: fixed;
-  margin-right: ${polySkewDesktop + desktopLeft}%;
-  @media (max-width: 1438px) {
-    top: 0;
-    margin-right: 0;
-    margin-top: 100px;
-  }
-  @media (max-width: 340px) {
-    margin-top: 50px;
-  }
-`;
-
-const StyledTutor = styled.h2`
-
-  text-align: center;
-  position: fixed;
-  @media (max-width: 1438px) {
-    bottom: 0;
-    margin-right: 0;
-    margin-bottom: 100px;
-  }
-  @media (max-width: 340px) {
-    margin-bottom: 50px;
   }
 `;
 
@@ -188,41 +200,58 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <TutorContainer onClick={onClickTutoring}>
-            <TutoringImage />
-            <StyledTutor>
-              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-            </StyledTutor>
-          </TutorContainer>
-          <Title wasTutoringClicked={wasTutoringClicked}>
-            <Image
-              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
-              src={GreenTapeImg}
-            />
-          </Title>
-          <MusicContainer onClick={onClickMusic}>
-            <MusicImage />
-            <StyledMusic>
-              <HomeLink onClick={onClickMusic}>Music</HomeLink>
-            </StyledMusic>
-          </MusicContainer>
+          <>
+            <TutorContainer onClick={onClickTutoring}>
+              <TutoringImage />
+              <HomeLink onClick={onClickTutoring}>
+                <StyledTutor>Tutoring</StyledTutor>
+              </HomeLink>
+            </TutorContainer>
+          </>
+          <>
+            <Title wasTutoringClicked={wasTutoringClicked}>
+              <Image
+                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+                src={GreenTapeImg}
+              />
+            </Title>
+          </>
+          <>
+            <MusicContainer onClick={onClickMusic}>
+              <MusicImage />
+              <HomeLink onClick={onClickMusic}>
+                <StyledMusic>Music</StyledMusic>
+              </HomeLink>
+            </MusicContainer>
+          </>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <Title wasTutoringClicked={wasTutoringClicked}>{}</Title>
-          <MusicContainer onClick={onClickMusic}>
-            <MusicImage />
-            <StyledMusic>
-              <HomeLink onClick={onClickMusic}>Music</HomeLink>
-            </StyledMusic>
-          </MusicContainer>
-          <TutorContainer onClick={onClickTutoring}>
-            <StyledTutor>
-              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
+          <>
+            <TutorContainer onClick={onClickTutoring}>
               <TutoringImage />
-            </StyledTutor>
-          </TutorContainer>
+              <HomeLink onClick={onClickTutoring}>
+                <StyledTutor>Tutoring</StyledTutor>
+              </HomeLink>
+            </TutorContainer>
+          </>
+          <>
+            <Title wasTutoringClicked={wasTutoringClicked}>
+              <Image
+                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+                src={GreenTapeImg}
+              />
+            </Title>
+          </>
+          <>
+            <MusicContainer onClick={onClickMusic}>
+              <MusicImage />
+              <HomeLink onClick={onClickMusic}>
+                <StyledMusic>Music</StyledMusic>
+              </HomeLink>
+            </MusicContainer>
+          </>
         </>
       )}
       <RandomNoteDrop
