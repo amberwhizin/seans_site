@@ -11,7 +11,6 @@ import GreenTapeImg from '../public/pics/cropped_green_label.png';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  font-family: 'Playfair Display SC', serif;
   @media (max-width: 1438px) {
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@ const TutorContainer = styled.div`
 
   :hover {
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.9;
   }
   @media (max-width: 1438px) {
     clip-path: polygon(100% 0, 0% 100%, 0 0);
@@ -39,7 +38,7 @@ const TutorContainer = styled.div`
 `;
 // https://bennettfeely.com/clippy/
 const MusicContainer = styled.div`
-  filter: grayscale(100%);
+  filter: grayscale(1);
   position: fixed;
   overflow: hidden;
   height: 100%;
@@ -52,17 +51,21 @@ const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.878;
   }
+
   @media (max-width: 1438px) {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
   }
 `;
 
 const StyledTutor = styled.div`
-  /* border: 3px solid red; */
   z-index: 100;
   position: absolute;
-  left: 7vw;
+  left: 6vw;
   bottom: 73vh;
+  color: #2c3237;
+  /* text-shadow: grey 1px 0 2px; */
+  font-family: 'Cutive Mono', monospace;
+  font-size: 9rem;
   @media (max-width: 1438px) {
     /* bottom: 0; */
     /* margin-right: 0; */
@@ -74,13 +77,15 @@ const StyledTutor = styled.div`
 `;
 
 const StyledMusic = styled.div`
-  /* border: 4px solid orange; */
   position: absolute;
-  top: 73vh;
-  /* bottom: 10vh; */
-  /* left: 0; */
-  right: 7vw;
-
+  top: 70vh;
+  right: 6vw;
+  color: #343a40;
+  font-family: 'Metal Mania', cursive;
+  font-weight: bold;
+  font-size: 10rem;
+  letter-spacing: 0.9rem;
+  filter: blur(0);
   @media (max-width: 1438px) {
     /* margin-right: 0; */
     /* margin-top: 100px; */
@@ -93,10 +98,9 @@ const StyledMusic = styled.div`
 const HomeLink = styled.a`
   text-decoration: none;
   font-size: 9rem;
-  color: black;
   :hover {
     cursor: pointer;
-    color: #212529;
+    opacity: 0.7;
   }
   @media (max-width: 1438px) {
     font-size: 45px;
@@ -119,9 +123,10 @@ const Title = styled.div`
   position: fixed;
   margin: 0;
   padding: 0;
-  top: 21vh;
+  top: 25vh;
   left: 31vw;
-  width: 42%;
+  width: 40%;
+  /* opacity: 0.9; */
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
@@ -141,15 +146,23 @@ const Title = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainerTutor = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  filter: blur(1px);
+`;
+const ImageContainerMuisc = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+  opacity: 0.7;
 `;
 
 const MusicImage = () => {
   return (
-    <ImageContainer>
+    <ImageContainerMuisc>
       <Image
         src={BackgroundMusic}
         alt="an image of three pieces of ripped sheet music on top one another"
@@ -158,12 +171,12 @@ const MusicImage = () => {
         placeholder="blur"
         // priority
       />
-    </ImageContainer>
+    </ImageContainerMuisc>
   );
 };
 const TutoringImage = () => {
   return (
-    <ImageContainer>
+    <ImageContainerTutor>
       <Image
         src={BackgroundTutoring}
         alt="image of lined paper for usually used for school work"
@@ -172,7 +185,7 @@ const TutoringImage = () => {
         placeholder="blur"
         // priority
       />
-    </ImageContainer>
+    </ImageContainerTutor>
   );
 };
 
@@ -203,7 +216,7 @@ const HomePage = () => {
             <TutorContainer onClick={onClickTutoring}>
               <TutoringImage />
               <HomeLink onClick={onClickTutoring}>
-                <StyledTutor>Tutoring</StyledTutor>
+                <StyledTutor>TUTORING</StyledTutor>
               </HomeLink>
             </TutorContainer>
           </>
@@ -217,9 +230,9 @@ const HomePage = () => {
           </>
           <>
             <MusicContainer onClick={onClickMusic}>
-              <MusicImage />
+              <MusicImage ifMusicImageExists={MusicImage} />
               <HomeLink onClick={onClickMusic}>
-                <StyledMusic>Music</StyledMusic>
+                <StyledMusic>MUSIC</StyledMusic>
               </HomeLink>
             </MusicContainer>
           </>
@@ -231,7 +244,7 @@ const HomePage = () => {
             <TutorContainer onClick={onClickTutoring}>
               <TutoringImage />
               <HomeLink onClick={onClickTutoring}>
-                <StyledTutor>Tutoring</StyledTutor>
+                <StyledTutor>TUTORING</StyledTutor>
               </HomeLink>
             </TutorContainer>
           </>
@@ -247,7 +260,7 @@ const HomePage = () => {
             <MusicContainer onClick={onClickMusic}>
               <MusicImage />
               <HomeLink onClick={onClickMusic}>
-                <StyledMusic>Music</StyledMusic>
+                <StyledMusic>MUSIC</StyledMusic>
               </HomeLink>
             </MusicContainer>
           </>
