@@ -30,7 +30,7 @@ const TutorContainer = styled.div`
 
   :hover {
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.8;
   }
   @media (max-width: 1438px) {
     clip-path: polygon(100% 0, 0% 100%, 0 0);
@@ -49,7 +49,7 @@ const MusicContainer = styled.div`
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
   :hover {
     cursor: pointer;
-    opacity: 0.878;
+    opacity: 0.9;
   }
 
   @media (max-width: 1438px) {
@@ -60,12 +60,12 @@ const MusicContainer = styled.div`
 const StyledTutor = styled.div`
   z-index: 100;
   position: absolute;
-  left: 6vw;
+  left: 7vw;
   bottom: 73vh;
-  color: #2c3237;
+  color: #343a40;
   /* text-shadow: grey 1px 0 2px; */
   font-family: 'Cutive Mono', monospace;
-  font-size: 9rem;
+  font-size: 8.5rem;
   @media (max-width: 1438px) {
     /* bottom: 0; */
     /* margin-right: 0; */
@@ -78,12 +78,11 @@ const StyledTutor = styled.div`
 
 const StyledMusic = styled.div`
   position: absolute;
-  top: 70vh;
-  right: 6vw;
+  top: 69vh;
+  right: 4vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
-  /* font-weight: bold; */
-  font-size: 10rem;
+  font-size: 9.5rem;
   letter-spacing: 1rem;
   filter: blur(0);
   @media (max-width: 1438px) {
@@ -100,7 +99,7 @@ const HomeLink = styled.a`
   font-size: 9rem;
   :hover {
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.9;
   }
   @media (max-width: 1438px) {
     font-size: 45px;
