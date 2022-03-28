@@ -23,7 +23,7 @@ const HiddenNotes = styled.div.attrs((props) => ({
     transform: getTransform(props),
   },
 }))`
-  color: white;
+  color: black;
   position: fixed;
   top: -300px;
 `;
