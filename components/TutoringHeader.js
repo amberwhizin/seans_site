@@ -47,10 +47,10 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
-const Logo = styled.div`
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 3rem;
-`;
+// const Logo = styled.div`
+//   font-family: 'Shadows Into Light', cursive;
+//   font-size: 3rem;
+// `;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -58,7 +58,7 @@ const NavItem = ({ href, children, left }) => {
   return (
     <NavLi left={left}>
       <Link href={href} passHref>
-        {/* is it going to index first? easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale? */}
+        {/* is it going to index first- easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale */}
         <StyledLink isActive={isActive}>{children}</StyledLink>
       </Link>
     </NavLi>
@@ -74,7 +74,7 @@ const TutoringHeader = ({ copy }) => {
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            <Logo>{navBarTutor.home}</Logo>
+            {navBarTutor.home}
           </NavItem>
         )}
 

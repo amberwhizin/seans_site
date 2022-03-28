@@ -47,10 +47,10 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
-const Logo = styled.div`
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 3rem;
-`;
+// const Logo = styled.div`
+//   font-family: 'Shadows Into Light', cursive;
+//   font-size: 3rem;
+// `;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -74,7 +74,7 @@ const MusicHeader = ({ copy }) => {
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            <Logo>{navBarMusic.home}</Logo>
+            {navBarMusic.home}
           </NavItem>
         )}
 
