@@ -19,14 +19,19 @@ const Container = styled.div`
 
 const Description = styled.p`
   margin: 0 auto;
-  padding: 5rem;
+  padding: 4rem;
   font-size: 2rem;
-  font-family: 'Cinzel Decorative', cursive;
   @media (max-width: 1438px) {
     text-align: center;
     font-size: 1rem;
     padding: 3rem;
-  } 
+  }
+`;
+
+const EmailBorder = styled.p`
+  border: 1px solid white;
+  padding: 2rem;
+  font-size: 2.5rem ;
 `;
 
 const Contact = ({ copy }) => {
@@ -38,7 +43,9 @@ const Contact = ({ copy }) => {
         <>
           <h1>{contact.title}</h1>
           <Description>{contact.blurb}</Description>
-          <Description>{contact.email}</Description>
+          <Description>
+            <EmailBorder>{contact.email}</EmailBorder>
+          </Description>
         </>
       )}
       {isTabletOrMobile && (
@@ -46,7 +53,6 @@ const Contact = ({ copy }) => {
           <h1>{contact.title}</h1>
           <Description>{contact.blurb}</Description>
           <Description>{contact.email}</Description>
-
         </>
       )}
     </Container>
