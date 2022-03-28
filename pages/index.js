@@ -82,9 +82,9 @@ const StyledMusic = styled.div`
   right: 6vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 10rem;
-  letter-spacing: 0.9rem;
+  letter-spacing: 1rem;
   filter: blur(0);
   @media (max-width: 1438px) {
     /* margin-right: 0; */
