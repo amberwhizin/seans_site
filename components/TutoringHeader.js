@@ -47,6 +47,11 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
+const Logo = styled.div`
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 3rem;
+`;
+
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -69,7 +74,7 @@ const TutoringHeader = ({ copy }) => {
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            {navBarTutor.home}
+            <Logo>{navBarTutor.home}</Logo>
           </NavItem>
         )}
 
