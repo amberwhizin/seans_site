@@ -11,6 +11,7 @@ import GreenTapeImg from '../public/pics/cropped_green_label.png';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  font-family: 'Playfair Display SC', serif;
   @media (max-width: 1438px) {
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@ const TutorContainer = styled.div`
   align-items: center;
   justify-content: center;
   clip-path: polygon(100% 0, 0% 100%, 0 0);
-  
+
   :hover {
     cursor: pointer;
     opacity: 0.7;
@@ -38,7 +39,7 @@ const TutorContainer = styled.div`
 `;
 // https://bennettfeely.com/clippy/
 const MusicContainer = styled.div`
-  /* filter: grayscale(100%); */
+  filter: grayscale(100%);
   position: fixed;
   overflow: hidden;
   height: 100%;
@@ -57,7 +58,7 @@ const MusicContainer = styled.div`
 `;
 
 const StyledTutor = styled.div`
-  border: 3px solid red;
+  /* border: 3px solid red; */
   z-index: 100;
   position: absolute;
   left: 7vw;
@@ -72,10 +73,8 @@ const StyledTutor = styled.div`
   }
 `;
 
-
-
 const StyledMusic = styled.div`
-  border: 4px solid orange;
+  /* border: 4px solid orange; */
   position: absolute;
   top: 73vh;
   /* bottom: 10vh; */
@@ -93,7 +92,7 @@ const StyledMusic = styled.div`
 
 const HomeLink = styled.a`
   text-decoration: none;
-  font-size: 156px;
+  font-size: 9rem;
   color: black;
   :hover {
     cursor: pointer;
