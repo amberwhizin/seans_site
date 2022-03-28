@@ -21,4 +21,6 @@ todo 3/23/22
  - emily's designs, ask about lacing design through?
  - test mobile side of every page
 
- 
+ ####random note drop bugs
+ - only coming down on the left
+ - something when you click music it does go anywhere but random note works
