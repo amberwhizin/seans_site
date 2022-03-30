@@ -130,7 +130,6 @@ const Title = styled.div`
   top: 25vh;
   left: 31vw;
   width: 40%;
-  /* opacity: 0.9; */
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
@@ -138,16 +137,10 @@ const Title = styled.div`
     }
     return;
   }};
-  @media (max-width: 1438px) {
-    font-size: 5rem;
-    top: 48%;
+  @media (max-width: 414px) {
+    top: 41%;
   }
-  @media (max-width: 340px) {
-    font-size: 4rem;
-  }
-  @media (max-width: 270px) {
-    font-size: 3.5rem;
-  }
+ 
 `;
 
 const ImageContainerTutor = styled.div`
