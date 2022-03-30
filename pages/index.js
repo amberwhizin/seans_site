@@ -100,6 +100,12 @@ const StyledMusic = styled.div`
   font-size: 9.5rem;
   letter-spacing: 1rem;
   filter: blur(0);
+  /* media query */
+  @media (max-width: 414px) {
+    top: 40vh;
+    right: 16vw;
+    font-size: 4.5rem;
+  }
 `;
 
 const HomeLink = styled.a`
