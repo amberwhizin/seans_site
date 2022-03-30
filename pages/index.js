@@ -11,7 +11,14 @@ import GreenTapeImg from '../public/pics/cropped_green_label.png';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  @media (max-width: 1438px) {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 414px) {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,13 +34,17 @@ const TutorContainer = styled.div`
   align-items: center;
   justify-content: center;
   clip-path: polygon(100% 0, 0% 100%, 0 0);
-
   :hover {
     cursor: pointer;
     opacity: 0.8;
   }
-  @media (max-width: 1438px) {
-    clip-path: polygon(100% 0, 0% 100%, 0 0);
+  @media (max-width: 414px) {
+    width: 100%;
+    height: 50%;
+    clip-path: none;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
   }
 `;
 // https://bennettfeely.com/clippy/
@@ -43,9 +54,6 @@ const MusicContainer = styled.div`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
   :hover {
     cursor: pointer;
@@ -53,7 +61,13 @@ const MusicContainer = styled.div`
   }
 
   @media (max-width: 1438px) {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    width: 100%;
+    height: 50%;
+    clip-path: none;
+    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 `;
 
@@ -66,13 +80,15 @@ const StyledTutor = styled.div`
   /* text-shadow: grey 1px 0 2px; */
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
+
   @media (max-width: 1438px) {
     /* bottom: 0; */
     /* margin-right: 0; */
     /* margin-bottom: 100px; */
   }
-  @media (max-width: 340px) {
+  @media (max-width: 414) {
     margin-bottom: 50px;
+    border: 2px solid blue;
   }
 `;
 
@@ -85,12 +101,14 @@ const StyledMusic = styled.div`
   font-size: 9.5rem;
   letter-spacing: 1rem;
   filter: blur(0);
+
   @media (max-width: 1438px) {
     /* margin-right: 0; */
     /* margin-top: 100px; */
   }
   @media (max-width: 340px) {
     margin-top: 50px;
+    border: 2px solid red;
   }
 `;
 
@@ -118,6 +136,7 @@ const HomeLink = styled.a`
 `;
 
 const Title = styled.div`
+  display: block;
   z-index: 1;
   position: fixed;
   margin: 0;
@@ -129,7 +148,7 @@ const Title = styled.div`
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
-      return 'translate(-50%, -50%) rotate(360deg);';
+      return 'translate(-10%, -10%) rotate(380deg);';
     }
     return;
   }};
