@@ -84,9 +84,10 @@ const StyledTutor = styled.div`
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
+   /* media queries */
   @media (max-width: 414px) {
     left: 12vw;
-    bottom: 45vh;
+    bottom: 52vh;
     font-size: 4rem;
   }
 `;
@@ -100,9 +101,9 @@ const StyledMusic = styled.div`
   font-size: 9.5rem;
   letter-spacing: 1rem;
   filter: blur(0);
-  /* media query */
+  /* media queries */
   @media (max-width: 414px) {
-    top: 40vh;
+    top: 48vh;
     right: 16vw;
     font-size: 4.5rem;
   }
@@ -148,7 +149,9 @@ const Title = styled.div`
     return;
   }};
   @media (max-width: 414px) {
-    top: 41%;
+    top: 36%;
+    width: 80%;
+    left: 10vw;
   }
 `;
 
