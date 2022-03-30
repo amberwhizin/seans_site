@@ -24,6 +24,12 @@ const Container = styled.div`
     justify-content: space-around;
   }
 `;
+// https://bennettfeely.com/clippy/
+// these are the controls for the skew, and skew position!
+const desktopLeft = 6;
+const polySkewDesktop = 15;
+const polySkewMobile = 40;
+const mobileTop = 4;
 
 const TutorContainer = styled.div`
   position: fixed;
@@ -39,17 +45,16 @@ const TutorContainer = styled.div`
     opacity: 0.8;
   }
   @media (max-width: 414px) {
-    width: 100%;
-    height: 50%;
-    clip-path: none;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + polySkewMobile / 2}%;
+    background-color: purple;
+    flex: 1;
+    top: 0;
   }
 `;
 // https://bennettfeely.com/clippy/
 const MusicContainer = styled.div`
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   position: fixed;
   overflow: hidden;
   height: 100%;
@@ -59,15 +64,15 @@ const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
+  @media (max-width: 414px) {
+    /* height: 50%; */
+    height: ${50 - mobileTop + polySkewMobile / 2}%;
 
-  @media (max-width: 1438px) {
-    width: 100%;
-    height: 50%;
-    clip-path: none;
-    /* margin-top: 10px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: red;
+    /* right: 0; */
+    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
+    flex: 1;
+    bottom: 0;
   }
 `;
 
@@ -80,16 +85,6 @@ const StyledTutor = styled.div`
   /* text-shadow: grey 1px 0 2px; */
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
-
-  @media (max-width: 1438px) {
-    /* bottom: 0; */
-    /* margin-right: 0; */
-    /* margin-bottom: 100px; */
-  }
-  @media (max-width: 414) {
-    margin-bottom: 50px;
-    border: 2px solid blue;
-  }
 `;
 
 const StyledMusic = styled.div`
@@ -101,15 +96,6 @@ const StyledMusic = styled.div`
   font-size: 9.5rem;
   letter-spacing: 1rem;
   filter: blur(0);
-
-  @media (max-width: 1438px) {
-    /* margin-right: 0; */
-    /* margin-top: 100px; */
-  }
-  @media (max-width: 340px) {
-    margin-top: 50px;
-    border: 2px solid red;
-  }
 `;
 
 const HomeLink = styled.a`
@@ -260,7 +246,7 @@ const HomePage = () => {
         <>
           <>
             <TutorContainer onClick={onClickTutoring}>
-              <TutoringImage />
+              {/* <TutoringImage /> */}
               <HomeLink onClick={onClickTutoring}>
                 <StyledTutor>TUTORING</StyledTutor>
               </HomeLink>
@@ -276,7 +262,7 @@ const HomePage = () => {
           </>
           <>
             <MusicContainer onClick={onClickMusic}>
-              <MusicImage />
+              {/* <MusicImage /> */}
               <HomeLink onClick={onClickMusic}>
                 <StyledMusic>MUSIC</StyledMusic>
               </HomeLink>
