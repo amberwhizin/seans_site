@@ -47,14 +47,14 @@ const TutorContainer = styled.div`
   @media (max-width: 414px) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + polySkewMobile / 2}%;
-    background-color: purple;
+    /* background-color: purple; */
     flex: 1;
     top: 0;
   }
 `;
 // https://bennettfeely.com/clippy/
 const MusicContainer = styled.div`
-  /* filter: grayscale(1); */
+  filter: grayscale(1);
   position: fixed;
   overflow: hidden;
   height: 100%;
@@ -68,7 +68,7 @@ const MusicContainer = styled.div`
     /* height: 50%; */
     height: ${50 - mobileTop + polySkewMobile / 2}%;
 
-    background-color: red;
+    /* background-color: red; */
     /* right: 0; */
     clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
     flex: 1;
@@ -82,9 +82,13 @@ const StyledTutor = styled.div`
   left: 7vw;
   bottom: 73vh;
   color: #343a40;
-  /* text-shadow: grey 1px 0 2px; */
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
+  @media (max-width: 414px) {
+    left: 12vw;
+    bottom: 45vh;
+    font-size: 4rem;
+  }
 `;
 
 const StyledMusic = styled.div`
@@ -140,7 +144,6 @@ const Title = styled.div`
   @media (max-width: 414px) {
     top: 41%;
   }
- 
 `;
 
 const ImageContainerTutor = styled.div`
@@ -239,7 +242,7 @@ const HomePage = () => {
         <>
           <>
             <TutorContainer onClick={onClickTutoring}>
-              {/* <TutoringImage /> */}
+              <TutoringImage />
               <HomeLink onClick={onClickTutoring}>
                 <StyledTutor>TUTORING</StyledTutor>
               </HomeLink>
@@ -255,7 +258,7 @@ const HomePage = () => {
           </>
           <>
             <MusicContainer onClick={onClickMusic}>
-              {/* <MusicImage /> */}
+              <MusicImage />
               <HomeLink onClick={onClickMusic}>
                 <StyledMusic>MUSIC</StyledMusic>
               </HomeLink>
