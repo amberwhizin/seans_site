@@ -20,6 +20,10 @@ const Button = styled.button`
   :hover {
     cursor: pointer;
   }
+  width: 70px;
+  @media (max-width: 414px) {
+    width: 60px;
+  }
 `;
 const CloseContainer = styled.div`
   position: absolute;
