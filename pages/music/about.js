@@ -46,18 +46,29 @@ const TextContainer = styled.div`
   display: block;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   padding: 2rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  @media (max-width: 820px) {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    line-height: 1.7;
+  }
 `;
 
 const HeaderContainer = styled.h1`
   margin: 0;
   font-size: 3.5rem;
-  @media (max-width: 1438px) {
+  @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
     display: flex;
     flex-direction: row;
     font-size: 3.5rem;
+    @media (max-width: 820px) {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -78,12 +89,13 @@ const About = () => {
       )}
       {isTabletOrMobile && (
         <>
+            <HeaderContainer>{AboutTitle}</HeaderContainer>
           <ImageContainer>
             <Family />
           </ImageContainer>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
-
-          <p>{AboutBlurb}</p>
+          <TextContainer>
+            <p>{AboutBlurb}</p>
+          </TextContainer>
         </>
       )}
     </Container>
