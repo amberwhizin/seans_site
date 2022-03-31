@@ -47,6 +47,11 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
+// const Logo = styled.div`
+//   font-family: 'Shadows Into Light', cursive;
+//   font-size: 3rem;
+// `;
+
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -68,13 +73,10 @@ const MusicHeader = ({ copy }) => {
     <header>
       <NavUl>
         {!isTabletOrMobile && (
-          <NavItem href="/" left>
-            {navBarMusic.home}
-          </NavItem>
-        )}
-
-        {!isTabletOrMobile && (
           <>
+            <NavItem href="/" left>
+              {navBarMusic.home}
+            </NavItem>
             <NavItem href="/music/about">{navBarMusic.about}</NavItem>
             <NavItem href="/music/videoGallery">
               {navBarMusic.videoGallery}
@@ -94,7 +96,7 @@ const MusicHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <MusicDropdownMenu />}
+            <MusicDropdownMenu />
           </>
         )}
       </NavUl>

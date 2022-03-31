@@ -47,13 +47,18 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
+// const Logo = styled.div`
+//   font-family: 'Shadows Into Light', cursive;
+//   font-size: 3rem;
+// `;
+
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
     <NavLi left={left}>
       <Link href={href} passHref>
-        {/* is it going to index first? easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale? */}
+        {/* is it going to index first- easy way to get rid of this, just go straight to about page and not the homepage of each side...investigate locale */}
         <StyledLink isActive={isActive}>{children}</StyledLink>
       </Link>
     </NavLi>
@@ -64,17 +69,15 @@ const TutoringHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBarTutor = {} } = copy;
   const homeDivided = (navBarTutor.home || '').split(' ');
+
   return (
     <header>
       <NavUl>
         {!isTabletOrMobile && (
-          <NavItem href="/" left>
-            {navBarTutor.home}
-          </NavItem>
-        )}
-
-        {!isTabletOrMobile && (
           <>
+            <NavItem href="/" left>
+              {navBarTutor.home}
+            </NavItem>
             {/* adding extra header information to split between both sides */}
             <NavItem href="/tutoring/about">{navBarTutor.about}</NavItem>
             <NavItem href="/tutoring/subjects">{navBarTutor.subjects}</NavItem>
@@ -95,7 +98,7 @@ const TutoringHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <TutoringDropdownMenu />}
+            <TutoringDropdownMenu />
           </>
         )}
       </NavUl>

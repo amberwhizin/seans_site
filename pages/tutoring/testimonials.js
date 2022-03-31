@@ -69,6 +69,7 @@ const ReadMoreButton = styled.button`
   align-self: end;
   :hover {
     color: grey;
+    cursor: pointer;
   }
   @media (max-width: 1438px) {
     margin-right: 0;

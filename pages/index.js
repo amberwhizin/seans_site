@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../hooks';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
+import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
+import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
+import GreenTapeImg from '../public/pics/cropped_green_label.png';
 
 const Container = styled.div`
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -12,22 +18,198 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  @media (max-width: 1438px) {
+  @media (max-width: 414px) {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 `;
+// https://bennettfeely.com/clippy/
+// these are the controls for the skew, and skew position!
+const desktopLeft = 6;
+const polySkewDesktop = 15;
+const polySkewMobile = 40;
+const mobileTop = 4;
 
-// target
+const TutorContainer = styled.div`
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(100% 0, 0% 100%, 0 0);
+  :hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  /* ipad , ipad air & ipad mini */
+  @media (max-width: 820px) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + 100 / 2}%;
+    /* background-color: purple; */
+    flex: 1;
+    top: 0;
+  }
+  /* iphone 8 & iphone 8 plus max-width */
+  @media (max-width: 414px) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + polySkewMobile / 2}%;
+    flex: 1;
+    top: 0;
+  }
+`;
+// https://bennettfeely.com/clippy/
+const MusicContainer = styled.div`
+  filter: grayscale(1);
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  /* ipad , ipad air & ipad mini */
+  @media (max-width: 820px) {
+    clip-path: polygon(0 57%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 50 / 2}%;
+    flex: 1;
+    bottom: 0;
+  }
+  @media (max-width: 428px) {
+    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + polySkewMobile / 2}%;
+    flex: 1;
+    bottom: 0;
+  }
+  /* iphone 8 & iphone 8 plus max-width */
+  @media (max-width: 414px) {
+    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + polySkewMobile / 2}%;
+    flex: 1;
+    bottom: 0;
+  }
+  /* iphone 8 plus max-height */
+  @media (max-height: 736px) {
+    clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 45 / 2}%;
+  }
+  /* iphone 12/13 pro max */
+  @media (max-width: 375px) {
+    clip-path: polygon(0 47%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 45 / 2}%;
+  }
+  /* iphone 11 pro */
+  @media (max-height: 812px) {
+    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 45 / 2}%;
+  }
+  @media (max-width: 360px) {
+    clip-path: polygon(0 41%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 47 / 2}%;
+  }
+
+  @media (max-width: 340px) {
+    clip-path: polygon(0 55%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 50 / 2}%;
+  }
+`;
+
+const StyledTutor = styled.div`
+  z-index: 100;
+  position: absolute;
+  left: 7vw;
+  bottom: 73vh;
+  color: #343a40;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 8.5rem;
+  /* media queries */
+  @media (max-width: 1438px) {
+    left: 18vw;
+    top: 11%;
+    font-size: 6rem;
+  }
+   /* ipad , ipad air & ipad mini */
+  @media (max-width: 820px) {
+    left: 25vw;
+    top: 6%;
+    font-size: 5rem;
+  }
+  @media (max-width: 428px) {
+    left: 23vw;
+    top: 6%;
+    font-size: 3rem;
+  }
+  /* iphone 8 & iphone 8 plus max-width */
+  @media (max-width: 414px) {
+    left: 20vw;
+    top: 11%;
+    font-size: 3rem;
+  }
+  //my iphone se 2nd gen
+  @media (max-width: 340px) {
+    top: 13%;
+    left: 19.5vw;
+    font-size: 2.5rem;
+  }
+  @media (max-width: 270px) {
+    left: 25vw;
+    font-size: 1.7rem;
+  }
+`;
+
+const StyledMusic = styled.div`
+  position: absolute;
+  top: 69vh;
+  right: 4vw;
+  color: #343a40;
+  font-family: 'Metal Mania', cursive;
+  font-size: 9.5rem;
+  letter-spacing: 1rem;
+  filter: blur(0);
+  /* media queries */
+  @media (max-width: 1438px) {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+  }
+   /* ipad , ipad air & ipad mini */
+  @media (max-width: 820px) {
+    left: 33vw;
+    top: 77%;
+    font-size: 6rem;
+  }
+  @media (max-width: 428px) {
+    left: 31vw;
+    top: 81%;
+    font-size: 3rem;
+  }
+  /* iphone 8 & iphone 8 plus max-width */
+  @media (max-width: 414px) {
+    left: 29vw;
+    top: 80%;
+    font-size: 3rem;
+  }
+  //my iphone se 2nd gen
+  @media (max-width: 340px) {
+    top: 75%;
+    left: 25vw;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 270px) {
+    font-size: 1.7rem;
+  }
+`;
+
 const HomeLink = styled.a`
   text-decoration: none;
-  font-size: 4rem;
-  color: #f4e9cd;
-  &:hover,
-  &:focus {
-    color: #9dbebb;
+  font-size: 9rem;
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
   }
   @media (max-width: 1438px) {
     font-size: 45px;
@@ -45,168 +227,114 @@ const HomeLink = styled.a`
   }
 `;
 
-// https://bennettfeely.com/clippy/
-// these are the controls for the skew, and skew position!
-const desktopLeft = 6;
-const polySkewDesktop = 15;
-const polySkewMobile = 40;
-const mobileTop = 4;
-
-const MusicContainer = styled.div`
-  position: fixed;
-  overflow: hidden;
-  width: ${50 + desktopLeft + polySkewDesktop / 2}%;
-  height: 100%;
-  right: 0;
-  clip-path: polygon(0 0, 100% 0%, ${100 - polySkewDesktop}% 100%, 0% 100%);
-  left: 0;
-  background: #040707;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  :hover {
-    cursor: pointer;
-    background-color: #111f21;
-    & ${HomeLink} {
-      color: #9dbebb;
-    }
-  }
-  @media (max-width: 1438px) {
-    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
-    background: #040707;
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: ${50 + polySkewMobile / 2}%;
-    top: 0;
-  }
-`;
-
-const TutorContainer = styled.div`
-  position: fixed;
-  overflow: hidden;
-  width: ${50 - mobileTop + desktopLeft + polySkewDesktop / 2}%;
-  height: 100%;
-  right: 0;
-  clip-path: polygon(${polySkewDesktop}% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background: #468189;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 2s, transform 0s;
-  :hover {
-    cursor: pointer;
-    background-color: #4d8d96;
-    & ${HomeLink} {
-      color: #9dbebb;
-    }
-  }
-  @media (max-width: 1438px) {
-    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
-    background: #468189;
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: ${50 - mobileTop + polySkewMobile / 2}%;
-    bottom: 0;
-  }
-`;
-
-const Heading = `Sean Keegan`;
-
-const Title = styled.h1`
-  /* clip-path  is messing with whats on top.*/
-  color: #f4e9cd;
+const Title = styled.div`
+  display: block;
   z-index: 1;
-  font-size: 9rem;
   position: fixed;
-  top: 17vh;
-  left: 50vw;
-  text-align: center;
-  width: 100%;
-  font-family: 'Caveat', cursive;
   margin: 0;
   padding: 0;
+  top: 25vh;
+  left: 31vw;
+  width: 40%;
   transition: transform 1200ms;
   transform: ${(props) => {
     if (props.wasTutoringClicked) {
-      return 'translate(-50%, -50%) rotate(360deg);';
+      return 'translate(-10%, -10%) rotate(380deg);';
     }
-    return 'translate(-50%, -50%) rotate(0);';
+    return;
   }};
-  @media (max-width: 1438px) {
-    font-size: 5rem;
-    top: 48%;
+ /* ipad , ipad air & ipad mini */
+  @media (max-width: 820px) {
+    top: 33%;
+    width: 70%;
+    left: 14vw;
   }
+  /* iphone 12/13 pro max */
+  @media (max-width: 428px) {
+    top: 35%;
+    width: 80%;
+    left: 10vw;
+  }
+  //iphone 8 & iphone 8 plus, iphone xr width
+  @media (max-width: 414px) {
+    top: 35%;
+    left: 6vw;
+    width: 85%;
+  }
+  /* iphone se, iphone 11 pro */
+  @media (max-width: 375px) {
+    top: 36%;
+  }
+  /* iphone 11 pro -height */
+  @media (max-height: 812px) {
+    top: 32.5%;
+  }
+  //iphone 8 plus -height
+  @media (max-height: 736px) {
+    top: 29%;
+    left: 6vw;
+    width: 90%;
+  }
+  /* iphone se -height */
+  @media (max-height: 667px) {
+    top: 29%;
+  }
+  @media (max-width: 360px) {
+    top: 32%;
+  }
+  //iphone se 2nd gen
   @media (max-width: 340px) {
-    font-size: 4rem;
-  }
-  @media (max-width: 270px) {
-    font-size: 3.5rem;
+    top: 30%;
   }
 `;
 
-const StyledMusic = styled.h2`
-  text-align: center;
-  font-family: 'Metal Mania', cursive;
-  position: fixed;
-  margin-right: ${polySkewDesktop + desktopLeft}%;
-  @media (max-width: 1438px) {
-    top: 0;
-    margin-right: 0;
-    margin-top: 100px;
-  }
-  @media (max-width: 340px) {
-    margin-top: 50px;
-  }
+const ImageContainerTutor = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+`;
+const ImageContainerMuisc = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+  opacity: 0.7;
 `;
 
-const StyledTutor = styled.h2`
-  text-align: center;
-  font-family: 'Merienda', sans-serif;
-  position: fixed;
-  @media (max-width: 1438px) {
-    bottom: 0;
-    margin-right: 0;
-    margin-bottom: 100px;
-  }
-  @media (max-width: 340px) {
-    margin-bottom: 50px;
-  }
-`;
+const MusicImage = () => {
+  return (
+    <ImageContainerMuisc>
+      <Image
+        src={BackgroundMusic}
+        alt="an image of three pieces of ripped sheet music on top one another"
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+        priority
+      />
+    </ImageContainerMuisc>
+  );
+};
+const TutoringImage = () => {
+  return (
+    <ImageContainerTutor>
+      <Image
+        src={BackgroundTutoring}
+        alt="an image of lined paper usually used for school work"
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+        priority
+      />
+    </ImageContainerTutor>
+  );
+};
 
-const TutorQuote = `"Best Tutor EVER!!"`;
-const MusicQuote = `"Incredible, a must see!"`;
-
-const MusicParagraph = styled.p`
-  margin-top: 7rem;
-  color: #f4e9cd;
-  font-size: 2rem;
-  @media (max-width: 1438px) {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-  }
-`;
-const TutorParagraph = styled.p`
-  font-size: 2rem;
-  margin-top: 7rem;
-  color: #f4e9cd;
-  @media (max-width: 1438px) {
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-  }
-`;
 const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const router = useRouter();
+
   const [wasMusicClicked, setWasMusicClicked] = useState(false);
   const onClickMusic = () => {
     setWasMusicClicked(true);
@@ -226,36 +354,58 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
-          <MusicContainer onClick={onClickMusic}>
-            <StyledMusic>
-              <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
-            </StyledMusic>
-          </MusicContainer>
-          <TutorContainer onClick={onClickTutoring}>
-            <StyledTutor>
-              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
-            </StyledTutor>
-          </TutorContainer>
+          <>
+            <TutorContainer onClick={onClickTutoring}>
+              <TutoringImage />
+              <HomeLink onClick={onClickTutoring}>
+                <StyledTutor>TUTORING</StyledTutor>
+              </HomeLink>
+            </TutorContainer>
+          </>
+          <>
+            <Title wasTutoringClicked={wasTutoringClicked}>
+              <Image
+                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+                src={GreenTapeImg}
+              />
+            </Title>
+          </>
+          <>
+            <MusicContainer onClick={onClickMusic}>
+              <MusicImage ifMusicImageExists={MusicImage} />
+              <HomeLink onClick={onClickMusic}>
+                <StyledMusic>MUSIC</StyledMusic>
+              </HomeLink>
+            </MusicContainer>
+          </>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <Title wasTutoringClicked={wasTutoringClicked}>{Heading}</Title>
-          <MusicContainer onClick={onClickMusic}>
-            <StyledMusic>
-              <HomeLink onClick={onClickMusic}>Music</HomeLink>
-              <MusicParagraph>{MusicQuote}</MusicParagraph>
-            </StyledMusic>
-          </MusicContainer>
-          <TutorContainer onClick={onClickTutoring}>
-            <StyledTutor>
-              <HomeLink onClick={onClickTutoring}>Tutoring</HomeLink>
-              <TutorParagraph>{TutorQuote}</TutorParagraph>
-            </StyledTutor>
-          </TutorContainer>
+          <>
+            <TutorContainer onClick={onClickTutoring}>
+              <TutoringImage />
+              <HomeLink onClick={onClickTutoring}>
+                <StyledTutor>TUTORING</StyledTutor>
+              </HomeLink>
+            </TutorContainer>
+          </>
+          <>
+            <Title wasTutoringClicked={wasTutoringClicked}>
+              <Image
+                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+                src={GreenTapeImg}
+              />
+            </Title>
+          </>
+          <>
+            <MusicContainer onClick={onClickMusic}>
+              <MusicImage />
+              <HomeLink onClick={onClickMusic}>
+                <StyledMusic>MUSIC</StyledMusic>
+              </HomeLink>
+            </MusicContainer>
+          </>
         </>
       )}
       <RandomNoteDrop

@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
+import seanGuitarImg from '../../public/pics/sean_website.jpeg';
 
 const AboutTitle = `Sean Keegan`;
 
 const AboutBlurb = `
 Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
- 
 Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
- 
-Et ut nulla. Nesciunt nam eos vel cumque laborum. Rem numquam incidunt ipsum sapiente.`;
+Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.`;
 
 const Container = styled.div`
   margin-top: 6.5rem;
   margin-left: 2rem;
   display: flex;
   align-items: center;
-
+  justify-content: center;
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
@@ -29,34 +28,47 @@ const X = 3;
 function Family() {
   return (
     <Image
-      src="/pics/sean_website.jpeg"
+      src={seanGuitarImg}
       alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      width={12032 / X}
-      height={10024 / X}
+      // width={12032 / X}
+      // height={10024 / X}
+      placeholder="blur"
+      priority // loads the image first over everything else since its the largest but for some reason the slowest to load out of all my images...
     />
   );
 }
 
-const TextContainer = styled.div`
-  display: block;
-  padding: 0;
-  margin-right: 2rem;
-  margin-left: 2rem;
+const ImageContainer = styled.div`
+  padding: 1rem;
 `;
 
-const Text = styled.p`
-  font-family: 'Cinzel Decorative', cursive;
+const TextContainer = styled.div`
+  display: block;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  padding: 2rem;
+  line-height: 1.9;
+  @media (max-width: 820px) {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    line-height: 1.7;
+  }
 `;
+
 const HeaderContainer = styled.h1`
   margin: 0;
-  font-family: 'Metal Mania', cursive;
-  font-size: 5rem;
-  @media (max-width: 1438px) {
+  font-size: 3.5rem;
+  @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
     display: flex;
     flex-direction: row;
     font-size: 3.5rem;
+    @media (max-width: 820px) {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -66,18 +78,24 @@ const About = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <Family />
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <Text>{AboutBlurb}</Text>
+            <p>{AboutBlurb}</p>
           </TextContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
-          <Family />
-          <p>{AboutBlurb}</p>
+            <HeaderContainer>{AboutTitle}</HeaderContainer>
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
+          <TextContainer>
+            <p>{AboutBlurb}</p>
+          </TextContainer>
         </>
       )}
     </Container>

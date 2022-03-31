@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 const Button = styled.button`
   display: flex;
   align-items: center;
@@ -19,6 +20,10 @@ const Button = styled.button`
     cursor: pointer;
   }
   border: none;
+  width: 70px;
+  @media (max-width: 414px) {
+    width: 60px;
+  }
 `;
 const CloseContainer = styled.div`
   position: absolute;
