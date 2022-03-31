@@ -311,7 +311,7 @@ const MusicImage = () => {
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        // priority
+        priority
       />
     </ImageContainerMuisc>
   );
@@ -325,7 +325,7 @@ const TutoringImage = () => {
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        // priority
+        priority
       />
     </ImageContainerTutor>
   );
