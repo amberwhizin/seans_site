@@ -44,7 +44,7 @@ const TutorContainer = styled.div`
     cursor: pointer;
     opacity: 0.8;
   }
-  /* ipad */
+  /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
@@ -52,6 +52,7 @@ const TutorContainer = styled.div`
     flex: 1;
     top: 0;
   }
+  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + polySkewMobile / 2}%;
@@ -71,20 +72,20 @@ const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
-  /* ipad */
+  /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     clip-path: polygon(0 57%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + 50 / 2}%;
     flex: 1;
     bottom: 0;
   }
-  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 428px) {
     clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + polySkewMobile / 2}%;
     flex: 1;
     bottom: 0;
   }
+  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
     clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + polySkewMobile / 2}%;
@@ -131,18 +132,18 @@ const StyledTutor = styled.div`
     top: 11%;
     font-size: 6rem;
   }
+   /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     left: 25vw;
     top: 6%;
     font-size: 5rem;
   }
-
   @media (max-width: 428px) {
     left: 23vw;
     top: 6%;
     font-size: 3rem;
   }
-
+  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
     left: 20vw;
     top: 11%;
@@ -174,6 +175,7 @@ const StyledMusic = styled.div`
     font-size: 6rem;
     margin-bottom: 0.5rem;
   }
+   /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     left: 33vw;
     top: 77%;
@@ -184,7 +186,7 @@ const StyledMusic = styled.div`
     top: 81%;
     font-size: 3rem;
   }
-
+  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
     left: 29vw;
     top: 80%;
@@ -241,7 +243,7 @@ const Title = styled.div`
     }
     return;
   }};
-  /* ipad */
+ /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     top: 33%;
     width: 70%;
@@ -253,26 +255,33 @@ const Title = styled.div`
     width: 80%;
     left: 10vw;
   }
-
-  //iphone 8 & iphone 8 plus width
+  //iphone 8 & iphone 8 plus, iphone xr width
   @media (max-width: 414px) {
     top: 35%;
     left: 6vw;
     width: 85%;
   }
-  //iphone 8 plus height
-  @media (max-height: 736px) {
-    top: 32%;
-    left: 6vw;
-    width: 85%;
-  }
+  /* iphone se, iphone 11 pro */
   @media (max-width: 375px) {
-    top: 32%;
+    top: 36%;
+  }
+  /* iphone 11 pro -height */
+  @media (max-height: 812px) {
+    top: 32.5%;
+  }
+  //iphone 8 plus -height
+  @media (max-height: 736px) {
+    top: 29%;
+    left: 6vw;
+    width: 90%;
+  }
+  /* iphone se -height */
+  @media (max-height: 667px) {
+    top: 29%;
   }
   @media (max-width: 360px) {
     top: 32%;
   }
-
   //iphone se 2nd gen
   @media (max-width: 340px) {
     top: 30%;
