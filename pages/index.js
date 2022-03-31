@@ -64,11 +64,17 @@ const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
+  /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
     clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + polySkewMobile / 2}%;
     flex: 1;
     bottom: 0;
+  }
+  /* iphone 8 plus max-height */
+  @media (max-height: 736px) {
+    clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 45 / 2}%;
   }
   @media (max-width: 375px) {
     clip-path: polygon(0 47%, 100% 0%, 100% 100%, 0% 100%);
@@ -94,9 +100,9 @@ const StyledTutor = styled.div`
     font-size: 6rem;
   }
   @media (max-width: 414px) {
-    left: 15vw;
+    left: 18vw;
     top: 11%;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   //my iphone se 2nd gen
   @media (max-width: 340px) {
@@ -126,7 +132,7 @@ const StyledMusic = styled.div`
   @media (max-width: 414px) {
     left: 25vw;
     top: 80%;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   //my iphone se 2nd gen
   @media (max-width: 340px) {
@@ -179,14 +185,22 @@ const Title = styled.div`
     }
     return;
   }};
+  //iphone 8 & iphone 8 plus width
   @media (max-width: 414px) {
     top: 35%;
+    left: 6vw;
+    width: 85%;
+  }
+  //iphone 8 plus height
+  @media (max-height: 736px) {
+    top: 32%;
     left: 6vw;
     width: 85%;
   }
   @media (max-width: 375px) {
     top: 36%;
   }
+
   //iphone se 2nd gen
   @media (max-width: 340px) {
     top: 30%;
