@@ -69,17 +69,15 @@ const TutoringHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBarTutor = {} } = copy;
   const homeDivided = (navBarTutor.home || '').split(' ');
+
   return (
     <header>
       <NavUl>
         {!isTabletOrMobile && (
-          <NavItem href="/" left>
-            {navBarTutor.home}
-          </NavItem>
-        )}
-
-        {!isTabletOrMobile && (
           <>
+            <NavItem href="/" left>
+              {navBarTutor.home}
+            </NavItem>
             {/* adding extra header information to split between both sides */}
             <NavItem href="/tutoring/about">{navBarTutor.about}</NavItem>
             <NavItem href="/tutoring/subjects">{navBarTutor.subjects}</NavItem>
@@ -100,7 +98,7 @@ const TutoringHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <TutoringDropdownMenu />}
+            <TutoringDropdownMenu />
           </>
         )}
       </NavUl>

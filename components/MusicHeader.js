@@ -73,13 +73,10 @@ const MusicHeader = ({ copy }) => {
     <header>
       <NavUl>
         {!isTabletOrMobile && (
-          <NavItem href="/" left>
-            {navBarMusic.home}
-          </NavItem>
-        )}
-
-        {!isTabletOrMobile && (
           <>
+            <NavItem href="/" left>
+              {navBarMusic.home}
+            </NavItem>
             <NavItem href="/music/about">{navBarMusic.about}</NavItem>
             <NavItem href="/music/videoGallery">
               {navBarMusic.videoGallery}
@@ -99,7 +96,7 @@ const MusicHeader = ({ copy }) => {
                 ))}
               </MobileHome>
             </NavItem>
-            {isTabletOrMobile && <MusicDropdownMenu />}
+            <MusicDropdownMenu />
           </>
         )}
       </NavUl>
