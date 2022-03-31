@@ -65,14 +65,19 @@ const MusicContainer = styled.div`
     opacity: 0.9;
   }
   @media (max-width: 414px) {
-    /* height: 50%; */
-    height: ${50 - mobileTop + polySkewMobile / 2}%;
-
-    /* background-color: red; */
-    /* right: 0; */
     clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + polySkewMobile / 2}%;
     flex: 1;
     bottom: 0;
+  }
+  @media (max-width: 375px) {
+    clip-path: polygon(0 47%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 37 / 2}%;
+  }
+
+  @media (max-width: 340px) {
+    clip-path: polygon(0 55%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 50 / 2}%;
   }
 `;
 
@@ -84,11 +89,24 @@ const StyledTutor = styled.div`
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
-   /* media queries */
+  /* media queries */
+  @media (max-width: 1438px) {
+    font-size: 6rem;
+  }
   @media (max-width: 414px) {
-    left: 12vw;
-    bottom: 52vh;
-    font-size: 4rem;
+    left: 15vw;
+    top: 11%;
+    font-size: 3.5rem;
+  }
+  //my iphone se 2nd gen
+  @media (max-width: 340px) {
+    top: 13%;
+    left: 19.5vw;
+    font-size: 2.5rem;
+  }
+  @media (max-width: 270px) {
+    left: 25vw;
+    font-size: 1.7rem;
   }
 `;
 
@@ -102,10 +120,23 @@ const StyledMusic = styled.div`
   letter-spacing: 1rem;
   filter: blur(0);
   /* media queries */
+  @media (max-width: 1438px) {
+    font-size: 6rem;
+  }
   @media (max-width: 414px) {
-    top: 48vh;
-    right: 16vw;
-    font-size: 4.5rem;
+    left: 25vw;
+    top: 80%;
+    font-size: 3.5rem;
+  }
+  //my iphone se 2nd gen
+  @media (max-width: 340px) {
+    top: 75%;
+    left: 25vw;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 270px) {
+    font-size: 1.7rem;
   }
 `;
 
@@ -149,9 +180,16 @@ const Title = styled.div`
     return;
   }};
   @media (max-width: 414px) {
+    top: 35%;
+    left: 6vw;
+    width: 85%;
+  }
+  @media (max-width: 375px) {
     top: 36%;
-    width: 80%;
-    left: 10vw;
+  }
+  //iphone se 2nd gen
+  @media (max-width: 340px) {
+    top: 30%;
   }
 `;
 
@@ -188,7 +226,7 @@ const TutoringImage = () => {
     <ImageContainerTutor>
       <Image
         src={BackgroundTutoring}
-        alt="image of lined paper for usually used for school work"
+        alt="an image of lined paper usually used for school work"
         layout="fill"
         objectFit="cover"
         placeholder="blur"
