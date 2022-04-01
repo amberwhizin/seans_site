@@ -23,11 +23,6 @@ home:
 portfolio:
   title: ''
   blurb: ''
-  # Currently we don't have a title or blurb
-  # So this is a placeholder
-services:
-  title: ''
-  blurb: ''
 #
 # Nav Bars
 #
@@ -35,7 +30,6 @@ navBarMusic:
   home: SK
   about: about
   videoGallery: video gallery
-  services: services
   testimonials: testimonials
   contact: contact
 navBarTutor:
