@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
 import YoutubeEmbed from '../../components/YoutubeEmbed';
+import concertData from '../../data/concertVideoData';
+import otherData from '../../data/otherVideoData';
 
 const Container = styled.div`
   position: absolute;
@@ -25,6 +27,32 @@ const VideoContainer = styled.div`
   }
 `;
 
+const concertVideos = concertData.map((video) => (
+  <YoutubeEmbed key={video.id} embedId={video.embedId} width="560" height="315"/>));
+
+const otherVideos = otherData.map((video) => (
+  <YoutubeEmbed key={video.id} embedId={video.embedId} width="560" height="315"/>));
+
+const concertVideosMobile = concertData.map((video) => (
+  <YoutubeEmbed
+    key={video.id}
+    embedId={video.embedId}
+    width="370"
+    height="220"
+  />
+));
+
+const otherVideosMobile = otherData.map((video) => (
+  <YoutubeEmbed
+    key={video.id}
+    embedId={video.embedId}
+    width="370"
+    height="220"
+  />
+));
+
+
+
 const VideoGallery = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
@@ -32,17 +60,25 @@ const VideoGallery = () => {
       <h1>Video Gallery</h1>
       {!isTabletOrMobile && (
         <>
+          <h2>Concerts</h2>
           <VideoContainer>
-            <YoutubeEmbed embedId="dw_OuFkgq0c" width="560" height="315"/>
-            <YoutubeEmbed embedId="w83rZNYYIK4" width="560" height="315"/>
+           {concertVideos}
+          </VideoContainer>
+          <h2>Other Performances</h2>
+          <VideoContainer>
+           {otherVideos}
           </VideoContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
+          <h2>Concerts</h2>
           <VideoContainer>
-            <YoutubeEmbed embedId="dw_OuFkgq0c" width="370" height="220"/>
-            <YoutubeEmbed embedId="w83rZNYYIK4" width="370" height="220"/>
+            {concertVideosMobile}
+          </VideoContainer>
+          <h2>Other Performances</h2>
+          <VideoContainer>
+            {otherVideosMobile}
           </VideoContainer>
         </>
       )}
