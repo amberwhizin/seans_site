@@ -6,7 +6,7 @@ const Container = styled.div`
   flex-direction: column;
   margin: 2rem;
   text-align: center;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 `;
 
 const SubjectContainer = styled.p`
@@ -14,7 +14,7 @@ const SubjectContainer = styled.p`
   padding: 1rem;
   font-size: 4rem;
   font-family: cursive;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: grid;
 `;
 
@@ -22,7 +22,7 @@ const CourseContainer = styled.ul`
   display: flex;
   font-size: 2rem;
   font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: grid;
 `;
 
