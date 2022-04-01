@@ -1,18 +1,26 @@
+
+// <a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons created by Syahrul Hidayatullah - Flaticon</a>
+
+//Syahrul Hidayatullah
+// <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by torskaya - Flaticon</a> 
+
 import { forwardRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Image from 'next/image';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import HamburgerIcon from '../public/pics/burger512.png';
+import XIcon from '../public/pics/cancel_button.png';
 
 const Button = styled.button`
   display: flex;
   align-items: center;
   z-index: 100;
   padding: 1rem;
-  margin-top: 0.6rem;
+  margin-top: 0.2rem;
   border: none;
-  color: #f4e9cd; // this isnt working for somereason
   &:hover,
   &:focus {
     color: #9dbebb;
@@ -20,11 +28,12 @@ const Button = styled.button`
   :hover {
     cursor: pointer;
   }
-  width: 70px;
+  /* width: 70px; */
   @media (max-width: 414px) {
-    width: 60px;
+    /* width: 60px; */
   }
 `;
+
 const CloseContainer = styled.div`
   position: absolute;
   top: 1rem;
@@ -33,7 +42,12 @@ const CloseContainer = styled.div`
 const CloseButton = ({ onClick }) => (
   <CloseContainer>
     <Button onClick={onClick}>
-      <FontAwesomeIcon icon={faTimes} css={{ fontSize: '2rem' }} />
+      <Image
+        src={XIcon}
+        alt={'an image of a black and white hamburger'}
+        width={30}
+        height={30}
+      />
     </Button>
   </CloseContainer>
 );
@@ -46,7 +60,12 @@ const OpenContainer = styled.div`
 const OpenButton = ({ onClick, hidden }) => (
   <OpenContainer hidden={hidden}>
     <Button onClick={onClick}>
-      <FontAwesomeIcon icon={faBars} css={{ fontSize: '1.8rem' }} />
+      <Image
+        alt={'an image of a black and white hamburger'}
+        src={HamburgerIcon}
+        width={42}
+        height={42}
+      />
     </Button>
   </OpenContainer>
 );
@@ -100,10 +119,10 @@ const MenuUl = styled.ul`
 `;
 const MenuLi = styled.li`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-decoration: none;
-  font-size: 1.875rem;
+  font-size: 1.9rem;
 `;
 const DropDownMenu = () => {
   const [isActive, setIsActive] = useState(false);
@@ -125,8 +144,6 @@ const DropDownMenu = () => {
             >
               Video Gallery
             </LinkWithOnClick>
-          </MenuLi>
-          <MenuLi>
           </MenuLi>
           <MenuLi>
             <LinkWithOnClick onClick={toggleIsActive} href="/music/contact">
