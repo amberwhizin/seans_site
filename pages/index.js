@@ -167,7 +167,7 @@ const StyledMusic = styled.div`
   right: 4vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
-  font-size: 9.5rem;
+  font-size: 10rem;
   letter-spacing: 1rem;
   filter: blur(0);
   /* media queries */
@@ -188,15 +188,15 @@ const StyledMusic = styled.div`
   }
   /* iphone 8 & iphone 8 plus max-width */
   @media (max-width: 414px) {
-    left: 29vw;
-    top: 80%;
-    font-size: 3rem;
+    left: 23vw;
+    top: 74%;
+    font-size: 4rem;
   }
   //my iphone se 2nd gen
   @media (max-width: 340px) {
     top: 75%;
     left: 25vw;
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
   }
   @media (max-width: 270px) {
@@ -300,6 +300,9 @@ const ImageContainerMuisc = styled.div`
   height: 100%;
   filter: blur(1px);
   opacity: 0.7;
+  @media (max-width: 1438px) {
+    filter: blur(2px);
+  }
 `;
 
 const MusicImage = () => {
