@@ -50,7 +50,7 @@ const TextContainer = styled.div`
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
-    padding: 1rem;
+    padding: 1px;
     line-height: 1.7;
   }
 `;
