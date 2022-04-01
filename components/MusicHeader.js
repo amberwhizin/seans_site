@@ -81,7 +81,6 @@ const MusicHeader = ({ copy }) => {
             <NavItem href="/music/videoGallery">
               {navBarMusic.videoGallery}
             </NavItem>
-            <NavItem href="/music/services">{navBarMusic.services}</NavItem>
             <NavItem href="/music/contact">{navBarMusic.contact}</NavItem>
           </>
         )}
