@@ -40,6 +40,9 @@ function Family() {
 
 const ImageContainer = styled.div`
   padding: 1rem;
+  @media (max-width: 820px) {
+    padding: 0;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -50,7 +53,7 @@ const TextContainer = styled.div`
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
-    padding: 1rem;
+    padding: 1px;
     line-height: 1.7;
   }
 `;
@@ -61,14 +64,7 @@ const HeaderContainer = styled.h1`
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    font-size: 3.5rem;
-    @media (max-width: 820px) {
-      text-align: center;
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-    }
+    font-size: 2.5rem;
   }
 `;
 
@@ -89,7 +85,7 @@ const About = () => {
       )}
       {isTabletOrMobile && (
         <>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
+          <HeaderContainer>{AboutTitle}</HeaderContainer>
           <ImageContainer>
             <Family />
           </ImageContainer>
