@@ -195,8 +195,8 @@ const StyledMusic = styled.div`
   //my iphone se 2nd gen
   @media (max-width: 340px) {
     top: 75%;
-    left: 25vw;
-    font-size: 4rem;
+    left: 21vw;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
   }
   @media (max-width: 270px) {
