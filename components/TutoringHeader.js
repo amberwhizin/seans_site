@@ -29,7 +29,7 @@ const MobileHome = styled.div`
 const NavUl = styled.ul`
   display: flex;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: white;
   border-bottom: 1px solid #468189;
   @media (max-width: 1438px) {
     padding: 0;
@@ -46,11 +46,6 @@ const NavLi = styled.li`
   height: 5rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
-
-// const Logo = styled.div`
-//   font-family: 'Shadows Into Light', cursive;
-//   font-size: 3rem;
-// `;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
