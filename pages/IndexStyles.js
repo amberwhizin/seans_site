@@ -118,12 +118,14 @@ export const StyledTutor = styled.div`
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
-  /* media queries */
-  @media (max-width: 1438px) {
-    left: 18vw;
+
+  /* laptop */
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
     top: 11%;
-    font-size: 6rem;
+    left: 21vw;
+    font-size: 9rem;
   }
+
   /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     left: 25vw;
@@ -146,11 +148,15 @@ export const StyledMusic = styled.div`
   font-size: 10rem;
   letter-spacing: 1rem;
   filter: blur(0);
-  /* media queries */
-  @media (max-width: 1438px) {
-    font-size: 6rem;
+
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
+    top: 70%;
+    right: 30vw;
+    font-size: 9rem;
     margin-bottom: 0.5rem;
+    /* border: 4px solid red; */
   }
+
   /* ipad , ipad air & ipad mini */
   @media (max-width: 820px) {
     left: 33vw;
