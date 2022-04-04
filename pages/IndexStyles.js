@@ -205,11 +205,17 @@ export const Title = styled.div`
     }
     return;
   }};
+  /* laptop */
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: landscape) {
+    top:  26%;
+    left: 20vw;
+    width: 70%;
+    /* border: 4px solid red; */
+  }
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
     top: 33%;
     left: 13vw;
     width: 70%;
-    /* border: 4px solid red; */
   }
 `;
 
