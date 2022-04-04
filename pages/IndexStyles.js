@@ -147,6 +147,18 @@ export const StyledTutor = styled.div`
     top: 6%;
     font-size: 3.5rem;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+    left: 10vw;
+    top: 6%;
+    font-size: 2.5rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    left: 10vw;
+    top: 6%;
+    font-size: 3.5rem;
+  }
 `;
 
 export const StyledMusic = styled.div`
@@ -186,13 +198,19 @@ export const StyledMusic = styled.div`
     font-size: 4.5rem;
   }
 
-  //my iphone se 2nd gen
-  @media (max-width: 340px) {
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
     top: 75%;
-    left: 21vw;
+    left: 60vw;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    top: 75%;
+    left: 22vw;
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
   }
+  
   @media (max-width: 270px) {
     font-size: 1.7rem;
   }
@@ -254,7 +272,7 @@ export const Title = styled.div`
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
     top: 30%;
     left: 7vw;
-    width: 80%;// not working????
+    width: 80%; // not working????
     /* border: 2px solid red; */
   }
   @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
