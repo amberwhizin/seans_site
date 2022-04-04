@@ -70,58 +70,50 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <>
-            <TutorContainer onClick={onClickTutoring}>
-              <TutoringImage />
-              <HomeLink onClick={onClickTutoring}>
-                <StyledTutor>TUTORING</StyledTutor>
-              </HomeLink>
-            </TutorContainer>
-          </>
-          <>
-            <Title wasTutoringClicked={wasTutoringClicked}>
-              <Image
-                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
-                src={GreenTapeImg}
-              />
-            </Title>
-          </>
-          <>
-            <MusicContainer onClick={onClickMusic}>
-              <MusicImage ifMusicImageExists={MusicImage} />
-              <HomeLink onClick={onClickMusic}>
-                <StyledMusic>MUSIC</StyledMusic>
-              </HomeLink>
-            </MusicContainer>
-          </>
+          <TutorContainer onClick={onClickTutoring}>
+            <TutoringImage />
+            <HomeLink onClick={onClickTutoring}>
+              <StyledTutor>TUTORING</StyledTutor>
+            </HomeLink>
+          </TutorContainer>
+
+          <Title wasTutoringClicked={wasTutoringClicked}>
+            <Image
+              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+              src={GreenTapeImg}
+            />
+          </Title>
+
+          <MusicContainer onClick={onClickMusic}>
+            <MusicImage ifMusicImageExists={MusicImage} />
+            <HomeLink onClick={onClickMusic}>
+              <StyledMusic>MUSIC</StyledMusic>
+            </HomeLink>
+          </MusicContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <>
-            <TutorContainer onClick={onClickTutoring}>
-              <TutoringImage />
-              <HomeLink onClick={onClickTutoring}>
-                <StyledTutor>TUTORING</StyledTutor>
-              </HomeLink>
-            </TutorContainer>
-          </>
-          <>
-            <Title wasTutoringClicked={wasTutoringClicked}>
-              <Image
-                alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
-                src={GreenTapeImg}
-              />
-            </Title>
-          </>
-          <>
-            <MusicContainer onClick={onClickMusic}>
-              <MusicImage />
-              <HomeLink onClick={onClickMusic}>
-                <StyledMusic>MUSIC</StyledMusic>
-              </HomeLink>
-            </MusicContainer>
-          </>
+          <TutorContainer onClick={onClickTutoring}>
+            <TutoringImage />
+            <HomeLink onClick={onClickTutoring}>
+              <StyledTutor>TUTORING</StyledTutor>
+            </HomeLink>
+          </TutorContainer>
+
+          <Title wasTutoringClicked={wasTutoringClicked}>
+            <Image
+              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+              src={GreenTapeImg}
+            />
+          </Title>
+
+          <MusicContainer onClick={onClickMusic}>
+            <MusicImage />
+            <HomeLink onClick={onClickMusic}>
+              <StyledMusic>MUSIC</StyledMusic>
+            </HomeLink>
+          </MusicContainer>
         </>
       )}
       <RandomNoteDrop
