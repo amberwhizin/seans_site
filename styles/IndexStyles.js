@@ -283,13 +283,23 @@ export const Title = styled.div`
   top: 25vh;
   left: 31vw;
   width: 40%;
-  transition: transform 1200ms;
-  transform: ${(props) => {
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-name: ${(props) => {
     if (props.wasTutoringClicked) {
-      return 'translate(-10%, -10%) rotate(380deg);';
+      return 'rotate';
     }
     return;
   }};
+ @keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
   /* laptop */
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: landscape) {
     top: 26%;
