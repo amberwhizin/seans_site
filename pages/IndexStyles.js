@@ -239,6 +239,16 @@ export const Title = styled.div`
     left: 9vw;
     width: 80%;
   }
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    top: 30%;
+    left: 14vw;
+    width: 75%;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+    top: 12%;
+    left: 14vw;
+    width: 75%;
+  }
 `;
 
 export const ImageContainerTutor = styled.div`
