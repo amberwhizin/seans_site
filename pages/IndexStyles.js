@@ -18,8 +18,6 @@ export const Container = styled.div`
 `;
 // https://bennettfeely.com/clippy/
 // these are the controls for the skew, and skew position!
-const desktopLeft = 6;
-const polySkewDesktop = 15;
 const polySkewMobile = 40;
 const mobileTop = 4;
 
@@ -36,20 +34,30 @@ export const TutorContainer = styled.div`
     cursor: pointer;
     opacity: 0.8;
   }
-  /* ipad , ipad air & ipad mini */
-  @media (max-width: 820px) {
+
+  /* these aren't doing very much just here because causing issues with clippy without */
+  /* refactor one day */
+  /* laptops */
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (min-resolution: 192dpi) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
-    /* background-color: purple; */
     flex: 1;
     top: 0;
   }
-  /* iphone 8 & iphone 8 plus max-width */
-  @media (max-width: 414px) {
+  /* ipads */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
-    height: ${50 + polySkewMobile / 2}%;
-    flex: 1;
-    top: 0;
+    height: ${50 + 100 / 2}%;
+  }
+  /* iphone 8... */
+  @media only screen and (min-width: 414px) and (max-width: 736px) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + 100 / 2}%;
+  }
+  /* iphone 5... */
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + 100 / 2}%;
   }
 `;
 // https://bennettfeely.com/clippy/
@@ -64,49 +72,36 @@ export const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
-  /* ipad , ipad air & ipad mini */
-  @media (max-width: 820px) {
-    clip-path: polygon(0 57%, 100% 0%, 100% 100%, 0% 100%);
+  /* laptops */
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: landscape) {
+    clip-path: polygon(0 92%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${72 - mobileTop + 50 / 2}%;
+    bottom: 0;
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
+    clip-path: polygon(0 54%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + 50 / 2}%;
-    flex: 1;
     bottom: 0;
   }
-  @media (max-width: 428px) {
-    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + polySkewMobile / 2}%;
-    flex: 1;
+  /* ipads */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    clip-path: polygon(0 52%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${50 - mobileTop + 50 / 2}%;
     bottom: 0;
+    /* border: 2px solid red; */
   }
-  /* iphone 8 & iphone 8 plus max-width */
-  @media (max-width: 414px) {
-    clip-path: polygon(0 ${polySkewMobile}%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + polySkewMobile / 2}%;
-    flex: 1;
+  /* iphone 8... */
+  @media only screen and (min-width: 414px) and (max-width: 736px) { //landscape broken
+    clip-path: polygon(0 42%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${48 - mobileTop + 50 / 2}%;
     bottom: 0;
-  }
-  /* iphone 8 plus max-height */
-  @media (max-height: 736px) {
-    clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + 45 / 2}%;
-  }
-  /* iphone 12/13 pro max */
-  @media (max-width: 375px) {
-    clip-path: polygon(0 47%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + 45 / 2}%;
-  }
-  /* iphone 11 pro */
-  @media (max-height: 812px) {
-    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + 45 / 2}%;
-  }
-  @media (max-width: 360px) {
-    clip-path: polygon(0 41%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + 47 / 2}%;
   }
 
-  @media (max-width: 340px) {
-    clip-path: polygon(0 55%, 100% 0%, 100% 100%, 0% 100%);
-    height: ${50 - mobileTop + 50 / 2}%;
+  /* iphone 5... landscape=min */
+  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${45 - mobileTop + 50 / 2}%;
+    bottom: 0;
   }
 `;
 
@@ -134,22 +129,6 @@ export const StyledTutor = styled.div`
     left: 23vw;
     top: 6%;
     font-size: 3rem;
-  }
-  /* iphone 8 & iphone 8 plus max-width */
-  @media (max-width: 414px) {
-    left: 20vw;
-    top: 11%;
-    font-size: 3rem;
-  }
-  //my iphone se 2nd gen
-  @media (max-width: 340px) {
-    top: 13%;
-    left: 19.5vw;
-    font-size: 2.5rem;
-  }
-  @media (max-width: 270px) {
-    left: 25vw;
-    font-size: 1.7rem;
   }
 `;
 
@@ -203,20 +182,6 @@ export const HomeLink = styled.a`
     cursor: pointer;
     opacity: 0.9;
   }
-  @media (max-width: 1438px) {
-    font-size: 45px;
-    margin-bottom: 1.5rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    :hover {
-      cursor: pointer;
-    }
-    @media (max-width: 375px) {
-      font-size: 40px;
-    }
-  }
 `;
 
 export const Title = styled.div`
@@ -235,49 +200,6 @@ export const Title = styled.div`
     }
     return;
   }};
-  /* ipad , ipad air & ipad mini */
-  @media (max-width: 820px) {
-    top: 33%;
-    width: 70%;
-    left: 14vw;
-  }
-  /* iphone 12/13 pro max */
-  @media (max-width: 428px) {
-    top: 35%;
-    width: 80%;
-    left: 10vw;
-  }
-  //iphone 8 & iphone 8 plus, iphone xr width
-  @media (max-width: 414px) {
-    top: 35%;
-    left: 6vw;
-    width: 85%;
-  }
-  /* iphone se, iphone 11 pro */
-  @media (max-width: 375px) {
-    top: 36%;
-  }
-  /* iphone 11 pro -height */
-  @media (max-height: 812px) {
-    top: 32.5%;
-  }
-  //iphone 8 plus -height
-  @media (max-height: 736px) {
-    top: 29%;
-    left: 6vw;
-    width: 90%;
-  }
-  /* iphone se -height */
-  @media (max-height: 667px) {
-    top: 29%;
-  }
-  @media (max-width: 360px) {
-    top: 32%;
-  }
-  //iphone se 2nd gen
-  @media (max-width: 340px) {
-    top: 30%;
-  }
 `;
 
 export const ImageContainerTutor = styled.div`

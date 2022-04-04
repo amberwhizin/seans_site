@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../hooks';
 import {
   Container,
@@ -11,17 +10,6 @@ import {
   ImageContainerTutor,
   ImageContainerMusic,
 } from './IndexStyles';
-// import {
-//   Container,
-//   TutorContainer,
-//   MusicContainer,
-//   StyledTutor,
-//   StyledMusic,
-//   HomeLink,
-//   Title,
-//   ImageContainerTutor,
-//   ImageContainerMusic,
-// } from './IndexStyles';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState } from 'react';
