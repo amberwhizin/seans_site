@@ -8,7 +8,10 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #f4e9cd;
+  border-top: 1px solid
+    ${(props) => {
+      props.theme.colors.lightBrown;
+    }};
   @media (max-width: 1438px) {
     border-top: none;
   }

@@ -7,7 +7,6 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
-
 const musicFont = `'Montserrat', cursive; color: #f4e9cd; background: black`;
 const tutoringFont = `'Montserrat', cursive; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
@@ -16,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
   }
-  * {
+  * {  
       box-sizing: border-box;
       font-family: ${(props) => {
         if (props.isMusic) {
@@ -26,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
           return tutoringFont;
         }
       }};
-
   }
   body {
     margin: 0;
@@ -35,13 +33,11 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     width: 100%;
   }
-
   h1 {
     font-size: 3rem;
     margin: 10px;
     color: #9dbebb;
   }
-
   p {
     font-size: 1.2rem;
   }
@@ -52,19 +48,7 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   colors: {
-    oliveDrab7: '#3d3522ff',
-    oliveDrab72: '#4a442dff',
-    hunterGreen: '#386150ff',
-    keppel: '#58b09cff',
-    aeroBlue: '#caf7e2ff',
-    operaMauve: '#b48eAe',
-    lightGrey: '#D7D9D7',
-    nickel: '#646E68',
-    peachPuff: '#F5D6BA',
     white: '#ffff',
-    floralWhite: '##FFFAF0',
-    aliceBlue: '##F0F8FF',
-    sapphireBlue: '#1768AC',
     lightBrown: '#f4e9cd',
     greenish: '#9dbebb',
     darkerGreen: '#77aca2',

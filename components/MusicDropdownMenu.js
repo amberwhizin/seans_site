@@ -1,16 +1,13 @@
-
 // <a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons created by Syahrul Hidayatullah - Flaticon</a>
 
 //Syahrul Hidayatullah
-// <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by torskaya - Flaticon</a> 
+// <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by torskaya - Flaticon</a>
 
 import { forwardRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import HamburgerIcon from '../public/pics/burger512.png';
 import XIcon from '../public/pics/cancel_button.png';
 
@@ -27,10 +24,6 @@ const Button = styled.button`
   }
   :hover {
     cursor: pointer;
-  }
-  /* width: 70px; */
-  @media (max-width: 414px) {
-    /* width: 60px; */
   }
 `;
 
@@ -70,7 +63,9 @@ const OpenButton = ({ onClick, hidden }) => (
   </OpenContainer>
 );
 const StyledA = styled.a`
-  color: #f4e9cd;
+  color: ${(props) => {
+    props.theme.colors.lightBrown;
+  }};
   &:hover,
   &:focus {
     color: #9dbebb;
