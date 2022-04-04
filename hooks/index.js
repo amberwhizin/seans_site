@@ -44,6 +44,6 @@ export const useHubSpotForm = () => {
 };
 
 export const useIsTabletOrMobile = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1438px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   return isTabletOrMobile;
 };

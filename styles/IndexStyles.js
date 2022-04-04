@@ -16,6 +16,7 @@ export const Container = styled.div`
     justify-content: space-around;
   }
 `;
+
 // https://bennettfeely.com/clippy/
 // these are the controls for the skew, and skew position!
 const polySkewMobile = 40;
@@ -44,22 +45,36 @@ export const TutorContainer = styled.div`
     flex: 1;
     top: 0;
   }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + 100 / 2}%;
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
+    clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
+    height: ${50 + 100 / 2}%;
+  }
+
   /* ipads */
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
   }
+
   /* iphone 8... */
   @media only screen and (min-width: 414px) and (max-width: 736px) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
   }
+
   /* iphone 5... */
   @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
   }
 `;
+
 // https://bennettfeely.com/clippy/
 export const MusicContainer = styled.div`
   filter: grayscale(1);
@@ -78,24 +93,39 @@ export const MusicContainer = styled.div`
     height: ${72 - mobileTop + 50 / 2}%;
     bottom: 0;
   }
+
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
     clip-path: polygon(0 54%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + 50 / 2}%;
     bottom: 0;
   }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
+    clip-path: polygon(0 79%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${63 - mobileTop + 50 / 2}%;
+    bottom: 0;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
+    clip-path: polygon(0 64%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${53 - mobileTop + 50 / 2}%;
+    bottom: 0;
+    border: 2px solid red;
+  }
+
   /* ipads */
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     clip-path: polygon(0 52%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + 50 / 2}%;
     bottom: 0;
-    /* border: 2px solid red; */
   }
+
   /* iphone 8... */
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
     clip-path: polygon(0 92%, 100% 0%, 100% 100%, 0% 100%);
     height: ${72 - mobileTop + 50 / 2}%;
     bottom: 0;
   }
+
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
     clip-path: polygon(0 42%, 100% 0%, 100% 100%, 0% 100%);
     height: ${48 - mobileTop + 50 / 2}%;
@@ -176,18 +206,20 @@ export const StyledMusic = styled.div`
     right: 30vw;
     font-size: 9rem;
     margin-bottom: 0.5rem;
-    /* border: 4px solid red; */
   }
+
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     right: 4vw;
     top: 77%;
     font-size: 7rem;
   }
+
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     right: 22vw;
     top: 70%;
     font-size: 7.5rem;
   }
+
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
     font-size: 4.5rem;
   }
@@ -210,7 +242,7 @@ export const StyledMusic = styled.div`
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
   }
-  
+
   @media (max-width: 270px) {
     font-size: 1.7rem;
   }
@@ -303,5 +335,3 @@ export const ImageContainerMusic = styled.div`
     filter: blur(2px);
   }
 `;
-
-
