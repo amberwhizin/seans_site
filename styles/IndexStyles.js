@@ -150,7 +150,7 @@ export const StyledTutor = styled.div`
 
   /* laptop */
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
-    top: 11%;
+    top: 7%;
     left: 21vw;
     font-size: 9rem;
   }
@@ -208,10 +208,9 @@ export const StyledMusic = styled.div`
   filter: blur(0);
 
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
-    top: 70%;
+    top: 76%;
     right: 30vw;
     font-size: 9rem;
-    margin-bottom: 0.5rem;
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
@@ -298,10 +297,12 @@ export const Title = styled.div`
     width: 70%;
     transform: rotate(-3deg);
   }
+
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
-    top: 33%;
+    top: 31%;
     left: 13vw;
     width: 70%;
+    transform: rotate(2deg);
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
