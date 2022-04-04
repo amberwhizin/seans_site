@@ -281,9 +281,7 @@ export const Title = styled.div`
   position: fixed;
   margin: 0;
   padding: 0;
-  top: 25vh;
-  left: 31vw;
-  width: 40%;
+  margin-bottom: 3rem;
   animation-duration: 1s;
   animation-direction: alternate;
   animation-name: ${(props) => {
@@ -299,77 +297,6 @@ export const Title = styled.div`
     100% {
       transform: rotate(360deg);
     }
-  }
-
-  /* laptop */
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: landscape) {
-    top: 26%;
-    left: 20vw;
-    width: 70%;
-    transform: rotate(-3deg);
-  }
-
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
-    top: 31%;
-    left: 13vw;
-    width: 70%;
-    transform: rotate(2deg);
-  }
-
-  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
-    top: 28%;
-    left: 18vw;
-    width: 60%;
-  }
-
-  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
-    top: 34%;
-    left: 19vw;
-    width: 60%;
-  }
-
-  /* ipad */
-  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    top: 21%;
-    left: 20vw;
-    width: 60%;
-    transform: rotate(-5deg);
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    top: 31%;
-    left: 13vw;
-    width: 70%;
-    transform: rotate(2deg);
-  }
-
-  /* iphone 8.... */
-  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
-    top: 12%;
-    left: 25vw;
-    width: 60%;
-    transform: rotate(3deg);
-  }
-
-  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
-    top: 31%;
-    left: 8vw;
-    width: 80%;
-    transform: rotate(3deg);
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
-    top: 28%;
-    left: 14vw;
-    width: 75%;
-    transform: rotate(9deg);
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
-    top: 15%;
-    left: 14vw;
-    width: 75%;
-    transform: rotate(-7deg);
   }
 `;
 
