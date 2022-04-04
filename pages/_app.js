@@ -16,8 +16,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
   * {  
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
       font-family: ${(props) => {
         if (props.isMusic) {
