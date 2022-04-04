@@ -210,7 +210,6 @@ export const Title = styled.div`
     top: 26%;
     left: 20vw;
     width: 70%;
-    /* border: 4px solid red; */
   }
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
     top: 33%;
@@ -227,6 +226,18 @@ export const Title = styled.div`
     top: 31%;
     left: 13vw;
     width: 70%;
+  }
+  /* iphone 8.... */
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    top: 12%;
+    left: 25vw;
+    width: 60%;
+    /* border: 4px solid red; */
+  }
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
+    top: 33%;
+    left: 9vw;
+    width: 80%;
   }
 `;
 
