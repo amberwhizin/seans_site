@@ -6,7 +6,7 @@ export const Container = styled.div`
   overflow: hidden;
   padding: 0;
   margin: 0;
-  font-size: 0rem;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,6 @@ const polySkewMobile = 40;
 const mobileTop = 4;
 
 export const TutorContainer = styled.div`
-  font-size: 0rem;
   position: fixed;
   overflow: hidden;
   height: 100%;
