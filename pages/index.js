@@ -9,7 +9,7 @@ import {
   Title,
   ImageContainerTutor,
   ImageContainerMusic,
-} from './IndexStyles';
+} from '../styles/IndexStyles.js';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState } from 'react';

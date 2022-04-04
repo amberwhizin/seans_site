@@ -303,3 +303,5 @@ export const ImageContainerMusic = styled.div`
     filter: blur(2px);
   }
 `;
+
+
