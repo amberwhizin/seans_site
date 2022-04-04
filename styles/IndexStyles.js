@@ -109,7 +109,6 @@ export const MusicContainer = styled.div`
     clip-path: polygon(0 64%, 100% 0%, 100% 100%, 0% 100%);
     height: ${53 - mobileTop + 50 / 2}%;
     bottom: 0;
-    border: 2px solid red;
   }
 
   /* ipads */
@@ -133,7 +132,7 @@ export const MusicContainer = styled.div`
   }
 
   /* iphone 5... landscape=min */
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
     clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
     height: ${45 - mobileTop + 50 / 2}%;
     bottom: 0;
@@ -150,7 +149,7 @@ export const StyledTutor = styled.div`
   font-size: 8.5rem;
 
   /* laptop */
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
     top: 11%;
     left: 21vw;
     font-size: 9rem;
@@ -173,24 +172,25 @@ export const StyledTutor = styled.div`
     top: 6%;
     font-size: 6rem;
   }
+
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
     left: 10vw;
     top: 6%;
     font-size: 3.5rem;
   }
+
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
     left: 17vw;
     top: 6%;
     font-size: 3.5rem;
   }
-
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
     left: 10vw;
     top: 6%;
     font-size: 2.5rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
     left: 10vw;
     top: 6%;
     font-size: 3.5rem;
@@ -220,6 +220,7 @@ export const StyledMusic = styled.div`
     font-size: 9rem;
     margin-bottom: 0.5rem;
   }
+
   @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
     top: 70%;
     right: 27vw;
@@ -244,18 +245,18 @@ export const StyledMusic = styled.div`
   }
 
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
-    left: 23vw;
+    right: 17vw;
     top: 74%;
-    font-size: 4.5rem;
+    font-size: 4.2rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
     top: 75%;
     left: 60vw;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
     top: 75%;
     left: 22vw;
     font-size: 3.5rem;
@@ -297,6 +298,7 @@ export const Title = styled.div`
     top: 26%;
     left: 20vw;
     width: 70%;
+    transform: rotate(-3deg);
   }
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
     top: 33%;
@@ -334,17 +336,17 @@ export const Title = styled.div`
     width: 60%;
   }
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
-    top: 30%;
-    left: 7vw;
-    width: 80%; // not working????
-    /* border: 2px solid red; */
+    top: 32%;
+    left: 8vw;
+    width: 80%;
+    transform: rotate(5deg);
   }
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
     top: 30%;
     left: 14vw;
     width: 75%;
   }
-  @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+  @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
     top: 12%;
     left: 14vw;
     width: 75%;
