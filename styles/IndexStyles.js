@@ -23,7 +23,7 @@ const polySkewMobile = 40;
 const mobileTop = 4;
 
 export const TutorContainer = styled.div`
-
+  font-size: 0rem;
   position: fixed;
   overflow: hidden;
   height: 100%;
