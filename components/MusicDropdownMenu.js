@@ -25,10 +25,6 @@ const Button = styled.button`
   :hover {
     cursor: pointer;
   }
-  /* width: 70px; */
-  @media (max-width: 414px) {
-    /* width: 60px; */
-  }
 `;
 
 const CloseContainer = styled.div`
@@ -67,7 +63,9 @@ const OpenButton = ({ onClick, hidden }) => (
   </OpenContainer>
 );
 const StyledA = styled.a`
-  color: #f4e9cd;
+  color: ${(props) => {
+    props.theme.colors.lightBrown;
+  }};
   &:hover,
   &:focus {
     color: #9dbebb;

@@ -8,7 +8,9 @@ const StyledLink = styled.a`
   text-decoration: none;
   padding-right: 4rem;
   font-size: 2rem;
-  color: #f4e9cd;
+  color: ${(props) => {
+    props.theme.colors.lightBrown;
+  }};
   &:hover,
   &:focus {
     color: #9dbebb;
@@ -30,7 +32,10 @@ const NavUl = styled.ul`
   display: flex;
   margin: 0 auto;
   background-color: black;
-  border-bottom: 1px solid #f4e9cd;
+  border-bottom: 1px solid
+    ${(props) => {
+      props.theme.colors.lightBrown;
+    }};
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
