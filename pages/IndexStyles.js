@@ -207,13 +207,24 @@ export const Title = styled.div`
   }};
   /* laptop */
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: landscape) {
-    top:  26%;
+    top: 26%;
     left: 20vw;
     width: 70%;
     /* border: 4px solid red; */
   }
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
     top: 33%;
+    left: 13vw;
+    width: 70%;
+  }
+  /* ipad */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    top: 21%;
+    left: 20vw;
+    width: 60%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    top: 31%;
     left: 13vw;
     width: 70%;
   }
