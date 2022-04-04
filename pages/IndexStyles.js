@@ -137,11 +137,15 @@ export const StyledTutor = styled.div`
     top: 6%;
     font-size: 6rem;
   }
-
-  @media (max-width: 428px) {
-    left: 23vw;
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    left: 10vw;
     top: 6%;
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
+    left: 17vw;
+    top: 6%;
+    font-size: 3.5rem;
   }
 `;
 
@@ -172,18 +176,16 @@ export const StyledMusic = styled.div`
     top: 70%;
     font-size: 7.5rem;
   }
-
-  @media (max-width: 428px) {
-    left: 31vw;
-    top: 81%;
-    font-size: 3rem;
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    font-size: 4.5rem;
   }
-  /* iphone 8 & iphone 8 plus max-width */
-  @media (max-width: 414px) {
+
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
     left: 23vw;
     top: 74%;
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
+
   //my iphone se 2nd gen
   @media (max-width: 340px) {
     top: 75%;
@@ -248,12 +250,12 @@ export const Title = styled.div`
     top: 12%;
     left: 25vw;
     width: 60%;
-    /* border: 4px solid red; */
   }
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
-    top: 33%;
-    left: 9vw;
-    width: 80%;
+    top: 30%;
+    left: 7vw;
+    width: 80%;// not working????
+    /* border: 2px solid red; */
   }
   @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
     top: 30%;
