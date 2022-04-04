@@ -205,6 +205,12 @@ export const Title = styled.div`
     }
     return;
   }};
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
+    top: 33%;
+    left: 13vw;
+    width: 70%;
+    /* border: 4px solid red; */
+  }
 `;
 
 export const ImageContainerTutor = styled.div`
