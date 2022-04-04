@@ -156,6 +156,12 @@ export const StyledTutor = styled.div`
     font-size: 9rem;
   }
 
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
+    top: 8%;
+    left: 16vw;
+    font-size: 9rem;
+  }
+
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     left: 10vw;
     top: 6%;
@@ -204,6 +210,19 @@ export const StyledMusic = styled.div`
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
     top: 70%;
     right: 30vw;
+    font-size: 9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
+    top: 70%;
+    right: 5vw;
+    font-size: 9rem;
+    margin-bottom: 0.5rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
+    top: 70%;
+    right: 27vw;
     font-size: 9rem;
     margin-bottom: 0.5rem;
   }
@@ -274,16 +293,29 @@ export const Title = styled.div`
     return;
   }};
   /* laptop */
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: landscape) {
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: landscape) {
     top: 26%;
     left: 20vw;
     width: 70%;
   }
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
     top: 33%;
     left: 13vw;
     width: 70%;
   }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
+    top: 29%;
+    left: 18vw;
+    width: 60%;
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
+    top: 33%;
+    left: 19vw;
+    width: 60%;
+  }
+
   /* ipad */
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     top: 21%;
