@@ -39,7 +39,7 @@ export const TutorContainer = styled.div`
   /* these aren't doing very much just here because causing issues with clippy without */
   /* refactor one day */
   /* laptops */
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (min-resolution: 192dpi) {
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
     clip-path: polygon(0 0, 100% 0%, 100% ${100 - polySkewMobile}%, 0 100%);
     height: ${50 + 100 / 2}%;
     flex: 1;
@@ -94,7 +94,7 @@ export const MusicContainer = styled.div`
     bottom: 0;
   }
 
-  @media screen and (min-width: 1200px) and (max-width: 1600px) and (min-resolution: 192dpi) and (orientation: portrait) {
+  @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: portrait) {
     clip-path: polygon(0 54%, 100% 0%, 100% 100%, 0% 100%);
     height: ${50 - mobileTop + 50 / 2}%;
     bottom: 0;
@@ -291,14 +291,14 @@ export const Title = styled.div`
     }
     return;
   }};
- @keyframes rotate {
-  0% {
-    transform: rotate(0);
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
   /* laptop */
   @media screen and (min-width: 1200px) and (max-width: 1600px) and (orientation: landscape) {
