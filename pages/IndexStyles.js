@@ -91,7 +91,12 @@ export const MusicContainer = styled.div`
     /* border: 2px solid red; */
   }
   /* iphone 8... */
-  @media only screen and (min-width: 414px) and (max-width: 736px) { //landscape broken
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    clip-path: polygon(0 92%, 100% 0%, 100% 100%, 0% 100%);
+    height: ${72 - mobileTop + 50 / 2}%;
+    bottom: 0;
+  }
+  @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
     clip-path: polygon(0 42%, 100% 0%, 100% 100%, 0% 100%);
     height: ${48 - mobileTop + 50 / 2}%;
     bottom: 0;
