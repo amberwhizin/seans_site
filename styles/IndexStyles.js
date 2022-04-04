@@ -251,16 +251,14 @@ export const StyledMusic = styled.div`
   }
 
   @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
-    top: 75%;
-    left: 60vw;
+    top: 77%;
+    right: 5vw;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
   }
   @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
-    top: 75%;
+    top: 70%;
     left: 22vw;
     font-size: 3.5rem;
-    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 270px) {
@@ -307,13 +305,13 @@ export const Title = styled.div`
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: landscape) {
-    top: 29%;
+    top: 28%;
     left: 18vw;
     width: 60%;
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1199px) and (orientation: portrait) {
-    top: 33%;
+    top: 34%;
     left: 19vw;
     width: 60%;
   }
@@ -323,33 +321,43 @@ export const Title = styled.div`
     top: 21%;
     left: 20vw;
     width: 60%;
+    transform: rotate(-5deg);
   }
+
   @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     top: 31%;
     left: 13vw;
     width: 70%;
+    transform: rotate(2deg);
   }
+
   /* iphone 8.... */
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
     top: 12%;
     left: 25vw;
     width: 60%;
+    transform: rotate(3deg);
   }
+
   @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
-    top: 32%;
+    top: 31%;
     left: 8vw;
     width: 80%;
-    transform: rotate(5deg);
+    transform: rotate(3deg);
   }
+
   @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: portrait) {
-    top: 30%;
+    top: 28%;
     left: 14vw;
     width: 75%;
+    transform: rotate(9deg);
   }
+
   @media only screen and (min-width: 320px) and (max-width: 413px) and (orientation: landscape) {
-    top: 12%;
+    top: 15%;
     left: 14vw;
     width: 75%;
+    transform: rotate(-7deg);
   }
 `;
 
