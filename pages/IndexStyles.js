@@ -126,12 +126,18 @@ export const StyledTutor = styled.div`
     font-size: 9rem;
   }
 
-  /* ipad , ipad air & ipad mini */
-  @media (max-width: 820px) {
-    left: 25vw;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    left: 10vw;
     top: 6%;
-    font-size: 5rem;
+    font-size: 6rem;
   }
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    left: 20vw;
+    top: 6%;
+    font-size: 6rem;
+  }
+
   @media (max-width: 428px) {
     left: 23vw;
     top: 6%;
@@ -156,13 +162,17 @@ export const StyledMusic = styled.div`
     margin-bottom: 0.5rem;
     /* border: 4px solid red; */
   }
-
-  /* ipad , ipad air & ipad mini */
-  @media (max-width: 820px) {
-    left: 33vw;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    right: 4vw;
     top: 77%;
-    font-size: 6rem;
+    font-size: 7rem;
   }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    right: 22vw;
+    top: 70%;
+    font-size: 7.5rem;
+  }
+
   @media (max-width: 428px) {
     left: 31vw;
     top: 81%;
