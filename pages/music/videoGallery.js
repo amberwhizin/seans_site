@@ -15,8 +15,10 @@ const Container = styled.div`
 const VideoContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 2rem;
-  margin: 2rem;
+  justify-content: center;
+  padding: 0rem;
+  margin: 1rem;
+  flex-wrap:  wrap;
   @media (max-width: 1438px) {
     display: flex;
     flex-direction: column;
