@@ -77,6 +77,9 @@ export const StyledTutor = styled.div`
   @media screen and (max-width: 300px) {
     font-size: 1.5rem;
   }
+  @media screen and (max-width: 200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const StyledMusic = styled.div`
@@ -110,6 +113,9 @@ export const StyledMusic = styled.div`
     font-size: 2.5rem;
   }
   @media screen and (max-width: 300px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 200px) {
     font-size: 1.5rem;
   }
 `;
