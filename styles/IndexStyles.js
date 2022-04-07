@@ -44,6 +44,11 @@ export const MusicContainer = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
+  @media screen and (max-width: 1438px) {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    height: ${79 - 4 + 50 / 2}%;
+    bottom: 0;
+  }
 `;
 
 export const StyledTutor = styled.div`
