@@ -7,7 +7,7 @@ const otherVideos = [
   },
   {
     id: 2,
-    embedId: '',
+    embedId: '2xP1UUh9yt0',
     description:
       'Sean Keegan, 14, plays Vals, Opus 8/ No.4 by Augustin Barrios',
     date: 'Feb 18, 2012',
