@@ -24,7 +24,6 @@ const CourseContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* border: 2px solid red; */
 `;
 
 function CourseItem({ courses, subject }) {
@@ -45,7 +44,7 @@ function CourseItem({ courses, subject }) {
       <p
         css={{
           'text-decoration':
-            'underline  #4c7371; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #4c7371; font-size: 3rem; margin-bottom: .5rem; margin-top: 2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
+            'underline  #4c7371; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #4c7371; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
         }}
       >
         {subject}

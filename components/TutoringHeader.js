@@ -7,7 +7,7 @@ import { useIsTabletOrMobile } from '../hooks';
 const StyledLink = styled.a`
   text-decoration: none;
   padding-right: 4rem;
-  font-size: 2rem;
+  font-size: 27px;
   color: #468189;
   &:hover,
   &:focus {
@@ -43,7 +43,7 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 5rem;
+  height: 4rem; 
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
