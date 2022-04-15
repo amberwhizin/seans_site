@@ -1,41 +1,30 @@
 import styled from 'styled-components';
 import data from '../../data/subjectData.js';
 
-const Container = styled.div`
+const SubjectGrouping = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  /* justify-content: center; */
-  text-align: center;
-  /* border: 2px solid orange; */
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-evenly;
 `;
 
 const SubjectContainer = styled.div`
-  /* display: flex; */
-  padding: 0;
-  margin: 0;
-  font-size: 3rem;
-  /* font-weight: bold; */
-  /* font-family: cursive; */
-  border: 2px solid red;
-  /* margin-bottom: 7rem; */
-  display: grid;
+  height: auto;
+  flex: 1;
+  flex-basis: ${100 / 3}%;
   text-align: center;
   @media only screen and (max-width: 600px) {
     font-size: 2rem;
+    flex-basis: 100%;
   }
 `;
 
 const CourseContainer = styled.div`
-  display: flex;
   font-size: 2rem;
-  /* font-family: Arial, Helvetica, sans-serif; */
-  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 0;
-  padding-bottom: 7rem; //bottom
+  /* border: 2px solid red; */
 `;
 
 function CourseItem({ courses, subject }) {
@@ -45,7 +34,7 @@ function CourseItem({ courses, subject }) {
       key={course}
       css={{
         'font-family':
-          'Helvetica, sans-serif-serif; font-weight: 100; line-height: .7;',
+          'Helvetica, sans-serif-serif; font-weight: 100; white-space: pre; line-height: .4; padding: 7px;',
       }}
     >
       {course}
@@ -56,7 +45,7 @@ function CourseItem({ courses, subject }) {
       <p
         css={{
           'text-decoration':
-            'underline  #4c7371; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #4c7371; font-size: 3rem; margin-bottom: 2.5rem; margin-top: 5rem; font-family: futura-pt, sans-serif; font-weight: 100;',
+            'underline  #4c7371; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #4c7371; font-size: 3rem; margin-bottom: .5rem; margin-top: 2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
         }}
       >
         {subject}
@@ -67,22 +56,20 @@ function CourseItem({ courses, subject }) {
 }
 
 function SubjectOfferings() {
-  const courseItems = data.map((subject) => (
+  return data.map((subject) => (
     <CourseItem
       key={subject.id}
       subject={subject.subject}
       courses={subject.courses}
     />
   ));
-  return <div>{courseItems}</div>;
 }
 
 const Subjects = () => {
   return (
-    <Container>
-      {/* <h1>subjects</h1> */}
+    <SubjectGrouping>
       <SubjectOfferings />
-    </Container>
+    </SubjectGrouping>
   );
 };
 
