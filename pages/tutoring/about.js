@@ -44,7 +44,6 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   display: block;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
   padding: 2rem;
   line-height: 1.9;
   @media (max-width: 820px) {
@@ -58,6 +57,7 @@ const TextContainer = styled.div`
 const HeaderContainer = styled.h1`
   margin: 0;
   font-size: 3.5rem;
+  color: #4c7371;
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;

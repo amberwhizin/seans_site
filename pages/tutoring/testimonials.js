@@ -118,7 +118,7 @@ const ExpandableSection = ({ children }) => {
 const Testimonials = () => {
   return (
     <Container>
-      <h1>testimonials</h1>
+      <h1>{`Sean's Reviews`}</h1>
       <ExpandableSection>
         {`“Our daughters have been receiving tutoring from Sean for the past 2
         years. His knowledge and expertise in Math and Science has helped them

@@ -31,6 +31,7 @@ export const TutorContainer = styled.div`
 
 // https://bennettfeely.com/clippy/
 export const MusicContainer = styled.div`
+  bottom: 0;
   filter: grayscale(1);
   position: fixed;
   overflow: hidden;

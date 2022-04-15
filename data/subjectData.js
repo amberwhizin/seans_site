@@ -31,11 +31,11 @@ const Subjects = [
     subject: 'Music',
     courses: ['AP Music Theory', 'Guitar Music Lessons'],
   },
-  {
-    id: 4,
-    subject: 'World Languages',
-    courses: ['Chinese', 'Spanish'],
-  },
+  // {
+  //   id: 4,
+  //   subject: 'World Languages',
+  //   courses: ['Chinese', 'Spanish'],
+  // },
 ];
 
 export default Subjects;
