@@ -28,8 +28,8 @@ const FooterLi = styled.li`
   padding-right: 4rem;
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  height: 5rem;
+  font-size: 27px;
+  height: 4rem;
   color: ${(props) => props.theme.colors.lightBrown};
 
   @media (max-width: 1438px) {
