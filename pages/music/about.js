@@ -46,8 +46,6 @@ const ImageContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  display: block;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
   padding: 2rem;
   line-height: 1.9;
   @media (max-width: 820px) {
