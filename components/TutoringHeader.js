@@ -6,7 +6,8 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding-right: 4rem;
+  margin-left: 10px;
+  margin-right: 4rem;
   font-size: 27px;
   color: #468189;
   &:hover,
@@ -16,7 +17,6 @@ const StyledLink = styled.a`
   @media (max-width: 1438px) {
     display: flex;
     align-items: center;
-    padding: 1rem;
   }
 `;
 

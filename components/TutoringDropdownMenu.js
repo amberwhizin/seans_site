@@ -15,8 +15,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   z-index: 100;
-  padding: 1rem;
-  margin-top: 0.2rem;
+  margin-top: 10px;
   border: none;
   &:hover,
   &:focus {
@@ -26,11 +25,13 @@ const Button = styled.button`
     cursor: pointer;
   }
 `;
+
 const CloseContainer = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;
 `;
+
 const CloseButton = ({ onClick }) => (
   <CloseContainer>
     <Button onClick={onClick}>
@@ -43,12 +44,14 @@ const CloseButton = ({ onClick }) => (
     </Button>
   </CloseContainer>
 );
+
 const OpenContainer = styled.div`
   z-index: ${(props) => (props.hidden ? -1 : 1)};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
   transition: all 500ms ease 350ms;
   font-size: 2rem;
 `;
+
 const OpenButton = ({ onClick, hidden }) => (
   <OpenContainer hidden={hidden}>
     <Button onClick={onClick}>
@@ -61,6 +64,7 @@ const OpenButton = ({ onClick, hidden }) => (
     </Button>
   </OpenContainer>
 );
+
 const StyledA = styled.a`
   text-decoration: none;
   color: #468189;
@@ -72,6 +76,7 @@ const StyledA = styled.a`
     cursor: pointer;
   }
 `;
+
 const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
   return (
     <Link href={href} passHref>
@@ -81,6 +86,7 @@ const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
     </Link>
   );
 });
+
 const Menu = styled.nav`
   display: flex;
   justify-content: center;
@@ -98,6 +104,7 @@ const Menu = styled.nav`
   opacity: ${(props) => (props.hidden ? 0 : 1)};
   transition: all 500ms ease 350ms;
 `;
+
 const MenuUl = styled.ul`
   list-style: none;
   text-decoration: none;
@@ -109,6 +116,7 @@ const MenuUl = styled.ul`
   align-items: space-around;
   height: 100%;
 `;
+
 const MenuLi = styled.li`
   display: flex;
   justify-content: space-around;
@@ -116,6 +124,7 @@ const MenuLi = styled.li`
   text-decoration: none;
   font-size: 1.9rem;
 `;
+
 const DropDownMenu = () => {
   const [isActive, setIsActive] = useState(false);
   const toggleIsActive = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
@@ -153,5 +162,6 @@ const DropDownMenu = () => {
     </>
   );
 };
+
 LinkWithOnClick.displayName = 'LinkWithOnClick';
 export default DropDownMenu;
