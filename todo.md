@@ -20,6 +20,7 @@ todo 3/23/22
  - yaml throughout
  - emily's designs, ask about lacing design through?
  - test mobile side of every page
+ - the tutoring button is covered by the green tape image a bit, errrrg
 
  ####random note drop bugs
  - only coming down on the left
