@@ -8,21 +8,23 @@ const Container = styled.div`
   margin: 2rem;
   text-align: center;
   padding-bottom: 7rem; //bottom
-  /* border: 2px solid red; */
 `;
 
 const TextContainer = styled.div`
-  /* border: 2px solid purple; */
-  background-color: #ecf4f5;
+  background-color: #ecf3f5; //ecf3f5
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1em;
-  margin-top: 4rem;
+  margin-top: 2rem;
   width: 55rem;
-  box-shadow: 5px 5px 5px #cbdddb;
+  box-shadow: 5px 5px 5px #d0e0de;
   @media (max-width: 1438px) {
     width: 22rem;
+  }
+  :hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 `;
 
@@ -32,8 +34,7 @@ const Description = styled.p`
   justify-content: center;
   margin: 0;
   padding: 1em;
-  /* border: 2px solid orange; */
-  background-color: #ecf4f5;
+  background-color: #ecf3f5;
   height: 23vh;
   width: 50rem;
   line-height: 2;
@@ -59,8 +60,9 @@ const Description = styled.p`
 `;
 
 const ReadMoreButton = styled.button`
-  color: darkgray;
-  font-size: 0.9rem;
+  color: black;
+  opacity: 0.3;
+  font-size: 2rem;
   margin-top: 6px;
   margin-right: 1.5rem;
   background-color: #ecf4f5;
@@ -78,14 +80,13 @@ const ReadMoreButton = styled.button`
 
 const TransparentBottom = styled.div`
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   background: linear-gradient(
     to bottom,
     rgba(236, 244, 245, 0),
     rgba(236, 244, 245, 1)
   );
   background-color: transparent;
-  /* opacity: 5; */
   position: absolute;
   bottom: 0;
   @media (max-width: 1438px) {
@@ -98,11 +99,11 @@ let ButtonText = '';
 const ExpandableSection = ({ children }) => {
   const [isReadMoreClicked, setReadMoreClicked] = useState(false);
   const toggleButton = () => setReadMoreClicked(!isReadMoreClicked);
-  isReadMoreClicked ? (ButtonText = 'read less') : (ButtonText = 'read more');
+  isReadMoreClicked ? (ButtonText = '⌃') : (ButtonText = '⌄');
 
   return (
     <>
-      <TextContainer>
+      <TextContainer onClick={toggleButton}>
         <Description isReadMoreClicked={isReadMoreClicked}>
           {/* or truncate and the dots are at the bottom of children, can i add them at height 23? */}
           {/* {truncate(children, children.length - 1)}  */}
