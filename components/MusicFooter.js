@@ -15,6 +15,7 @@ const Container = styled.div`
   @media (max-width: 1438px) {
     border-top: none;
   }
+  z-index: 1;
 `;
 
 const FooterUl = styled.ul`
