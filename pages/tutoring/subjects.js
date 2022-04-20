@@ -6,6 +6,8 @@ const SubjectGrouping = styled.div`
   flex-wrap: wrap;
   flex: 1;
   justify-content: space-evenly;
+  padding-bottom: 4rem;
+  background: linear-gradient(#f5f9fa, #ecf3f5);
 `;
 
 const SubjectContainer = styled.div`
@@ -13,6 +15,8 @@ const SubjectContainer = styled.div`
   flex: 1;
   flex-basis: ${100 / 3}%;
   text-align: center;
+  border: 1px solid #b6c6c5;
+  margin: 1rem;
   @media only screen and (max-width: 600px) {
     font-size: 2rem;
     flex-basis: 100%;
@@ -24,6 +28,7 @@ const CourseContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-bottom: 2rem;
 `;
 
 function CourseItem({ courses, subject }) {
