@@ -11,7 +11,7 @@ const StyledLink = styled.a`
   color: ${(props) => {
     props.theme.colors.lightBrown;
   }};
-  &:hover,
+  &:hover, 
   &:focus {
     color: #9dbebb;
   }
@@ -52,10 +52,9 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
-// const Logo = styled.div`
-//   font-family: 'Shadows Into Light', cursive;
-//   font-size: 3rem;
-// `;
+const StyledHeader = styled.header`
+  position: relative;
+`;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -75,7 +74,7 @@ const MusicHeader = ({ copy }) => {
   const homeDivided = (navBarMusic.home || '').split(' ');
 
   return (
-    <header>
+    <StyledHeader>
       <NavUl>
         {!isTabletOrMobile && (
           <>
@@ -104,7 +103,7 @@ const MusicHeader = ({ copy }) => {
           </>
         )}
       </NavUl>
-    </header>
+    </StyledHeader>
   );
 };
 export default MusicHeader;

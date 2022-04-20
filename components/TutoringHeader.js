@@ -35,7 +35,7 @@ const NavUl = styled.ul`
     padding: 0;
     margin: 0;
     bottom: 0;
-  }
+  } 
 `;
 
 const NavLi = styled.li`
@@ -43,7 +43,7 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 4rem; 
+  height: 4rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
@@ -60,13 +60,19 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
+const StyledHeader = styled.header`
+  position: relative;
+  /* width: 100%; */
+  /* height: 100vh; */
+`;
+
 const TutoringHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBarTutor = {} } = copy;
   const homeDivided = (navBarTutor.home || '').split(' ');
 
   return (
-    <header>
+    <StyledHeader>
       <NavUl>
         {!isTabletOrMobile && (
           <>
@@ -97,7 +103,7 @@ const TutoringHeader = ({ copy }) => {
           </>
         )}
       </NavUl>
-    </header>
+    </StyledHeader>
   );
 };
 export default TutoringHeader;
