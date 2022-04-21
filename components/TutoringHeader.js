@@ -9,10 +9,10 @@ const StyledLink = styled.a`
   margin-left: 10px;
   margin-right: 4rem;
   font-size: 27px;
-  color: #468189;
+  color: #595959;
   &:hover,
   &:focus {
-    color: #9dbebb;
+    color: #b1b1b1;
   }
   @media (max-width: 1438px) {
     display: flex;
@@ -30,7 +30,7 @@ const NavUl = styled.ul`
   display: flex;
   margin: 0 auto;
   background-color: white;
-  border-bottom: 1px solid #dae5e7;
+  border-bottom: 1px solid #e9ecf1;
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
@@ -76,7 +76,7 @@ const TutoringHeader = ({ copy }) => {
       <NavUl>
         {!isTabletOrMobile && (
           <>
-            <NavItem href="/" left>
+            <NavItem css={{'border': '20rem'}} href="/" left >
               {navBarTutor.home}
             </NavItem>
             {/* adding extra header information to split between both sides */}

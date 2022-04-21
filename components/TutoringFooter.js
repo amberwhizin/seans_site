@@ -8,7 +8,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #dae5e7;
+  border-top: 1px solid #e9ecf1;
   @media (max-width: 1438px) {
     border-top: none;
   }
@@ -29,7 +29,7 @@ const FooterLi = styled.li`
   align-items: center;
   font-size: 27px;
   height: 4rem; 
-  color: ${(props) => props.theme.colors.darkestGreen};
+  color: #595959;
   /* border: 1px solid blue; */
 
   @media (max-width: 1438px) {

@@ -13,7 +13,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #e9f0f1, white);
+  background-color: #f5f6f9;
+  /* background: linear-gradient(to right, white, #e9ecf1); */
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
@@ -49,10 +50,14 @@ const ImageContainer = styled.div`
 
 //https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
 const TextContainer = styled.div`
-  margin: 8rem;
+  background-color: white;
+  margin: 9rem;
   margin-right: 7rem;
   margin-left: 20px;
-  box-shadow: 5px 5px 5px 5px #eaf1f0;
+  /* box-shadow: 5px 5px 2px 2px #e9ecf1; */
+  /* box-shadow: 60px -16px #c5cbdc; */
+  /* box-shadow: 12px 12px 2px 1px #e9ebf2; */
+  box-shadow: 3px 3px #dde0eb, -1em 0 .4em #dde0eb;
   padding-top: 10px;
   padding-bottom: 40px;
   position: relative;
@@ -74,17 +79,18 @@ const TextContainer = styled.div`
     padding-top: 10px;
     padding-bottom: 20px;
     line-height: 1.7;
-    box-shadow: 2px 2px 2px 2px #cbdddb;
+    box-shadow: 2px 2px 2px 2px #e9ecf1;
   }
 `;
 
 const HeaderContainer = styled.div`
+  background-color: white;
   font-family: futura-pt, sans-serif;
   font-weight: 100;
   margin-top: 1rem;
   padding-left: 56px;
   font-size: 3.5rem;
-  color: #639694;
+  color: #323232;
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
@@ -95,6 +101,7 @@ const HeaderContainer = styled.div`
 `;
 
 const Content = styled.div`
+  font-family: 'Open Sans', sans-serif;
   padding-top: 28px;
   padding-left: 56px;
   padding-right: 16px;

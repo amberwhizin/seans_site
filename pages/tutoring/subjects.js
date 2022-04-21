@@ -7,7 +7,7 @@ const SubjectGrouping = styled.div`
   flex: 1;
   justify-content: space-evenly;
   padding-bottom: 4rem;
-  background: linear-gradient(to right, #e9f0f1, white);
+  background-color: #e9ecf1;
 `;
 
 const SubjectContainer = styled.div`
@@ -15,7 +15,7 @@ const SubjectContainer = styled.div`
   flex: 1;
   flex-basis: ${100 / 3}%;
   text-align: center;
-  border: 1px solid #b6c6c5;
+  /* border: 2px solid #b1b1b1; */
   margin: 1rem;
   @media only screen and (max-width: 600px) {
     font-size: 2rem;
@@ -49,7 +49,7 @@ function CourseItem({ courses, subject }) {
       <p
         css={{
           'text-decoration':
-            'underline  #639694; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #639694; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
+            'underline  #323232; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #323232; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
         }}
       >
         {subject}

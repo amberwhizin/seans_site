@@ -4,9 +4,10 @@ import { useIsTabletOrMobile } from '../../hooks';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+
   text-align: center;
   align-items: center;
+  background-color: #e9ecf1;
 `;
 
 const Description = styled.p`

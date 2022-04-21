@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, #e9f0f1, white);
+  background-color: #e9ecf1;
   text-align: center;
   padding-bottom: 7rem; //bottom
 `;
@@ -18,7 +18,7 @@ const TextContainer = styled.div`
   padding: 1em;
   margin-top: 2rem;
   width: 55rem;
-  box-shadow: 5px 5px 5px #d0e0de;
+  /* box-shadow: 5px 5px 5px #d0e0de; */
   @media (max-width: 1438px) {
     width: 22rem;
   }
@@ -119,7 +119,7 @@ const ExpandableSection = ({ children }) => {
 const Testimonials = () => {
   return (
     <Container>
-      <h1>{`sean's reviews`}</h1>
+      <h1 css={{'background-color': '#e9ecf1'}}>{`sean's reviews`}</h1>
       <ExpandableSection>
         {`“Our daughters have been receiving tutoring from Sean for the past 2
         years. His knowledge and expertise in Math and Science has helped them
