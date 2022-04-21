@@ -7,7 +7,7 @@ const SubjectGrouping = styled.div`
   flex: 1;
   justify-content: space-evenly;
   padding-bottom: 4rem;
-  background: linear-gradient(to right, #dae5e7, white);
+  background: linear-gradient(to right, #e9f0f1, white);
 `;
 
 const SubjectContainer = styled.div`

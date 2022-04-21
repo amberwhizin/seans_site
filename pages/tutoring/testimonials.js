@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, #dae5e7, white);
+  background: linear-gradient(to right, #e9f0f1, white);
   text-align: center;
   padding-bottom: 7rem; //bottom
 `;

@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #dae5e7, white);
+  background: linear-gradient(to right, #e9f0f1, white);
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
