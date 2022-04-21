@@ -1,28 +1,24 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
-import seanTutoringImg from '../../public/pics/sean_mel_.png';
+import seanTutoringImg from '../../public/pics/sean_mel_ copy.png';
 
 const AboutTitle = `Sean Keegan`;
 
-const AboutBlurb = ` 
-Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
-Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.`;
+const AboutBlurb = `
+The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.`;
 
 const Container = styled.div`
-  margin-top: 3.5rem;
-  margin-left: 2rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to right, #dae5e7, white);
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
     padding: 0;
+    margin: 0;
     margin: 1rem;
   }
 `;
@@ -32,17 +28,18 @@ function Family() {
     <Image
       src={seanTutoringImg}
       alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
-      width={4700}
-      height={5700}
+      width={7000}
+      height={7600}
       placeholder="blur"
       priority
     />
   );
 }
 
+//https://codepen.io/binarykiwi/pen/BbOoPy
 const ImageContainer = styled.div`
-  /* padding: 1rem; */
-  margin-left: 4rem;
+  margin-left: 5rem;
+  margin-right: 20px;
   @media only screen and (max-width: 1438px) {
     padding: 5px;
     margin: 5px;
@@ -51,10 +48,11 @@ const ImageContainer = styled.div`
 
 //https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
 const TextContainer = styled.div`
-  margin: 5rem;
+  margin: 8rem;
   margin-right: 7rem;
-  box-shadow: 5px 5px 5px 5px #cbdddb;
-  padding-top: 40px;
+  margin-left: 20px;
+  box-shadow: 5px 5px 5px 5px #eaf1f0;
+  padding-top: 10px;
   padding-bottom: 40px;
   position: relative;
   ::before {
@@ -79,15 +77,18 @@ const TextContainer = styled.div`
   }
 `;
 
-const HeaderContainer = styled.h1`
+const HeaderContainer = styled.div`
+  font-family: futura-pt, sans-serif;
+  font-weight: 100;
   margin-top: 1rem;
   padding-left: 56px;
   font-size: 3.5rem;
-  color: #4c7371;
+  color: #639694;
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
     padding: 0;
+    margin-right: 1rem;
     font-size: 2.5rem;
   }
 `;
@@ -137,4 +138,5 @@ const About = () => {
     </Container>
   );
 };
+
 export default About;

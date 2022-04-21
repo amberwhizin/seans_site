@@ -5,13 +5,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  background: linear-gradient(to right, #dae5e7, white);
   text-align: center;
   padding-bottom: 7rem; //bottom
 `;
 
 const TextContainer = styled.div`
-  background-color: #ecf3f5; //ecf3f5
+  background-color: white; //ecf3f5
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -34,7 +34,7 @@ const Description = styled.p`
   justify-content: center;
   margin: 0;
   padding: 1em;
-  background-color: #ecf3f5;
+  background-color: white;
   height: 23vh;
   width: 50rem;
   line-height: 2;
@@ -65,7 +65,7 @@ const ReadMoreButton = styled.button`
   font-size: 2rem;
   margin-top: 6px;
   margin-right: 1.5rem;
-  background-color: #ecf4f5;
+  background-color: white;
   border: none;
   display: flex;
   align-self: end;
@@ -84,7 +84,7 @@ const TransparentBottom = styled.div`
   background: linear-gradient(
     to bottom,
     rgba(236, 244, 245, 0),
-    rgba(236, 244, 245, 1)
+    rgba(255,255,255, 0.9)
   );
   background-color: transparent;
   position: absolute;

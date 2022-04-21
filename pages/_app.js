@@ -35,8 +35,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
-    margin: 10px;
-    color: #4c7371;
+    color: #639694;
     font-family: futura-pt, sans-serif;
     font-weight: 100;
   }

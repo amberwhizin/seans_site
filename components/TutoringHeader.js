@@ -30,7 +30,7 @@ const NavUl = styled.ul`
   display: flex;
   margin: 0 auto;
   background-color: white;
-  border-bottom: 1px solid #468189;
+  border-bottom: 1px solid #dae5e7;
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;

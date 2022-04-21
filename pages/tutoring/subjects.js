@@ -7,7 +7,7 @@ const SubjectGrouping = styled.div`
   flex: 1;
   justify-content: space-evenly;
   padding-bottom: 4rem;
-  background: linear-gradient(#f5f9fa, #ecf3f5);
+  background: linear-gradient(to right, #dae5e7, white);
 `;
 
 const SubjectContainer = styled.div`
@@ -38,7 +38,7 @@ function CourseItem({ courses, subject }) {
       key={course}
       css={{
         'font-family':
-          'Helvetica, sans-serif-serif; font-weight: 100; white-space: pre; line-height: .4; padding: 7px;',
+          'Helvetica, sans-serif-serif; font-weight: 100; white-space: pre; line-height: .0; padding: 7px;',
       }}
     >
       {course}
@@ -49,7 +49,7 @@ function CourseItem({ courses, subject }) {
       <p
         css={{
           'text-decoration':
-            'underline  #4c7371; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #4c7371; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
+            'underline  #639694; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #639694; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
         }}
       >
         {subject}
