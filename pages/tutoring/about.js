@@ -40,6 +40,7 @@ function Family() {
 const ImageContainer = styled.div`
   margin-left: 5rem;
   margin-right: 20px;
+  opacity: 0.9;
   @media only screen and (max-width: 1438px) {
     padding: 5px;
     margin: 5px;
