@@ -46,8 +46,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #e9ecf1; */
-  /* background: linear-gradient(45deg, white 5%, #e9ecf1); */
   background: linear-gradient(
       217deg,
       rgb(249, 249, 253),
@@ -55,13 +53,9 @@ const Container = styled.div`
     ),
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
-
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    margin: 1rem;
   }
 `;
 
@@ -85,10 +79,9 @@ const ImageContainer = styled.div`
   margin-left: 6rem;
   margin-right: 20px;
   opacity: 0.9;
-  background-color: #e9ecf1; //#e9ecf1
+  background-color: #e9ecf1; 
   @media only screen and (max-width: 1438px) {
-    padding: 5px;
-    margin: 5px;
+    margin: 20px;
   }
 `;
 
@@ -113,14 +106,13 @@ const TextContainer = styled.div`
     opacity: 0.4;
   }
   @media only screen and (max-width: 1438px) {
-    margin: 10px;
+    margin: 20px;
     margin-top: 1rem;
     margin-bottom: 2rem;
     padding: 0;
     padding-top: 10px;
     padding-bottom: 20px;
     line-height: 1.7;
-    /* box-shadow: 2px 2px 2px 2px #e9ecf1; */
   }
 `;
 
@@ -178,18 +170,19 @@ const About = () => {
         </>
       )}
       {isTabletOrMobile && (
-         <>
-         <ImageContainer>
-           <Family />
-         </ImageContainer>
-         <TextContainer>
-           <HeaderContainer>{AboutTitle}</HeaderContainer>
-           <Content>
-             {AboutBlurb1} <br /><br />
-             {AboutBlurb2}
-           </Content>
-         </TextContainer>
-       </>
+        <>
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
+          <TextContainer>
+          <HeaderContainer>{AboutTitle}</HeaderContainer>
+            <Content>
+              {AboutBlurb1} <br />
+              <br />
+              {AboutBlurb2}
+            </Content>
+          </TextContainer>
+        </>
       )}
     </Container>
   );
