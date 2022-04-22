@@ -7,9 +7,13 @@ const Container = styled.div`
   align-items: center;
   /* background-color: #e9ecf1; */
   /* background: linear-gradient(45deg, #e9ecf1 80%, white); */
-  background: linear-gradient(217deg, rgb(249,249,253), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgb(219,221,243), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgb(205,207,238), rgba(0,0,255,0) 70.71%);
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(219, 221, 243), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
   text-align: center;
   padding-bottom: 7rem; //bottom
 `;
@@ -88,7 +92,7 @@ const TransparentBottom = styled.div`
   background: linear-gradient(
     to bottom,
     rgba(236, 244, 245, 0),
-    rgba(255,255,255, 0.9)
+    rgba(255, 255, 255, 0.9)
   );
   background-color: transparent;
   position: absolute;
@@ -123,7 +127,6 @@ const ExpandableSection = ({ children }) => {
 const Testimonials = () => {
   return (
     <Container>
-      <h1 css={{'background-color': '#e9ecf1'}}>{`sean's reviews`}</h1>
       <ExpandableSection>
         {`“Our daughters have been receiving tutoring from Sean for the past 2
         years. His knowledge and expertise in Math and Science has helped them
