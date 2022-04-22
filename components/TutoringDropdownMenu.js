@@ -17,13 +17,6 @@ const Button = styled.button`
   z-index: 100;
   margin-top: 10px;
   border: none;
-  &:hover,
-  &:focus {
-    color: #9dbebb;
-  }
-  :hover {
-    cursor: pointer;
-  }
 `;
 
 const CloseContainer = styled.div`
@@ -67,14 +60,7 @@ const OpenButton = ({ onClick, hidden }) => (
 
 const StyledA = styled.a`
   text-decoration: none;
-  color: #468189;
-  &:hover,
-  &:focus {
-    color: #9dbebb;
-  }
-  :hover {
-    cursor: pointer;
-  }
+  color: #4f4f4f;
 `;
 
 const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
