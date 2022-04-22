@@ -32,6 +32,8 @@ function Family() {
       width={7000}
       height={7600}
       placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
       priority
     />
   );
@@ -42,6 +44,7 @@ const ImageContainer = styled.div`
   margin-left: 5rem;
   margin-right: 20px;
   opacity: 0.9;
+  background-color: #f5f6f9;
   @media only screen and (max-width: 1438px) {
     padding: 5px;
     margin: 5px;
@@ -54,10 +57,7 @@ const TextContainer = styled.div`
   margin: 9rem;
   margin-right: 7rem;
   margin-left: 20px;
-  /* box-shadow: 5px 5px 2px 2px #e9ecf1; */
-  /* box-shadow: 60px -16px #c5cbdc; */
-  /* box-shadow: 12px 12px 2px 1px #e9ebf2; */
-  box-shadow: 3px 3px #dde0eb, -1em 0 .4em #dde0eb;
+  box-shadow: 3px 3px #dde0eb, -1em 0 0.4em #dde0eb;
   padding-top: 10px;
   padding-bottom: 40px;
   position: relative;
@@ -108,7 +108,7 @@ const Content = styled.div`
   line-height: 25px;
   letter-spacing: 1px;
   word-spacing: 5px;
-  font-size: 18px;
+  font-size: 20px;
   background-image: repeating-linear-gradient(
     white 0px,
     white 24px,
