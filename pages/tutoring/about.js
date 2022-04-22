@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f6f9;
+  background-color: #e9ecf1;
   /* background: linear-gradient(to right, white, #e9ecf1); */
   @media (max-width: 1438px) {
     position: absolute;
@@ -44,7 +44,7 @@ const ImageContainer = styled.div`
   margin-left: 5rem;
   margin-right: 20px;
   opacity: 0.9;
-  background-color: #f5f6f9;
+  background-color: #e9ecf1;//#e9ecf1
   @media only screen and (max-width: 1438px) {
     padding: 5px;
     margin: 5px;
@@ -57,7 +57,7 @@ const TextContainer = styled.div`
   margin: 9rem;
   margin-right: 7rem;
   margin-left: 20px;
-  box-shadow: 3px 3px #dde0eb, -1em 0 0.4em #dde0eb;
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   padding-top: 10px;
   padding-bottom: 40px;
   position: relative;
@@ -79,7 +79,7 @@ const TextContainer = styled.div`
     padding-top: 10px;
     padding-bottom: 20px;
     line-height: 1.7;
-    box-shadow: 2px 2px 2px 2px #e9ecf1;
+    /* box-shadow: 2px 2px 2px 2px #e9ecf1; */
   }
 `;
 
@@ -109,6 +109,7 @@ const Content = styled.div`
   letter-spacing: 1px;
   word-spacing: 5px;
   font-size: 20px;
+  color: #4f4f4f;
   background-image: repeating-linear-gradient(
     white 0px,
     white 24px,

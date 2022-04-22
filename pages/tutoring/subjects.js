@@ -15,7 +15,7 @@ const SubjectContainer = styled.div`
   flex: 1;
   flex-basis: ${100 / 3}%;
   text-align: center;
-  /* border: 2px solid #b1b1b1; */
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin: 1rem;
   @media only screen and (max-width: 600px) {
     font-size: 2rem;

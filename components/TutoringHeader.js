@@ -9,10 +9,10 @@ const StyledLink = styled.a`
   margin-left: 10px;
   margin-right: 4rem;
   font-size: 27px;
-  color: #595959;
+  color: #4f4f4f;
   &:hover,
   &:focus {
-    color: #b1b1b1;
+    color: #949494;
   }
   @media (max-width: 1438px) {
     display: flex;

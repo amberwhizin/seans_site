@@ -18,7 +18,7 @@ const TextContainer = styled.div`
   padding: 1em;
   margin-top: 2rem;
   width: 55rem;
-  /* box-shadow: 5px 5px 5px #d0e0de; */
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   @media (max-width: 1438px) {
     width: 22rem;
   }
