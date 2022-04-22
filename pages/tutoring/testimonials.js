@@ -5,7 +5,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e9ecf1;
+  /* background-color: #e9ecf1; */
+  /* background: linear-gradient(45deg, #e9ecf1 80%, white); */
+  background: linear-gradient(217deg, rgb(249,249,253), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgb(219,221,243), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgb(205,207,238), rgba(0,0,255,0) 70.71%);
   text-align: center;
   padding-bottom: 7rem; //bottom
 `;

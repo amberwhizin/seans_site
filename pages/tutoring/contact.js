@@ -7,7 +7,11 @@ const Container = styled.div`
 
   text-align: center;
   align-items: center;
-  background-color: #e9ecf1;
+  /* background-color: #e9ecf1; */
+  background: linear-gradient(217deg, rgb(249,249,253), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgb(249,249,253), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgb(205,207,238), rgba(0,0,255,0) 70.71%);
+  
 `;
 
 const Description = styled.p`
