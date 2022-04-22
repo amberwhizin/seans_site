@@ -6,17 +6,24 @@ const SubjectGrouping = styled.div`
   flex-wrap: wrap;
   flex: 1;
   justify-content: space-evenly;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
   /* background-color: #e9ecf1; */
-  background: linear-gradient(217deg, rgb(249,249,253), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgb(249,249,253), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgb(205,207,238), rgba(0,0,255,0) 70.71%);
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
 `;
 
 const SubjectContainer = styled.div`
   height: auto;
   flex: 1;
-  flex-basis: ${100 / 3}%;
+  flex-basis: ${100 / 4}%;
   text-align: center;
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin: 1rem;
