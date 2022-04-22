@@ -5,8 +5,41 @@ import seanTutoringImg from '../../public/pics/sean_mel_ copy.png';
 
 const AboutTitle = `Sean Keegan`;
 
-const AboutBlurb = `
-The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.`;
+const AboutBlurb1 = `
+’Twas brillig, and the slithy toves
+      Did gyre and gimble in the wabe:
+All mimsy were the borogoves,
+      And the mome raths outgrabe.
+
+“Beware the Jabberwock, my son!
+      The jaws that bite, the claws that catch!
+Beware the Jubjub bird, and shun
+      The frumious Bandersnatch!”
+
+He took his vorpal sword in hand;
+      Long time the manxome foe he sought—
+So rested he by the Tumtum tree
+      And stood awhile in thought.`;
+
+const AboutBlurb2 = `And, as in uffish thought he stood,
+The Jabberwock, with eyes of flame,
+Came whiffling through the tulgey wood,
+And burbled as it came!
+
+One, two! One, two! And through and through
+The vorpal blade went snicker-snack!
+He left it dead, and with its head
+He went galumphing back.
+
+“And hast thou slain the Jabberwock?
+Come to my arms, my beamish boy!
+O frabjous day! Callooh! Callay!”
+He chortled in his joy.
+
+’Twas brillig, and the slithy toves
+Did gyre and gimble in the wabe:
+All mimsy were the borogoves,
+And the mome raths outgrabe.`;
 
 const Container = styled.div`
   width: 100%;
@@ -15,9 +48,13 @@ const Container = styled.div`
   justify-content: center;
   /* background-color: #e9ecf1; */
   /* background: linear-gradient(45deg, white 5%, #e9ecf1); */
-  background: linear-gradient(217deg, rgb(249,249,253), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgb(249,249,253), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgb(205,207,238), rgba(0,0,255,0) 70.71%);
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
 
   @media (max-width: 1438px) {
     position: absolute;
@@ -33,8 +70,8 @@ function Family() {
     <Image
       src={seanTutoringImg}
       alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
-      width={7000}
-      height={7600}
+      width={3700}
+      height={4100}
       placeholder="blur"
       layout="intrinsic"
       objectFit="cover"
@@ -45,10 +82,10 @@ function Family() {
 
 //https://codepen.io/binarykiwi/pen/BbOoPy
 const ImageContainer = styled.div`
-  margin-left: 5rem;
+  margin-left: 6rem;
   margin-right: 20px;
   opacity: 0.9;
-  background-color: #e9ecf1;//#e9ecf1
+  background-color: #e9ecf1; //#e9ecf1
   @media only screen and (max-width: 1438px) {
     padding: 5px;
     margin: 5px;
@@ -58,7 +95,7 @@ const ImageContainer = styled.div`
 //https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
 const TextContainer = styled.div`
   background-color: white;
-  margin: 9rem;
+  margin: 8rem;
   margin-right: 7rem;
   margin-left: 20px;
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
@@ -133,20 +170,26 @@ const About = () => {
           </ImageContainer>
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <Content>{AboutBlurb}</Content>
+            <Content>
+              {AboutBlurb1} <br /><br />
+              {AboutBlurb2}
+            </Content>
           </TextContainer>
         </>
       )}
       {isTabletOrMobile && (
-        <>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
-          <ImageContainer>
-            <Family />
-          </ImageContainer>
-          <TextContainer>
-            <Content>{AboutBlurb}</Content>
-          </TextContainer>
-        </>
+         <>
+         <ImageContainer>
+           <Family />
+         </ImageContainer>
+         <TextContainer>
+           <HeaderContainer>{AboutTitle}</HeaderContainer>
+           <Content>
+             {AboutBlurb1} <br /><br />
+             {AboutBlurb2}
+           </Content>
+         </TextContainer>
+       </>
       )}
     </Container>
   );
