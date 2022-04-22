@@ -13,8 +13,8 @@ const Container = styled.div`
     ),
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
-  @media only screen and (max-width: 1438px) {
-    height: auto;
+  @media only screen and (max-width: 900px) {
+    height: 93vh;
   }
 `;
 const TextContainer = styled.div`
@@ -68,9 +68,13 @@ const EmailBorder = styled.p`
   padding: 1rem;
   color: #4f4f4f;
   @media (max-width: 1438px) {
-    border: 1px solid rgb(205, 207, 238);
     padding: 1rem;
     margin: 1.7rem;
+    font-size: 20px;
+  }
+  @media (max-width: 900px) {
+    padding: 1rem;
+    margin: 4rem;
     font-size: 20px;
   }
 `;
@@ -95,16 +99,16 @@ const Contact = ({ copy }) => {
       )}
       {isTabletOrMobile && (
         <>
-        <TextContainer>
-          <h1 css={{ 'padding-left': '56px;' }}>{contact.title}</h1>
-          <Content>
-            {contact.blurb}
-            <br />
-            <br />
-          </Content>
-        </TextContainer>
-        <EmailBorder>{contact.email}</EmailBorder>
-      </>
+          <TextContainer>
+            <h1 css={{ 'padding-left': '56px;' }}>{contact.title}</h1>
+            <Content>
+              {contact.blurb}
+              <br />
+              <br />
+            </Content>
+          </TextContainer>
+          <EmailBorder>{contact.email}</EmailBorder>
+        </>
       )}
     </Container>
   );
