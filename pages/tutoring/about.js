@@ -80,7 +80,7 @@ const ImageContainer = styled.div`
   margin-right: 20px;
   opacity: 0.9;
   background-color: #e9ecf1; 
-  @media only screen and (max-width: 1438px) {
+  @media screen and (max-width: 1438px) {
     margin: 20px;
   }
 `;
@@ -105,7 +105,7 @@ const TextContainer = styled.div`
     background-color: #9b375e;
     opacity: 0.4;
   }
-  @media only screen and (max-width: 1438px) {
+  @media screen and (max-width: 1438px) {
     margin: 20px;
     margin-top: 1rem;
     margin-bottom: 2rem;

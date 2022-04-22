@@ -10,7 +10,6 @@ const SubjectGrouping = styled.div`
   padding-right: 2rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  /* background-color: #e9ecf1; */
   background: linear-gradient(
       217deg,
       rgb(249, 249, 253),
@@ -18,6 +17,12 @@ const SubjectGrouping = styled.div`
     ),
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
+  @media screen and (max-width: 1438px) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 const SubjectContainer = styled.div`

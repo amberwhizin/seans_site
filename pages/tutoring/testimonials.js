@@ -16,6 +16,9 @@ const Container = styled.div`
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
   text-align: center;
   padding-bottom: 7rem; //bottom
+  @media screen and (max-width: 1438px) {
+    padding-bottom: 3rem; //bottom
+  }
 `;
 
 const TextContainer = styled.div`
