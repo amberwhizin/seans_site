@@ -20,8 +20,8 @@ const SubjectGrouping = styled.div`
   @media screen and (max-width: 1438px) {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
 `;
 
