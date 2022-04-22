@@ -72,11 +72,6 @@ const EmailBorder = styled.p`
     margin: 1.7rem;
     font-size: 20px;
   }
-  @media (max-width: 900px) {
-    padding: 1rem;
-    margin: 4rem;
-    font-size: 20px;
-  }
 `;
 
 const Contact = ({ copy }) => {
