@@ -100,22 +100,10 @@ const EmailBorder = styled.p`
   background-color: rgb(249, 249, 253);
   padding: 1rem;
   color: #4f4f4f;
-  /* margin-bottom: 15rem; */
+  margin: 1rem;
+  margin-left: 56px;
   @media screen and (max-width: 1438px) {
-    margin-bottom: 39rem;
     font-size: 20px;
-  }
-  @media screen and (max-width: 1024px) {
-    margin-bottom: 52rem;
-  }
-  @media only screen and (max-width: 414px) {
-    margin-bottom: 15rem;
-  }
-  @media only screen and (max-width: 375px) {
-    margin-bottom: 4rem;
-  }
-  @media only screen and (max-width: 375px) and (max-height: 812px) {
-    margin-bottom: 12rem;
   }
 `;
 
