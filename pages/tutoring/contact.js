@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
 
 const Container = styled.div`
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +13,6 @@ const Container = styled.div`
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
   @media only screen and (max-width: 900px) {
-    height: 93vh;
   }
 `;
 const TextContainer = styled.div`
@@ -35,11 +33,11 @@ const TextContainer = styled.div`
     opacity: 0.4;
   }
   @media (max-width: 1438px) {
-    font-size: 20px;
     width: 90%;
-    height: auto;
-    margin-top: 2rem;
-    margin-bottom: 10px;
+    height: 100%;
+  }
+  @media (max-width: 375px) {
+    margin: 1rem;
   }
 `;
 
@@ -67,10 +65,22 @@ const EmailBorder = styled.p`
   border: 1px solid rgb(205, 207, 238);
   padding: 1rem;
   color: #4f4f4f;
-  @media (max-width: 1438px) {
-    padding: 1rem;
-    margin: 1.7rem;
+  margin-bottom: 15rem;
+  @media screen and (max-width: 1438px) {
+    margin-bottom: 39rem;
     font-size: 20px;
+  }
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 52rem;
+  }
+  @media only screen and (max-width: 414px) {
+    margin-bottom: 15rem;
+  }
+  @media only screen and (max-width: 375px) {
+    margin-bottom: 4rem;
+  }
+  @media only screen and (max-width: 375px) and (max-height: 812px) {
+    margin-bottom: 12rem;
   }
 `;
 
