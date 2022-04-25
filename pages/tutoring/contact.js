@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
+import Image from 'next/image';
+import seanTutoringImg from '../../public/pics/books_sean.jpeg';
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(
       217deg,
       rgb(249, 249, 253),
@@ -12,15 +15,20 @@ const Container = styled.div`
     ),
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
-  @media only screen and (max-width: 900px) {
+  @media (max-width: 1438px) {
+    position: absolute;
+    flex-direction: column;
   }
 `;
+
 const TextContainer = styled.div`
-  width: 800px;
-  height: 400px;
   background-color: white;
-  margin: 3rem;
+  margin: 10rem;
+  margin-right: 10rem;
+  margin-left: 20px;
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
+  padding-top: 10px;
+  padding-bottom: 40px;
   position: relative;
   ::before {
     content: '';
@@ -32,12 +40,38 @@ const TextContainer = styled.div`
     background-color: #9b375e;
     opacity: 0.4;
   }
-  @media (max-width: 1438px) {
+  @media screen and (max-width: 1438px) {
+    margin: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    line-height: 1.7;
+  }
+  /* @media (max-width: 1024px) {
     width: 90%;
     height: 100%;
-  }
-  @media (max-width: 375px) {
+  } */
+  /* @media (max-width: 375px) {
     margin: 1rem;
+  } */
+`;
+
+const HeadingText = `Contact me!`;
+
+const HeadingContainer = styled.div`
+  background-color: white;
+  font-family: futura-pt, sans-serif;
+  font-weight: 100;
+  margin-top: 1rem;
+  padding-left: 56px;
+  font-size: 3rem;
+  color: #323232;
+  @media (max-width: 820px) {
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -63,9 +97,10 @@ const Content = styled.div`
 const EmailBorder = styled.p`
   font-size: 2rem;
   border: 1px solid rgb(205, 207, 238);
+  background-color: rgb(249, 249, 253);
   padding: 1rem;
   color: #4f4f4f;
-  margin-bottom: 15rem;
+  /* margin-bottom: 15rem; */
   @media screen and (max-width: 1438px) {
     margin-bottom: 39rem;
     font-size: 20px;
@@ -84,6 +119,33 @@ const EmailBorder = styled.p`
   }
 `;
 
+//https://codepen.io/binarykiwi/pen/BbOoPy
+const ImageContainer = styled.div`
+  margin-left: 9rem;
+  margin-right: 20px;
+  opacity: 0.9;
+  background-color: #e9ecf1;
+  @media screen and (max-width: 1438px) {
+    margin: 20px;
+  }
+`;
+
+//Photo by Sharon McCutcheon: https://www.pexels.com/photo/selective-focus-photo-of-pile-of-assorted-title-books-1148399/
+function Books() {
+  return (
+    <Image
+      src={seanTutoringImg}
+      alt="two people with their arms on each others shoulders facing camera smiling. The background is lost of snow and trees"
+      width={1000}
+      height={1000}
+      placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
+      priority
+    />
+  );
+}
+
 const Contact = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { contact = {} } = copy;
@@ -91,28 +153,34 @@ const Contact = ({ copy }) => {
     <Container id="contact">
       {!isTabletOrMobile && (
         <>
+          <ImageContainer>
+            <Books />
+          </ImageContainer>
           <TextContainer>
-            <h1 css={{ 'padding-left': '56px;' }}>{contact.title}</h1>
+            <HeadingContainer>{HeadingText}</HeadingContainer>
             <Content>
               {contact.blurb}
               <br />
               <br />
             </Content>
+            <EmailBorder>{contact.email}</EmailBorder>
           </TextContainer>
-          <EmailBorder>{contact.email}</EmailBorder>
         </>
       )}
       {isTabletOrMobile && (
         <>
+          <ImageContainer>
+            <Books />
+          </ImageContainer>
           <TextContainer>
-            <h1 css={{ 'padding-left': '56px;' }}>{contact.title}</h1>
+            <HeadingContainer>{HeadingText}</HeadingContainer>
             <Content>
               {contact.blurb}
               <br />
               <br />
             </Content>
+            <EmailBorder>{contact.email}</EmailBorder>
           </TextContainer>
-          <EmailBorder>{contact.email}</EmailBorder>
         </>
       )}
     </Container>

@@ -79,7 +79,7 @@ const ImageContainer = styled.div`
   margin-left: 6rem;
   margin-right: 20px;
   opacity: 0.9;
-  background-color: #e9ecf1; 
+  background-color: #e9ecf1;
   @media screen and (max-width: 1438px) {
     margin: 20px;
   }
@@ -127,7 +127,6 @@ const HeaderContainer = styled.div`
   @media (max-width: 820px) {
     text-align: center;
     margin-bottom: 0.5rem;
-    padding: 0;
     margin-right: 1rem;
     font-size: 2.5rem;
   }
@@ -163,7 +162,8 @@ const About = () => {
           <TextContainer>
             <HeaderContainer>{AboutTitle}</HeaderContainer>
             <Content>
-              {AboutBlurb1} <br /><br />
+              {AboutBlurb1} <br />
+              <br />
               {AboutBlurb2}
             </Content>
           </TextContainer>
@@ -175,9 +175,10 @@ const About = () => {
             <Family />
           </ImageContainer>
           <TextContainer>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
+            <HeaderContainer>{AboutTitle}</HeaderContainer>
             <Content>
-              {AboutBlurb1} <br />
+              {AboutBlurb1}
+              <br />
               <br />
               {AboutBlurb2}
             </Content>
