@@ -20,7 +20,7 @@ const Container = styled.div`
     flex-direction: column;
   }
 `;
-
+//https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
 const TextContainer = styled.div`
   background-color: white;
   margin: 12rem;
@@ -48,6 +48,7 @@ const TextContainer = styled.div`
     padding-top: 10px;
     padding-bottom: 20px;
     line-height: 1.7;
+    width: 90%;
   }
 `;
 
@@ -92,11 +93,19 @@ const EmailBorder = styled.p`
   border: 1px solid rgb(205, 207, 238);
   background-color: rgb(249, 249, 253);
   padding: 1rem;
-  color: #4f4f4f;
+  color: #323232;
   margin: 1rem;
-  margin-left: 56px;
+  margin-left: 48px;
+  margin-right: 30rem;
+  opacity: 0.9;
   @media screen and (max-width: 1438px) {
-    font-size: 20px;
+    font-size: 17px;
+    margin-right: 10px;
+    margin-left: 50px;
+    padding-left: 10px;
+    padding-right: 9px;
+    
+
   }
 `;
 
