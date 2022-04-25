@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   background-color: white;
-  margin: 10rem;
+  margin: 12rem;
   margin-right: 10rem;
   margin-left: 20px;
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
@@ -49,13 +49,6 @@ const TextContainer = styled.div`
     padding-bottom: 20px;
     line-height: 1.7;
   }
-  /* @media (max-width: 1024px) {
-    width: 90%;
-    height: 100%;
-  } */
-  /* @media (max-width: 375px) {
-    margin: 1rem;
-  } */
 `;
 
 const HeadingText = `Contact me!`;
