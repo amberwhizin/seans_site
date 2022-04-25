@@ -89,23 +89,19 @@ const Content = styled.div`
 `;
 
 const EmailBorder = styled.p`
+  /* display: flex;
+  justify-content: center; */
   font-size: 2rem;
   border: 1px solid rgb(205, 207, 238);
   background-color: rgb(249, 249, 253);
   padding: 1rem;
+  margin-left: 3.5rem;
+  margin-right: 2rem;
   color: #323232;
-  margin: 1rem;
-  margin-left: 48px;
-  margin-right: 30rem;
   opacity: 0.9;
   @media screen and (max-width: 1438px) {
     font-size: 17px;
-    margin-right: 10px;
-    margin-left: 50px;
-    padding-left: 10px;
-    padding-right: 9px;
-    
-
+    margin-right: 13px;
   }
 `;
 
@@ -150,10 +146,8 @@ const Contact = ({ copy }) => {
             <HeadingContainer>{HeadingText}</HeadingContainer>
             <Content>
               {contact.blurb}
-              <br />
-              <br />
             </Content>
-            <EmailBorder>{contact.email}</EmailBorder>
+              <EmailBorder>{contact.email}</EmailBorder>
           </TextContainer>
         </>
       )}
@@ -166,10 +160,8 @@ const Contact = ({ copy }) => {
             <HeadingContainer>{HeadingText}</HeadingContainer>
             <Content>
               {contact.blurb}
-              <br />
-              <br />
             </Content>
-            <EmailBorder>{contact.email}</EmailBorder>
+              <EmailBorder>{contact.email}</EmailBorder>
           </TextContainer>
         </>
       )}
