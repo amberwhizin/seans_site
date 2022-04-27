@@ -33,8 +33,9 @@ const SubjectContainer = styled.div`
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin: 1rem;
   @media only screen and (max-width: 600px) {
-    font-size: 2rem;
     flex-basis: 100%;
+    margin: 0;
+    margin-top: 1rem;
   }
 `;
 
