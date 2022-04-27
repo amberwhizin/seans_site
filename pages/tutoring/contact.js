@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { useIsTabletOrMobile } from '../../hooks';
-import Image from 'next/image';
-import seanTutoringImg from '../../public/pics/books_sean.jpeg';
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: linear-gradient(
       217deg,
       rgb(249, 249, 253),
@@ -15,122 +12,42 @@ const Container = styled.div`
     ),
     linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
-  @media (max-width: 1438px) {
-    position: absolute;
-    flex-direction: column;
-  }
 `;
-//https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
-const TextContainer = styled.div`
-  background-color: white;
-  margin: 12rem;
-  margin-right: 10rem;
-  margin-left: 20px;
-  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  position: relative;
-  ::before {
-    content: '';
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 40px;
-    background-color: #9b375e;
-    opacity: 0.4;
-  }
-  @media screen and (max-width: 1438px) {
-    margin: 20px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    line-height: 1.7;
+
+const Description = styled.div`
+  border: 1px solid black;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+  width: 800px;
+  height: 700px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 1438px) {
+    text-align: center;
+    font-size: 20px;
     width: 90%;
   }
 `;
 
-const HeadingText = `Contact me!`;
-
-const HeadingContainer = styled.div`
-  background-color: white;
-  font-family: futura-pt, sans-serif;
-  font-weight: 100;
-  margin-top: 1rem;
-  padding-left: 56px;
+const EmailBorder = styled.div`
+  border: 1px solid black;
+  background-color: rgb(205, 207, 238);
+  text-align: center;
+  margin-top: 9rem;
+  padding: 1rem;
   font-size: 3rem;
   color: #323232;
-  @media (max-width: 820px) {
-    margin-bottom: 0.5rem;
-    margin-right: 1rem;
-    font-size: 2.5rem;
+  @media (max-width: 1438px) {
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
-
-const Content = styled.div`
-  font-family: 'Open Sans', sans-serif;
-  padding-top: 28px;
-  padding-left: 56px;
-  padding-right: 16px;
-  padding-bottom: 50px;
-  line-height: 25px;
-  letter-spacing: 1px;
-  word-spacing: 5px;
-  font-size: 22px;
-  color: #4f4f4f;
-  background-image: repeating-linear-gradient(
-    white 0px,
-    white 24px,
-    white 24px,
-    teal 25px
-  );
-`;
-
-const EmailBorder = styled.p`
-  /* display: flex;
-  justify-content: center; */
-  font-size: 2rem;
-  border: 1px solid rgb(205, 207, 238);
-  background-color: rgb(249, 249, 253);
-  padding: 1rem;
-  margin-left: 3.5rem;
-  margin-right: 2rem;
-  color: #323232;
-  opacity: 0.9;
-  @media screen and (max-width: 1438px) {
-    font-size: 17px;
-    margin-right: 13px;
-  }
-`;
-
-//https://codepen.io/binarykiwi/pen/BbOoPy
-const ImageContainer = styled.div`
-  margin-left: 9rem;
-  margin-right: 20px;
-  opacity: 0.9;
-  background-color: #e9ecf1;
-  @media screen and (max-width: 1438px) {
-    margin: 20px;
-  }
-`;
-
-//Photo by Sharon McCutcheon: https://www.pexels.com/photo/selective-focus-photo-of-pile-of-assorted-title-books-1148399/
-function Books() {
-  return (
-    <Image
-      src={seanTutoringImg}
-      alt="two people with their arms on each others shoulders facing camera smiling. The background is lost of snow and trees"
-      width={1000}
-      height={1000}
-      placeholder="blur"
-      layout="intrinsic"
-      objectFit="cover"
-      priority
-    />
-  );
-}
 
 const Contact = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
@@ -139,30 +56,46 @@ const Contact = ({ copy }) => {
     <Container id="contact">
       {!isTabletOrMobile && (
         <>
-          <ImageContainer>
-            <Books />
-          </ImageContainer>
-          <TextContainer>
-            <HeadingContainer>{HeadingText}</HeadingContainer>
-            <Content>
-              {contact.blurb}
-            </Content>
-              <EmailBorder>{contact.email}</EmailBorder>
-          </TextContainer>
+          <Description>
+            <h1>{contact.title}</h1>
+            <div
+              css={{
+                padding:
+                  '1rem;  padding-left: 4rem; padding-right: 4rem; line-height: 40px; word-space: 20px',
+              }}
+            >
+              {contact.blurb1}
+              <br />
+              <br />
+              {contact.blurb2}
+              <br />
+              <br />
+              {contact.blurb3}
+            </div>
+            <EmailBorder>{contact.email}</EmailBorder>
+          </Description>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <ImageContainer>
-            <Books />
-          </ImageContainer>
-          <TextContainer>
-            <HeadingContainer>{HeadingText}</HeadingContainer>
-            <Content>
-              {contact.blurb}
-            </Content>
-              <EmailBorder>{contact.email}</EmailBorder>
-          </TextContainer>
+          <Description>
+            <h1>{contact.title}</h1>
+            <div
+              css={{
+                padding:
+                  '1rem;  padding-left: 4rem; padding-right: 4rem; line-height: 35px; word-space: 20px',
+              }}
+            >
+              {contact.blurb1}
+              <br />
+              <br />
+              {contact.blurb2}
+              <br />
+              <br />
+              {contact.blurb3}
+            </div>
+            <EmailBorder>{contact.email}</EmailBorder>
+          </Description>
         </>
       )}
     </Container>
