@@ -141,19 +141,18 @@ const About = ({ copy }) => {
       )}
       {isTabletOrMobile && (
         <>
-          <ImageContainer>
-            <Family />
-          </ImageContainer>
-          <TextContainer>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <Content>
-              {AboutBlurb1}
-              <br />
-              <br />
-              {AboutBlurb2}
-            </Content>
-          </TextContainer>
-        </>
+        <ImageContainer>
+          <Family />
+        </ImageContainer>
+        <TextContainer>
+          <HeaderContainer>{AboutTitle}</HeaderContainer>
+          <Content>
+            {about.blurb1} <br />
+            <br />
+            {about.blurb2}
+          </Content>
+        </TextContainer>
+      </>
       )}
     </Container>
   );
