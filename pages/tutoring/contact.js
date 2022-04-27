@@ -14,7 +14,7 @@ const Container = styled.div`
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
 `;
 
-const Description = styled.div`
+const TextContainer = styled.div`
   border: 1px solid black;
   margin-top: 2.5rem;
   margin-bottom: 3rem;
@@ -31,6 +31,19 @@ const Description = styled.div`
   }
 `;
 
+const Text = styled.div`
+  padding: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  line-height: 40px;
+  @media screen and (max-width: 1438px) {
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    line-height: 35px;
+  }
+`;
+
 const EmailBorder = styled.div`
   border: 1px solid black;
   background-color: rgb(205, 207, 238);
@@ -40,7 +53,6 @@ const EmailBorder = styled.div`
   font-size: 3rem;
   color: #323232;
   @media (max-width: 1438px) {
-    padding: 1rem;
     margin: 2rem;
     font-size: 20px;
     display: flex;
@@ -56,14 +68,9 @@ const Contact = ({ copy }) => {
     <Container id="contact">
       {!isTabletOrMobile && (
         <>
-          <Description>
+          <TextContainer>
             <h1>{contact.title}</h1>
-            <div
-              css={{
-                padding:
-                  '1rem;  padding-left: 4rem; padding-right: 4rem; line-height: 40px; word-space: 20px',
-              }}
-            >
+            <Text>
               {contact.blurb1}
               <br />
               <br />
@@ -71,21 +78,16 @@ const Contact = ({ copy }) => {
               <br />
               <br />
               {contact.blurb3}
-            </div>
+            </Text>
             <EmailBorder>{contact.email}</EmailBorder>
-          </Description>
+          </TextContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <Description>
+          <TextContainer>
             <h1>{contact.title}</h1>
-            <div
-              css={{
-                padding:
-                  '1rem;  padding-left: 4rem; padding-right: 4rem; line-height: 35px; word-space: 20px',
-              }}
-            >
+            <Text>
               {contact.blurb1}
               <br />
               <br />
@@ -93,9 +95,9 @@ const Contact = ({ copy }) => {
               <br />
               <br />
               {contact.blurb3}
-            </div>
+            </Text>
             <EmailBorder>{contact.email}</EmailBorder>
-          </Description>
+          </TextContainer>
         </>
       )}
     </Container>
