@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-  border: 1px solid black;
+ box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin-top: 2.5rem;
   margin-bottom: 3rem;
   width: 800px;
@@ -59,7 +59,7 @@ const Text = styled.div`
 `;
 
 const EmailBorder = styled.div`
-  border: 1px solid black;
+ box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.2em #d1d7e2;
   background-color: rgb(205, 207, 238);
   text-align: center;
   margin-top: 9rem;
