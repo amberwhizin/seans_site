@@ -25,9 +25,20 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   @media (max-width: 1438px) {
-    text-align: center;
     font-size: 20px;
     width: 90%;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+  @media (max-width: 1024px) {
+    font-size: 30px;
+    margin-top: 5rem;
+    margin-bottom: 32.5rem;
+  }
+  @media screen and (max-width: 414px) {
+    margin-top: 4rem;
+    margin-bottom: 5.5rem;
+    width: 95%;
   }
 `;
 
@@ -38,9 +49,12 @@ const Text = styled.div`
   line-height: 40px;
   @media screen and (max-width: 1438px) {
     padding: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     line-height: 35px;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 20px;
   }
 `;
 
@@ -54,10 +68,15 @@ const EmailBorder = styled.div`
   color: #323232;
   @media (max-width: 1438px) {
     margin: 2rem;
-    font-size: 20px;
+    margin-top: 9rem;
+    font-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  @media (max-width: 414px) {
+    font-size: 20px;
+    margin-top: 2rem;
   }
 `;
 
