@@ -14,6 +14,7 @@ const Container = styled.div`
     linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
 `;
 
+
 const TextContainer = styled.div`
  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin-top: 2.5rem;
