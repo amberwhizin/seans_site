@@ -3,13 +3,6 @@ import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
 import seanTutoringImg from '../../public/pics/sean_mel_ copy.png';
 
-const AboutTitle = `Sean Keegan`;
-
-const AboutBlurb1 = `
-’`;
-
-const AboutBlurb2 = ``;
-
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -94,10 +87,9 @@ const HeaderContainer = styled.div`
   font-size: 3.5rem;
   color: #323232;
   @media (max-width: 820px) {
-    text-align: center;
     margin-bottom: 0.5rem;
     margin-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 `;
 
@@ -130,7 +122,7 @@ const About = ({ copy }) => {
             <Family />
           </ImageContainer>
           <TextContainer>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
+            <HeaderContainer>Sean Keegan</HeaderContainer>
             <Content>
               {about.blurb1} <br />
               <br />
@@ -141,18 +133,18 @@ const About = ({ copy }) => {
       )}
       {isTabletOrMobile && (
         <>
-        <ImageContainer>
-          <Family />
-        </ImageContainer>
-        <TextContainer>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
-          <Content>
-            {about.blurb1} <br />
-            <br />
-            {about.blurb2}
-          </Content>
-        </TextContainer>
-      </>
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
+          <TextContainer>
+            <HeaderContainer>Sean Keegan</HeaderContainer>
+            <Content>
+              {about.blurb1} <br />
+              <br />
+              {about.blurb2}
+            </Content>
+          </TextContainer>
+        </>
       )}
     </Container>
   );
