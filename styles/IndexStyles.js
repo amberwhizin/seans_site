@@ -53,13 +53,17 @@ export const MusicContainer = styled.div`
 `;
 
 export const StyledTutor = styled.div`
-  z-index: 7;
-  position: absolute;
+  z-index: 100; //can only effect its parent el
+  position: fixed;
   left: 7vw;
   bottom: 75vh;
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
   @media screen and (max-width: 1438px) {
     font-size: 7.5rem;
     top: 1%;
@@ -89,7 +93,8 @@ export const StyledTutor = styled.div`
 `;
 
 export const StyledMusic = styled.div`
-  position: absolute;
+  z-index: 100; //can only effect its parent el
+  position: fixed;
   top: 75vh;
   right: 4vw;
   color: #343a40;
@@ -97,6 +102,10 @@ export const StyledMusic = styled.div`
   font-size: 10rem;
   letter-spacing: 1rem;
   filter: blur(0);
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
   @media screen and (max-width: 1438px) {
     font-size: 7.5rem;
   }

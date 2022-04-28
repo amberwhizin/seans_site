@@ -18,7 +18,6 @@ import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
 import GreenTapeImg from '../public/pics/cropped_green_label.png';
 
-
 const TutoringImage = () => {
   return (
     <ImageContainerTutor>
@@ -73,24 +72,18 @@ const HomePage = () => {
         <>
           <TutorContainer onClick={onClickTutoring}>
             <TutoringImage />
-            <HomeLink onClick={onClickTutoring}>
-              <StyledTutor>TUTORING</StyledTutor>
-            </HomeLink>
           </TutorContainer>
-
+          <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
           <Title wasTutoringClicked={wasTutoringClicked}>
             <Image
               alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
               src={GreenTapeImg}
             />
           </Title>
-
           <MusicContainer onClick={onClickMusic}>
             <MusicImage ifMusicImageExists={MusicImage} />
-            <HomeLink onClick={onClickMusic}>
-              <StyledMusic>MUSIC</StyledMusic>
-            </HomeLink>
           </MusicContainer>
+          <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
         </>
       )}
       {isTabletOrMobile && (
