@@ -25,7 +25,7 @@ function Family() {
   return (
     <Image
       src={seanTutoringImg}
-      alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
+      alt="Sean keegan and family member with their arms on each others shoulders facing camera smiling. The background is of snow ground and trees."
       width={3700}
       height={4100}
       placeholder="blur"
