@@ -13,6 +13,7 @@ const Container = styled.div`
     position: absolute;
     flex-direction: column;
     padding: 1rem;
+    margin: 0;
   }
 `;
 
@@ -30,7 +31,10 @@ function SeanGuitar() {
 const ImageContainer = styled.div`
   padding: 1rem;
   margin-left: 1rem;
-  @media (max-width: 820px) {
+  @media screen and (max-width: 1438px) {
+    margin: 0;
+  }
+  @media screen and (max-width: 820px) {
     padding: 0;
   }
 `;
