@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 7rem;
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
@@ -29,6 +29,7 @@ function SeanGuitar() {
 
 const ImageContainer = styled.div`
   padding: 1rem;
+  margin-left: 1rem;
   @media (max-width: 820px) {
     padding: 0;
   }
@@ -36,11 +37,11 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   padding: 2rem;
-  line-height: 1.9;
+  line-height: 1.5;
   @media (max-width: 820px) {
     margin-bottom: 0.5rem;
     padding: 1px;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 `;
 
