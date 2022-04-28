@@ -95,7 +95,7 @@ export const StyledTutor = styled.div`
 export const StyledMusic = styled.div`
   z-index: 100; //can only effect its parent el
   position: fixed;
-  top: 75vh;
+  top: 70vh;
   right: 4vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
