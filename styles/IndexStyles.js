@@ -126,6 +126,7 @@ export const StyledMusic = styled.div`
   }
   @media screen and (max-width: 400px) {
     font-size: 2.5rem;
+    top: 88%;
   }
   @media screen and (max-width: 300px) {
     font-size: 1.5rem;
