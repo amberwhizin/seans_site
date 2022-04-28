@@ -1,15 +1,15 @@
 // <a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons created by Syahrul Hidayatullah - Flaticon</a>
 
-//Syahrul Hidayatullah
-// <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by torskaya - Flaticon</a> 
+
+// <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by torskaya - Flaticon</a>
 
 import { forwardRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
-import HamburgerIcon from '../public/pics/burger_green.png';
-import XIcon from '../public/pics/cancel_green.png';
+import HamburgerIcon from '../public/pics/grey_burger.png';
+import XIcon from '../public/pics/grey_cancel.png';
 
 const Button = styled.button`
   display: flex;
@@ -27,7 +27,9 @@ const CloseContainer = styled.div`
 
 const CloseButton = ({ onClick }) => (
   <CloseContainer>
-    <Button onClick={onClick}>
+    <Button
+      onClick={onClick}
+    >
       <Image
         src={XIcon}
         alt={'an image of a black and white hamburger'}
