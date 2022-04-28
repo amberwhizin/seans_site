@@ -20,8 +20,8 @@ const SubjectGrouping = styled.div`
   @media screen and (max-width: 1438px) {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 `;
 
@@ -32,6 +32,15 @@ const SubjectContainer = styled.div`
   text-align: center;
   box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   margin: 1rem;
+  @media screen and (max-width: 1438px) {
+    flex-basis: ${100 / 3}%;
+  }
+  @media screen and (max-width: 1024px) and (max-height: 1366px) {
+    flex-basis: ${100 / 2}%;
+  }
+  @media screen and (max-width: 768px) and (max-height: 1024px) {
+    flex-basis: ${100 / 3}%;
+  }
   @media only screen and (max-width: 600px) {
     flex-basis: 100%;
     margin: 0;
