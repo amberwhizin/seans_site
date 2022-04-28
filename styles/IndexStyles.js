@@ -31,6 +31,7 @@ export const TutorContainer = styled.div`
 
 // https://bennettfeely.com/clippy/
 export const MusicContainer = styled.div`
+  bottom: 0;
   filter: grayscale(1);
   position: fixed;
   overflow: hidden;
@@ -52,13 +53,17 @@ export const MusicContainer = styled.div`
 `;
 
 export const StyledTutor = styled.div`
-  z-index: 7;
-  position: absolute;
+  z-index: 100; //can only effect its parent el
+  position: fixed;
   left: 7vw;
   bottom: 75vh;
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
   @media screen and (max-width: 1438px) {
     font-size: 7.5rem;
     top: 1%;
@@ -88,14 +93,19 @@ export const StyledTutor = styled.div`
 `;
 
 export const StyledMusic = styled.div`
-  position: absolute;
-  top: 75vh;
+  z-index: 100; //can only effect its parent el
+  position: fixed;
+  top: 70vh;
   right: 4vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
   font-size: 10rem;
   letter-spacing: 1rem;
   filter: blur(0);
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
   @media screen and (max-width: 1438px) {
     font-size: 7.5rem;
   }
@@ -116,6 +126,7 @@ export const StyledMusic = styled.div`
   }
   @media screen and (max-width: 400px) {
     font-size: 2.5rem;
+    top: 88%;
   }
   @media screen and (max-width: 300px) {
     font-size: 1.5rem;

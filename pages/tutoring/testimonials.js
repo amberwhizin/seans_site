@@ -5,24 +5,37 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  /* background-color: #e9ecf1; */
+  /* background: linear-gradient(45deg, #e9ecf1 80%, white); */
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(219, 221, 243), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
   text-align: center;
   padding-bottom: 7rem; //bottom
-  /* border: 2px solid red; */
+  @media screen and (max-width: 1438px) {
+    padding-bottom: 3rem; //bottom
+  }
 `;
 
 const TextContainer = styled.div`
-  /* border: 2px solid purple; */
-  background-color: #ecf4f5;
+  background-color: white; //ecf3f5
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1em;
-  margin-top: 4rem;
+  margin-top: 2rem;
   width: 55rem;
-  box-shadow: 5px 5px 5px #cbdddb;
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
   @media (max-width: 1438px) {
     width: 22rem;
+  }
+  :hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 `;
 
@@ -32,8 +45,7 @@ const Description = styled.p`
   justify-content: center;
   margin: 0;
   padding: 1em;
-  /* border: 2px solid orange; */
-  background-color: #ecf4f5;
+  background-color: white;
   height: 23vh;
   width: 50rem;
   line-height: 2;
@@ -59,11 +71,12 @@ const Description = styled.p`
 `;
 
 const ReadMoreButton = styled.button`
-  color: darkgray;
-  font-size: 0.9rem;
+  color: black;
+  opacity: 0.3;
+  font-size: 2rem;
   margin-top: 6px;
   margin-right: 1.5rem;
-  background-color: #ecf4f5;
+  background-color: white;
   border: none;
   display: flex;
   align-self: end;
@@ -78,14 +91,13 @@ const ReadMoreButton = styled.button`
 
 const TransparentBottom = styled.div`
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   background: linear-gradient(
     to bottom,
     rgba(236, 244, 245, 0),
-    rgba(236, 244, 245, 1)
+    rgba(255, 255, 255, 0.9)
   );
   background-color: transparent;
-  /* opacity: 5; */
   position: absolute;
   bottom: 0;
   @media (max-width: 1438px) {
@@ -98,11 +110,11 @@ let ButtonText = '';
 const ExpandableSection = ({ children }) => {
   const [isReadMoreClicked, setReadMoreClicked] = useState(false);
   const toggleButton = () => setReadMoreClicked(!isReadMoreClicked);
-  isReadMoreClicked ? (ButtonText = 'read less') : (ButtonText = 'read more');
+  isReadMoreClicked ? (ButtonText = '⌃') : (ButtonText = '⌄');
 
   return (
     <>
-      <TextContainer>
+      <TextContainer onClick={toggleButton}>
         <Description isReadMoreClicked={isReadMoreClicked}>
           {/* or truncate and the dots are at the bottom of children, can i add them at height 23? */}
           {/* {truncate(children, children.length - 1)}  */}
@@ -118,7 +130,6 @@ const ExpandableSection = ({ children }) => {
 const Testimonials = () => {
   return (
     <Container>
-      <h1>testimonials</h1>
       <ExpandableSection>
         {`“Our daughters have been receiving tutoring from Sean for the past 2
         years. His knowledge and expertise in Math and Science has helped them

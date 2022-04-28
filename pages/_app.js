@@ -7,8 +7,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
-const musicFont = `'Montserrat', cursive; color: #f4e9cd; background: black`;
-const tutoringFont = `'Montserrat', cursive; background: white`;
+const musicFont = `'Montserrat', Arial, Sans-Serif; color: #f4e9cd; background: black`;
+const tutoringFont = `'Montserrat', Arial, Sans-Serif; background: white`;
 /* If the urls says music, use the music font, otherwise use the tutoring font */
 
 const GlobalStyle = createGlobalStyle`
@@ -35,8 +35,13 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
-    margin: 10px;
-    color: #9dbebb;
+    color:  ${(props) => {
+      if (props.isTutoring) {
+        return '#323232';
+      }
+    }};
+    font-family: futura-pt, sans-serif;
+    font-weight: 100;
   }
   p {
     font-size: 1.2rem;

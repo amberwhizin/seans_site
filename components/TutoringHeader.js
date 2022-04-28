@@ -6,17 +6,17 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding-right: 4rem;
-  font-size: 2rem;
-  color: #468189;
+  margin-left: 10px;
+  margin-right: 4rem;
+  font-size: 27px;
+  color: #4f4f4f;
   &:hover,
   &:focus {
-    color: #9dbebb;
+    color: #949494;
   }
   @media (max-width: 1438px) {
     display: flex;
     align-items: center;
-    padding: 1rem;
   }
 `;
 
@@ -30,12 +30,12 @@ const NavUl = styled.ul`
   display: flex;
   margin: 0 auto;
   background-color: white;
-  border-bottom: 1px solid #468189;
+  border-bottom: 1px solid #e9ecf1;
   @media (max-width: 1438px) {
     padding: 0;
     margin: 0;
     bottom: 0;
-  }
+  } 
 `;
 
 const NavLi = styled.li`
@@ -43,7 +43,7 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 5rem;
+  height: 4rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
@@ -60,17 +60,23 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
+const StyledHeader = styled.header`
+  position: relative;
+  /* width: 100%; */
+  /* height: 100vh; */
+`;
+
 const TutoringHeader = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBarTutor = {} } = copy;
   const homeDivided = (navBarTutor.home || '').split(' ');
 
   return (
-    <header>
+    <StyledHeader>
       <NavUl>
         {!isTabletOrMobile && (
           <>
-            <NavItem href="/" left>
+            <NavItem css={{'border': '20rem'}} href="/" left >
               {navBarTutor.home}
             </NavItem>
             {/* adding extra header information to split between both sides */}
@@ -97,7 +103,7 @@ const TutoringHeader = ({ copy }) => {
           </>
         )}
       </NavUl>
-    </header>
+    </StyledHeader>
   );
 };
 export default TutoringHeader;

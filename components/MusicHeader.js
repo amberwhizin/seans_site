@@ -6,19 +6,19 @@ import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding-right: 4rem;
-  font-size: 2rem;
+  margin-left: 10px;
+  margin-right: 4rem;
+  font-size: 27px;
   color: ${(props) => {
     props.theme.colors.lightBrown;
   }};
-  &:hover,
+  &:hover, 
   &:focus {
     color: #9dbebb;
   }
   @media (max-width: 1438px) {
     display: flex;
     align-items: center;
-    padding: 1rem;
   }
 `;
 
@@ -48,14 +48,13 @@ const NavLi = styled.li`
   align-items: center;
   margin: 0;
   padding: 0;
-  height: 5rem;
+  height: 4rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
-// const Logo = styled.div`
-//   font-family: 'Shadows Into Light', cursive;
-//   font-size: 3rem;
-// `;
+const StyledHeader = styled.header`
+  position: relative;
+`;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -75,7 +74,7 @@ const MusicHeader = ({ copy }) => {
   const homeDivided = (navBarMusic.home || '').split(' ');
 
   return (
-    <header>
+    <StyledHeader>
       <NavUl>
         {!isTabletOrMobile && (
           <>
@@ -104,7 +103,7 @@ const MusicHeader = ({ copy }) => {
           </>
         )}
       </NavUl>
-    </header>
+    </StyledHeader>
   );
 };
 export default MusicHeader;

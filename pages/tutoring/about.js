@@ -1,72 +1,119 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
-import seanTutoringImg from '../../public/pics/sean_mel_.png';
-
-const AboutTitle = `Sean Keegan`;
-
-const AboutBlurb = `
-Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.`;
+import seanTutoringImg from '../../public/pics/sean_mel_ copy.png';
 
 const Container = styled.div`
-  margin-top: 4rem;
-  margin-left: 2rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
   @media (max-width: 1438px) {
-    /* position: absolute; */
+    position: absolute;
     flex-direction: column;
-    padding: 1rem;
-    margin: 1rem;
   }
 `;
 
-const X = 3;
 function Family() {
   return (
     <Image
       src={seanTutoringImg}
-      alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
-      width={7000 / X}
-      height={8752 / X}
+      alt="Sean keegan and family member with their arms on each others shoulders facing camera smiling. The background is of snow ground and trees."
+      width={3700}
+      height={4100}
       placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
       priority
     />
   );
 }
 
+//https://codepen.io/binarykiwi/pen/BbOoPy
 const ImageContainer = styled.div`
-  padding: 1rem;
+  margin-left: 6rem;
+  margin-right: 20px;
+  opacity: 0.9;
+  background-color: #e9ecf1;
+  @media screen and (max-width: 1438px) {
+    margin: 20px;
+  }
 `;
 
+//https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
 const TextContainer = styled.div`
-  display: block;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  padding: 2rem;
-  line-height: 1.9;
-  @media (max-width: 820px) {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    padding: 1px;
+  background-color: white;
+  margin: 8rem;
+  margin-right: 7rem;
+  margin-left: 20px;
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  position: relative;
+  ::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    background-color: #9b375e;
+    opacity: 0.4;
+  }
+  @media screen and (max-width: 1438px) {
+    margin: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
     line-height: 1.7;
   }
 `;
 
-const HeaderContainer = styled.h1`
-  margin: 0;
+const HeaderContainer = styled.div`
+  background-color: white;
+  font-family: futura-pt, sans-serif;
+  font-weight: 100;
+  margin-top: 1rem;
+  padding-left: 56px;
   font-size: 3.5rem;
+  color: #323232;
   @media (max-width: 820px) {
-    text-align: center;
     margin-bottom: 0.5rem;
+    margin-right: 1rem;
     font-size: 2.5rem;
   }
 `;
 
-const About = () => {
+const Content = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 28px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  font-size: 20px;
+  color: #4f4f4f;
+  background-image: repeating-linear-gradient(
+    white 0px,
+    white 24px,
+    white 24px,
+    teal 25px
+  );
+`;
+
+const About = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
+  const { about = {} } = copy;
   return (
     <Container>
       {!isTabletOrMobile && (
@@ -75,21 +122,32 @@ const About = () => {
             <Family />
           </ImageContainer>
           <TextContainer>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <p>{AboutBlurb}</p>
+            <HeaderContainer>Sean Keegan</HeaderContainer>
+            <Content>
+              {about.blurb1} <br />
+              <br />
+              {about.blurb2}
+            </Content>
           </TextContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
-          <Family />
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
           <TextContainer>
-            <p>{AboutBlurb}</p>
+            <HeaderContainer>Sean Keegan</HeaderContainer>
+            <Content>
+              {about.blurb1} <br />
+              <br />
+              {about.blurb2}
+            </Content>
           </TextContainer>
         </>
       )}
     </Container>
   );
 };
+
 export default About;

@@ -8,7 +8,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #468189;
+  border-top: 1px solid #e9ecf1; 
   @media (max-width: 1438px) {
     border-top: none;
   }
@@ -18,17 +18,17 @@ const Container = styled.div`
 const FooterUl = styled.ul`
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 `;
 
 const FooterLi = styled.li`
-  padding-right: 4rem;
+  margin-right: 4rem;
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  height: 5rem;
-  color: ${(props) => props.theme.colors.darkestGreen};
+  font-size: 27px;
+  height: 4rem; 
+  color: #4f4f4f;
 
   @media (max-width: 1438px) {
     margin: 0.5rem;

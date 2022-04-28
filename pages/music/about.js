@@ -3,58 +3,49 @@ import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
 import seanGuitarImg from '../../public/pics/sean_website.jpeg';
 
-const AboutTitle = `Sean Keegan`;
-
-const AboutBlurb = `
-Odio molestiae repellat necessitatibus ut corporis earum repellendus. Sed doloribus quam corrupti eos. Atque voluptatum non corporis ipsa beatae laboriosam. Iure sed est aut et consequatur iste sed exercitationem voluptatum. Eaque aspernatur aut et laboriosam dolore eos architecto.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.
-Nostrum earum at ut. Reiciendis omnis sint odio voluptatem veniam. Et adipisci velit ut et delectus autem est maiores voluptate. Voluptas magni dolor.`;
-
 const Container = styled.div`
-  margin-top: 6.5rem;
-  margin-left: 2rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 7rem;
   @media (max-width: 1438px) {
     position: absolute;
     flex-direction: column;
     padding: 1rem;
-    margin: 1rem;
+    margin: 0;
   }
 `;
 
-const X = 3;
-function Family() {
+function SeanGuitar() {
   return (
     <Image
       src={seanGuitarImg}
-      alt="the musician holding a classical guitar sitting on a stone garden bed in a well groomed park"
-      // width={12032 / X}
-      // height={10024 / X}
+      alt="Sean Keegan holding a classical guitar sitting on a stone garden bed in a well groomed park"
       placeholder="blur"
-      priority // loads the image first over everything else since its the largest but for some reason the slowest to load out of all my images...
+      priority
     />
   );
 }
 
 const ImageContainer = styled.div`
   padding: 1rem;
-  @media (max-width: 820px) {
+  margin-left: 1rem;
+  @media screen and (max-width: 1438px) {
+    margin: 0;
+  }
+  @media screen and (max-width: 820px) {
     padding: 0;
   }
 `;
 
 const TextContainer = styled.div`
-  display: block;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
   padding: 2rem;
-  line-height: 1.9;
+  line-height: 1.5;
   @media (max-width: 820px) {
-    text-align: center;
     margin-bottom: 0.5rem;
     padding: 1px;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 `;
 
@@ -68,29 +59,38 @@ const HeaderContainer = styled.h1`
   }
 `;
 
-const About = () => {
+const About = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
+  const { about = {} } = copy;
   return (
     <Container>
       {!isTabletOrMobile && (
         <>
           <ImageContainer>
-            <Family />
+            <SeanGuitar />
           </ImageContainer>
           <TextContainer>
-            <HeaderContainer>{AboutTitle}</HeaderContainer>
-            <p>{AboutBlurb}</p>
+            <HeaderContainer>Sean Keegan</HeaderContainer>
+            <p>
+              {about.blurb1} <br />
+              <br />
+              {about.blurb2}
+            </p>
           </TextContainer>
         </>
       )}
       {isTabletOrMobile && (
         <>
-          <HeaderContainer>{AboutTitle}</HeaderContainer>
+          <HeaderContainer>Sean Keegan</HeaderContainer>
           <ImageContainer>
-            <Family />
+            <SeanGuitar />
           </ImageContainer>
           <TextContainer>
-            <p>{AboutBlurb}</p>
+            <p>
+              {about.blurb1} <br />
+              <br />
+              {about.blurb2}
+            </p>
           </TextContainer>
         </>
       )}

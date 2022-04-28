@@ -1,62 +1,104 @@
 import styled from 'styled-components';
 import data from '../../data/subjectData.js';
 
-const Container = styled.div`
+const SubjectGrouping = styled.div`
   display: flex;
-  flex-direction: column;
-  
-  text-align: center;
-  /* border: 2px solid orange; */
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-evenly;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(
+      217deg,
+      rgb(249, 249, 253),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgb(249, 249, 253), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgb(205, 207, 238), rgba(0, 0, 255, 0) 70.71%);
+  @media screen and (max-width: 1438px) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
-const SubjectContainer = styled.p`
-  /* display: flex; */
-  padding: 1rem;
-  font-size: 4rem;
-  font-family: cursive;
-  /* border: 2px solid red; */
-  display: grid;
+const SubjectContainer = styled.div`
+  height: auto;
+  flex: 1;
+  flex-basis: ${100 / 4}%;
   text-align: center;
+  box-shadow: -0em 0 0.4em #d1d7e2, -0em 0 0.4em #d1d7e2;
+  margin: 1rem;
+  @media screen and (max-width: 1438px) {
+    flex-basis: ${100 / 3}%;
+  }
+  @media screen and (max-width: 1024px) and (max-height: 1366px) {
+    flex-basis: ${100 / 2}%;
+  }
+  @media screen and (max-width: 768px) and (max-height: 1024px) {
+    flex-basis: ${100 / 3}%;
+  }
+  @media only screen and (max-width: 600px) {
+    flex-basis: 100%;
+    margin: 0;
+    margin-top: 1rem;
+  }
 `;
 
-const CourseContainer = styled.p`
-  display: flex;
+const CourseContainer = styled.div`
   font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-bottom: 2rem;
 `;
 
 function CourseItem({ courses, subject }) {
   // const subjectList = <p>{subject}</p>;
-  const courseList = courses.map((course) => <p key={course}>{course}</p>);
+  const courseList = courses.map((course) => (
+    <p
+      key={course}
+      css={{
+        'font-family':
+          'Helvetica, sans-serif-serif; font-weight: 100; white-space: pre; line-height: .0; padding: 7px;',
+      }}
+    >
+      {course}
+    </p>
+  ));
   return (
     <SubjectContainer>
-      {subject}
-      <CourseContainer> {courseList}</CourseContainer>
+      <p
+        css={{
+          'text-decoration':
+            'underline  #323232; text-decoration-thickness: 6%; text-underline-offset: 0.1em;  color: #323232; font-size: 3rem; margin-bottom: 1rem; margin-top: 3.2rem; font-family: futura-pt, sans-serif; font-weight: 100;',
+        }}
+      >
+        {subject}
+      </p>
+      <CourseContainer>{courseList}</CourseContainer>
     </SubjectContainer>
   );
 }
 
 function SubjectOfferings() {
-  const courseItems = data.map((subject) => (
+  return data.map((subject) => (
     <CourseItem
       key={subject.id}
       subject={subject.subject}
       courses={subject.courses}
     />
   ));
-  return <div>{courseItems}</div>;
 }
 
 const Subjects = () => {
   return (
-    <Container>
-      <h1>subjects</h1>
+    <SubjectGrouping>
       <SubjectOfferings />
-    </Container>
+    </SubjectGrouping>
   );
 };
 

@@ -1,7 +1,7 @@
 const Subjects = [
   {
     id: 1,
-    subject: 'Mathematics',
+    subject: 'mathematics',
     courses: [
       'Algebra I & II',
       'Geometry',
@@ -16,7 +16,7 @@ const Subjects = [
   },
   {
     id: 2,
-    subject: 'Physics',
+    subject: 'physics',
     courses: [
       'Physics',
       'Physics(H)',
@@ -28,14 +28,14 @@ const Subjects = [
   },
   {
     id: 3,
-    subject: 'Music',
+    subject: 'music',
     courses: ['AP Music Theory', 'Guitar Music Lessons'],
   },
-  {
-    id: 4,
-    subject: 'World Languages',
-    courses: ['Chinese', 'Spanish'],
-  },
+  // {
+  //   id: 4,
+  //   subject: 'World Languages',
+  //   courses: ['Chinese', 'Spanish'],
+  // },
 ];
 
 export default Subjects;
