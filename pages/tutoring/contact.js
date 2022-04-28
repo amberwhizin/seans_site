@@ -59,7 +59,7 @@ const Text = styled.div`
 `;
 
 const EmailBorder = styled.div`
- box-shadow: -0em 0 0.1em rgb(205, 207, 238), -0em 0 0.1em rgb(205, 207, 238);
+ /* box-shadow: -0em 0 0.1em rgb(205, 207, 238), -0em 0 0.1em rgb(205, 207, 238); */
   background-color: rgb(205, 207, 238);
   text-align: center;
   margin-top: 9rem;
