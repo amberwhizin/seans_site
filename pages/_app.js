@@ -35,7 +35,11 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
-    color: #323232;
+    color:  ${(props) => {
+      if (props.isTutoring) {
+        return '#323232';
+      }
+    }};
     font-family: futura-pt, sans-serif;
     font-weight: 100;
   }
