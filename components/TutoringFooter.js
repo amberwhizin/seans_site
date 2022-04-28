@@ -20,7 +20,6 @@ const FooterUl = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0;
-  /* border: 1px solid red; */
 `;
 
 const FooterLi = styled.li`
@@ -30,7 +29,6 @@ const FooterLi = styled.li`
   font-size: 27px;
   height: 4rem; 
   color: #4f4f4f;
-  /* border: 1px solid blue; */
 
   @media (max-width: 1438px) {
     margin: 0.5rem;

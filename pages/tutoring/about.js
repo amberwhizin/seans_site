@@ -89,7 +89,7 @@ const HeaderContainer = styled.div`
   @media (max-width: 820px) {
     margin-bottom: 0.5rem;
     margin-right: 1rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
