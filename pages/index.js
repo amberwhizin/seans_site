@@ -13,7 +13,7 @@ import {
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState } from 'react';
-import RandomNoteDrop from '../components/RandomNoteDrop';
+// import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
 import GreenTapeImg from '../public/pics/cropped_mobile_green_label.png';
@@ -110,10 +110,10 @@ const HomePage = () => {
           </MusicContainer>
         </>
       )}
-      <RandomNoteDrop
+      {/* <RandomNoteDrop
         wasMusicClicked={wasMusicClicked}
         isTabletOrMobile={isTabletOrMobile}
-      />
+      /> */}
     </Container>
   );
 };
