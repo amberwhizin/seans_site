@@ -17,10 +17,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundImg from '../public/pics/3.png';
-import BackgroundImgMobile from '../public/pics/nothing_but.png';
+// import BackgroundImgMobile from '../public/pics/nothing_but.png';
 // import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 // import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
-import GreenTapeImg from '../public/pics/green_tape_mobile.png';
+// import GreenTapeImg from '../public/pics/green_tape_mobile.png';
 
 const TutoringImage = () => {
   return (
@@ -62,18 +62,18 @@ const BackGround = () => {
     />
   );
 };
-const BackGroundMobile = () => {
-  return (
-    <Image
-      src={BackgroundImgMobile}
-      alt="an image of three pieces of ripped sheet music on top one another"
-      layout="fill"
-      objectFit="cover"
-      placeholder="blur"
-      priority
-    />
-  );
-};
+// const BackGroundMobile = () => {
+//   return (
+//     <Image
+//       src={BackgroundImgMobile}
+//       alt="an image of three pieces of ripped sheet music on top one another"
+//       layout="fill"
+//       objectFit="cover"
+//       placeholder="blur"
+//       priority
+//     />
+//   );
+// };
 
 const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
@@ -144,19 +144,11 @@ const HomePage = () => {
           </MusicContainer> */}
 
           <TutoringButton onClick={onClickTutoring}>
-            <BackGroundMobile />
+            <BackGround />
           </TutoringButton>
-          <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
-          <Title wasTutoringClicked={wasTutoringClicked}>
-            <Image
-              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
-              src={GreenTapeImg}
-            />
-          </Title>
           <MusicButton onClick={onClickMusic}>
-            <BackGroundMobile />
+            <BackGround />
           </MusicButton>
-          <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
         </>
       )}
       <RandomNoteDrop
