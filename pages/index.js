@@ -9,14 +9,17 @@ import {
   Title,
   ImageContainerTutor,
   ImageContainerMusic,
+  TutoringButton,
+  MusicButton,
 } from '../styles/IndexStyles.js';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
-import BackgroundMusic from '../public/pics/paper_sk.png';
-import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
-import GreenTapeImg from '../public/pics/cropped_mobile_green_label.png';
+import BackgroundImg from '../public/pics/3.png';
+// import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
+// import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
+// import GreenTapeImg from '../public/pics/cropped_mobile_green_label.png';
 
 const TutoringImage = () => {
   return (
@@ -46,6 +49,18 @@ const MusicImage = () => {
     </ImageContainerMusic>
   );
 };
+const BackGround = () => {
+  return (
+    <Image
+      src={BackgroundImg}
+      alt="an image of three pieces of ripped sheet music on top one another"
+      layout="fill"
+      objectFit="cover"
+      placeholder="blur"
+      priority
+    />
+  );
+};
 
 const HomePage = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
@@ -70,7 +85,7 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-            <MusicContainer onClick={onClickMusic}>
+          {/* <MusicContainer onClick={onClickMusic}>
               <MusicImage ifMusicImageExists={MusicImage} />
             </MusicContainer>
             <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
@@ -83,7 +98,13 @@ const HomePage = () => {
             <TutorContainer onClick={onClickTutoring}>
               <TutoringImage />
             </TutorContainer>
-            <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
+            <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor> */}
+          <TutoringButton onClick={onClickTutoring}>
+            <BackGround />
+          </TutoringButton>
+          <MusicButton onClick={onClickMusic}>
+            <BackGround />
+          </MusicButton>
         </>
       )}
       {isTabletOrMobile && (
