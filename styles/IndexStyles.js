@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 // https://bennettfeely.com/clippy/
 export const TutorContainer = styled.div`
-  bottom: 0;
+  top: 0;
   position: fixed;
   overflow: hidden;
   height: 50%;
@@ -31,7 +31,7 @@ export const TutorContainer = styled.div`
 
 // https://bennettfeely.com/clippy/
 export const MusicContainer = styled.div`
-  top: 0;
+  bottom: 0;
   filter: grayscale(1);
   position: fixed;
   overflow: hidden;
@@ -55,8 +55,8 @@ export const MusicContainer = styled.div`
 export const StyledTutor = styled.div`
   z-index: 100; //can only effect its parent el
   position: fixed;
-  right: 7vw;
-  top: 75vh;
+  left: 7vw;
+  bottom: 75vh;
   color: #343a40;
   font-family: 'Cutive Mono', monospace;
   font-size: 8.5rem;
@@ -95,8 +95,8 @@ export const StyledTutor = styled.div`
 export const StyledMusic = styled.div`
   z-index: 100; //can only effect its parent el
   position: fixed;
-  bottom: 70vh;
-  left: 4vw;
+  top: 70vh;
+  right: 4vw;
   color: #343a40;
   font-family: 'Metal Mania', cursive;
   font-size: 10rem;
