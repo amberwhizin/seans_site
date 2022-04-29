@@ -17,9 +17,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundImg from '../public/pics/3.png';
+import BackgroundImgMobile from '../public/pics/nothing_but.png';
 // import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 // import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
-// import GreenTapeImg from '../public/pics/cropped_mobile_green_label.png';
+import GreenTapeImg from '../public/pics/green_tape_mobile.png';
 
 const TutoringImage = () => {
   return (
@@ -53,6 +54,18 @@ const BackGround = () => {
   return (
     <Image
       src={BackgroundImg}
+      alt="an image of three pieces of ripped sheet music on top one another"
+      layout="fill"
+      objectFit="cover"
+      placeholder="blur"
+      priority
+    />
+  );
+};
+const BackGroundMobile = () => {
+  return (
+    <Image
+      src={BackgroundImgMobile}
       alt="an image of three pieces of ripped sheet music on top one another"
       layout="fill"
       objectFit="cover"
@@ -109,7 +122,7 @@ const HomePage = () => {
       )}
       {isTabletOrMobile && (
         <>
-          <TutorContainer onClick={onClickTutoring}>
+          {/* <TutorContainer onClick={onClickTutoring}>
             <TutoringImage />
             <HomeLink onClick={onClickTutoring}>
               <StyledTutor>TUTORING</StyledTutor>
@@ -127,8 +140,23 @@ const HomePage = () => {
             <MusicImage />
             <HomeLink onClick={onClickMusic}>
               <StyledMusic>MUSIC</StyledMusic>
-            </HomeLink>
-          </MusicContainer>
+            </HomeLink> //remove this
+          </MusicContainer> */}
+
+          <TutoringButton onClick={onClickTutoring}>
+            <BackGroundMobile />
+          </TutoringButton>
+          <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
+          <Title wasTutoringClicked={wasTutoringClicked}>
+            <Image
+              alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
+              src={GreenTapeImg}
+            />
+          </Title>
+          <MusicButton onClick={onClickMusic}>
+            <BackGroundMobile />
+          </MusicButton>
+          <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
         </>
       )}
       <RandomNoteDrop
