@@ -17,12 +17,12 @@ export const TutorContainer = styled.div`
   top: 0;
   position: fixed;
   overflow: hidden;
-  height: 100%;
+  height: 50%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(100% 0, 0% 100%, 0 0);
+  /* clip-path: polygon(100% 0, 0% 100%, 0 0); */
   :hover {
     cursor: pointer;
     opacity: 0.8;
@@ -35,20 +35,20 @@ export const MusicContainer = styled.div`
   filter: grayscale(1);
   position: fixed;
   overflow: hidden;
-  height: 100%;
+  height: 50%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%); */
   :hover {
     cursor: pointer;
     opacity: 0.9;
   }
   @media screen and (max-width: 1438px) {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
-    height: ${79 - 4 + 50 / 2}%;
-    bottom: 0;
+    /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%); */
+    /* height: ${79 - 4 + 50 / 2}%; */
+    /* bottom: 0; */
   }
 `;
 
@@ -151,7 +151,7 @@ export const Title = styled.div`
   position: fixed;
   margin: 0;
   padding: 0;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
   animation-duration: 1s;
   animation-direction: alternate;
   animation-name: ${(props) => {

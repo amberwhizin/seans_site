@@ -16,7 +16,7 @@ import { useState } from 'react';
 import RandomNoteDrop from '../components/RandomNoteDrop';
 import BackgroundMusic from '../public/pics/ylanite_koppens_music.jpeg';
 import BackgroundTutoring from '../public/pics/cropped_marjanNo.png';
-import GreenTapeImg from '../public/pics/cropped_green_label.png';
+import GreenTapeImg from '../public/pics/cropped_mobile_green_label.png';
 
 const TutoringImage = () => {
   return (
@@ -70,20 +70,20 @@ const HomePage = () => {
     <Container>
       {!isTabletOrMobile && (
         <>
-          <TutorContainer onClick={onClickTutoring}>
-            <TutoringImage />
-          </TutorContainer>
-          <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
+            <MusicContainer onClick={onClickMusic}>
+              <MusicImage ifMusicImageExists={MusicImage} />
+            </MusicContainer>
+            <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
           <Title wasTutoringClicked={wasTutoringClicked}>
             <Image
               alt="an image of a ripped piece of green tape with sean keegan written on it, the owner of site"
               src={GreenTapeImg}
             />
           </Title>
-          <MusicContainer onClick={onClickMusic}>
-            <MusicImage ifMusicImageExists={MusicImage} />
-          </MusicContainer>
-          <StyledMusic onClick={onClickMusic}>MUSIC</StyledMusic>
+            <TutorContainer onClick={onClickTutoring}>
+              <TutoringImage />
+            </TutorContainer>
+            <StyledTutor onClick={onClickTutoring}>TUTORING</StyledTutor>
         </>
       )}
       {isTabletOrMobile && (
