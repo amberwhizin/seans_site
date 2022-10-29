@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../../hooks';
-import seanTutoringImg from '../../public/pics/sean_mel_.png';
+import seanTutoringImg from '../../public/pics/sean.jpeg';
 
 const AboutTitle = `Sean Keegan`;
 
@@ -24,16 +24,19 @@ const Container = styled.div`
   }
 `;
 
-const X = 3;
+
 function Family() {
   return (
     <Image
-      src={seanTutoringImg}
-      alt="two people with their arms on eachothers shoulders facing camera smiling. The background is lost of snow and trees"
-      width={7000 / X}
-      height={8752 / X}
-      placeholder="blur"
-      priority
+    src={seanTutoringImg}
+    alt="Sean keegan and family member with their arms on each others shoulders facing camera smiling. The background is of snow ground and trees."
+    // 1125 x 1626
+    width={3125}
+    height={3626}
+    placeholder="blur"
+    layout="intrinsic"
+    objectFit="cover"
+    priority
     />
   );
 }
