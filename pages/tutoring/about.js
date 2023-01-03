@@ -8,7 +8,7 @@ const AboutTitle = `Sean Keegan`;
 const AboutBlurb = `
 Sean has been tutoring full-time since 2019, with an emphasis on the math and sciences. His teaching style focuses on reducing intimidation and letting the student discover their own understanding of concepts. With over 2500 hours of experience as an instructor, Sean has found that tutoring online via virtual whiteboard makes math and science less intimidating for students. Rather than working within a traditional teacher-student hierarchy, Sean invites a collaborative approach to learning. The modern schooling system is too results-based, and often damages students' natural approach to learning. Once intimidation is reduced, students begin building their own understanding and confidence. `;
 
-const AboutQuote = `My goal is to instill the joy of learning in students, so that they may one day become their own teachers.`
+const AboutQuote = `My hope is to instill the joy of learning in students, so that they may one day become their own teachers.`
 
 const Container = styled.div`
   margin-top: 4rem;
